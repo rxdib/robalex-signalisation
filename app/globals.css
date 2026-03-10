@@ -26,6 +26,13 @@
   /* Box shadows */
   --shadow-card:    0 4px 24px rgba(0,0,0,0.10);
   --shadow-card-lg: 0 8px 40px rgba(0,0,0,0.15);
+
+  /* Font weights — numeric aliases used throughout (font-500, font-700, etc.) */
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
 }
 
 @layer base {
