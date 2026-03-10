@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.robalex-signalisation.ch'
   const pages = ['', '/a-propos', '/nos-produits', '/nos-services', '/location-feux-chantier', '/nos-catalogues', '/contact']
