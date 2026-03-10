@@ -6,7 +6,7 @@ import CtaBand from '@/components/CtaBand'
 
 export const metadata: Metadata = {
   title: 'Nos produits — Signalisation routière Suisse',
-  description: 'Signalisation temporaire, permanente et matériel de chantier. Signaux pliants Triopan, cônes, barrières, panneaux OSR R1 R2 R3. Conforme normes suisses.',
+  description: 'Signalisation routière temporaire, permanente et matériel de chantier. Signaux pliants Triopan, cônes, barrières, panneaux OSR R1 R2 R3. Conforme normes suisses.',
   alternates: { canonical: 'https://www.robalex-signalisation.ch/nos-produits/' },
   openGraph: {
     title: 'Nos produits de signalisation routière — Robalex Signalisation',
