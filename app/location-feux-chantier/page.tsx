@@ -18,14 +18,13 @@ export const metadata: Metadata = {
 }
 
 const steps = [
-  { number: 1, label: 'Contactez-nous' },
-  { number: 2, label: 'Devis rapide' },
-  { number: 3, label: 'Installation' },
-  { number: 4, label: 'Suivi & maintenance' },
-  { number: 5, label: 'Retrait' },
+  { number: 1, label: 'Contactez-nous',      desc: 'Appelez ou envoyez votre demande en ligne.' },
+  { number: 2, label: 'Devis rapide',         desc: 'Réponse sous 24h, prix tout compris.' },
+  { number: 3, label: 'Installation',         desc: 'Pose sur site par notre équipe.' },
+  { number: 4, label: 'Suivi & maintenance',  desc: 'Disponible 7j/7 pendant toute la durée.' },
+  { number: 5, label: 'Retrait',              desc: 'Démontage et reprise du matériel inclus.' },
 ]
 
-// These logos are from the "Location feux" subfolder — companies that specifically rent construction lights from Robalex
 const clientLogos = [
   { src: '/images/Logo client/Location feux/Logo_AGV-Toni.jpg',              alt: 'AGV Toni — client location feux de chantier Robalex Signalisation' },
   { src: '/images/Logo client/Location feux/Logo_bernasconi.png',             alt: 'Bernasconi — client location feux de chantier Robalex Signalisation' },
@@ -102,12 +101,26 @@ export default function LocationFeux() {
           <SectionHeader badge="Pourquoi nous choisir" title={<>Nos <span className="text-red">avantages</span></>} centered />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
-              { title: 'Réactivité',       desc: 'Devis rapide et intervention dans les meilleurs délais.' },
-              { title: 'Prix compétitifs', desc: 'Tarifs transparents et compétitifs, sans frais cachés.' },
-              { title: 'Couverture',       desc: "Tout le Canton de Vaud et l'ensemble de la Suisse romande." },
+              {
+                icon: <ClockIcon />,
+                title: 'Réactivité',
+                desc: "Devis sous 24h, livraison et pose dans les meilleurs délais, même pour les interventions d'urgence.",
+              },
+              {
+                icon: <TagIcon />,
+                title: 'Prix compétitifs',
+                desc: 'Tarifs transparents et compétitifs, sans frais cachés. Tout est inclus : matériel, installation et retrait.',
+              },
+              {
+                icon: <MapPinIcon />,
+                title: 'Couverture étendue',
+                desc: "Tout le Canton de Vaud et l'ensemble de la Suisse romande. Interventions possibles 7j/7.",
+              },
             ].map(a => (
               <div key={a.title} className="text-center p-6 bg-bg-light rounded-xl">
-                <div className="w-2 h-10 bg-red mx-auto mb-4 rounded" />
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red/10 text-red mx-auto mb-4">
+                  {a.icon}
+                </div>
                 <h3 className="font-head font-700 text-lg text-dark mb-2">{a.title}</h3>
                 <p className="text-gray-dark text-sm">{a.desc}</p>
               </div>
@@ -132,5 +145,30 @@ export default function LocationFeux() {
 
       <CtaBand />
     </>
+  )
+}
+
+function ClockIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  )
+}
+
+function TagIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+    </svg>
+  )
+}
+
+function MapPinIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+    </svg>
   )
 }
