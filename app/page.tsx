@@ -35,8 +35,8 @@ const clients = [
   { src: '/images/logo-canton-valais.png',    alt: 'Canton du Valais',           href: 'https://www.vs.ch' },
   { src: '/images/logo-romande-energie.svg',  alt: 'Romande Energie',            href: 'https://www.romande-energie.ch' },
   { src: '/images/logo-walo.jpg',             alt: 'Walo Bertschinger',          href: 'https://www.walo.ch' },
-  { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi',                 href: 'https://www.bernasconi-freres.ch' },
-  { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA',                  href: 'https://www.cornaz.ch' },
+  { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi',                 href: 'https://www.bernasconisa.ch/' },
+  { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA',                  href: 'https://www.cornaz-fontanellaz-sa.ch/' },
   { src: '/images/logo-commune-yvonand.jpg',  alt: "Commune d'Yvonand",          href: 'https://www.yvonand.ch' },
 ]
 
