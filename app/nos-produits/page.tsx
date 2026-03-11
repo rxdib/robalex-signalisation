@@ -19,26 +19,30 @@ export const metadata: Metadata = {
 const tempProducts = [
   { img: '/images/Liste produit/Triopan.jpg',              name: 'Signaux pliants Triopan',       desc: "Fabrication sur mesure — tous les symboles et textes sont possibles." },
   { img: '/images/Liste produit/Fireball.png',             name: 'Lampes flash Fireball',          desc: "Très compactes, particulièrement appréciées des services d'urgence." },
-  { img: '/images/Liste produit/Cône-de-signalisation.webp', name: 'Cônes de signalisation',      desc: 'Cônes K1, K2, K3 pour délimiter zones de travaux et interventions.' },
+  { img: '/images/Liste produit/Cône-de-signalisation.webp', name: 'Cônes de signalisation',      desc: "Délimitation de zones de travaux et d'interventions. Disponibles en plusieurs tailles." },
   { img: '/images/Liste produit/barriere-extensible.webp', name: 'Barrière extensible aluminium', desc: "Légère et robuste, s'adapte à toutes les configurations de chantier." },
-  { img: '/images/Liste produit/Ruban de barrage 500m + texte.png', name: 'Ruban de barrage rouge-blanc', desc: 'Personnalisable : POLICE, POLICE ZONE INTERDITE, nom d\'entreprise…' },
+  { img: '/images/Liste produit/Ruban de barrage 500m + texte.png', name: 'Ruban de barrage rouge-blanc', desc: "Personnalisable : POLICE, POLICE ZONE INTERDITE, nom d'entreprise…" },
   { img: '/images/Liste produit/Barrière_Vauban.png',      name: 'Barrière mobile Vauban',         desc: 'Délimitation de périmètre robuste pour chantiers et événements.' },
 ]
 
 const permProducts = [
-  { img: '/images/Liste produit/Miroir-signalisation.jpg',      name: 'Miroirs de signalisation',  desc: 'Modèles rectangulaires ou ronds pour carrefours, parkings et zones de faible visibilité.' },
-  { img: '/images/Liste produit/Mise à ban.jpeg',               name: 'Mise à ban',                desc: 'Fabrication et installation de signalisation de mise à ban selon vos besoins.' },
-  { img: '/images/Liste produit/Radar-pedagogique.jpg',         name: 'Radar pédagogique',         desc: 'Affichage de vitesse pour sensibiliser les conducteurs et améliorer la sécurité locale.' },
-  { img: '/images/Liste produit/Potelet.jpeg',                  name: 'Mobilier urbain',            desc: 'Potelets, barrières, ralentisseurs et autres dispositifs de gestion du trafic.' },
+  { img: '/images/Liste produit/Miroir-signalisation.jpg', name: 'Miroirs de signalisation', desc: 'Modèles rectangulaires ou ronds pour carrefours, parkings et zones à faible visibilité.' },
+  { img: '/images/Liste produit/Mise à ban.jpeg',          name: 'Mise à ban',               desc: 'Fabrication et installation de signaux de mise à ban conformes aux prescriptions suisses.' },
+]
+
+const securiteProducts = [
+  { img: '/images/Liste produit/Radar-pedagogique.jpg', name: 'Radar pédagogique',  desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque." },
+  { img: '/images/Liste produit/Potelet.jpeg',           name: 'Potelets de guidage', desc: 'Délimitation de trottoirs, pistes cyclables et zones piétonnes. Disponibles en plusieurs modèles.' },
+  { img: '/images/travaux-ralentisseurs.jpg',            name: 'Ralentisseurs',        desc: "Dos-d'âne et coussins berlinois pour réduire la vitesse en zone sensible, conformes aux normes suisses." },
 ]
 
 const chantierProducts = [
-  { img: '/images/Liste produit/Latte-barrage.jpg',             name: 'Lattes de barrage rouge-blanc', desc: 'En bois avec bandes réfléchissantes, disponibles en 3m ou 4m.' },
-  { img: '/images/Liste produit/Lampe-chantier.png',            name: 'Lampes de chantier',            desc: 'Éclairage et balisage de chantier homologué.' },
-  { img: '/images/Liste produit/Support-trilatte.jpeg',         name: 'Support trilatte',              desc: 'Support pour signalisation avancée de chantier.' },
+  { img: '/images/Liste produit/Latte-barrage.jpg',    name: 'Lattes de barrage rouge-blanc', desc: 'En bois avec bandes réfléchissantes, disponibles en 3m ou 4m.' },
+  { img: '/images/Liste produit/Lampe-chantier.png',   name: 'Lampes de chantier',            desc: 'Éclairage et balisage de chantier homologué.' },
+  { img: '/images/Liste produit/Support-trilatte.jpeg', name: 'Support trilatte',             desc: 'Support pour signalisation avancée de chantier.' },
 ]
 
-function ProductGrid({ products }: { products: typeof tempProducts }) {
+function ProductGrid({ products }: { products: { img: string; name: string; desc: string }[] }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {products.map(p => (
@@ -63,7 +67,7 @@ export default function NosProduits() {
         bgImage="/images/panneaux-signalisation.jpg"
         badge="Nos produits"
         title={<>Nos produits de <span className="text-red">signalisation routière</span></>}
-        subtitle="Fourniture de matériel de signalisation conforme aux normes suisses OSR, VSS et ASTRA."
+        subtitle="Fourniture de signalisation routière conforme aux normes OFROU/VSS — de la signalisation temporaire de chantier aux signaux OSR permanents."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: 'Voir les catalogues', href: '/nos-catalogues' }}
       />
@@ -74,7 +78,7 @@ export default function NosProduits() {
           <SectionHeader
             badge="Signalisation temporaire"
             title={<>Matériel pour <span className="text-red">chantiers et urgences</span></>}
-            subtitle="Tout le matériel nécessaire pour sécuriser vos chantiers, interventions d'urgence ou événements."
+            subtitle="Tout le matériel nécessaire pour le balisage temporaire de vos chantiers, interventions d'urgence ou événements."
           />
           <ProductGrid products={tempProducts} />
           <p className="text-gray-dark mt-6 italic text-sm">
@@ -89,15 +93,27 @@ export default function NosProduits() {
         <div className="container">
           <SectionHeader
             badge="Signalisation permanente"
-            title={<>Panneaux et dispositifs <span className="text-red">permanents</span></>}
-            subtitle="Tous les panneaux de signalisation selon l'OSR Suisse, disponibles dans tous les types de rétro-réflexion : classe R1, R2 ou R3."
+            title={<>Signaux OSR et dispositifs <span className="text-red">permanents</span></>}
+            subtitle="Signaux OSR conformes aux prescriptions suisses, disponibles en rétro-réflexion R1, R2 ou R3."
           />
           <ProductGrid products={permProducts} />
         </div>
       </section>
 
+      {/* Sécurité & mobilier urbain */}
+      <section className="section-pad" aria-label="Sécurité et mobilier urbain">
+        <div className="container">
+          <SectionHeader
+            badge="Sécurité routière"
+            title={<>Sécurité & <span className="text-red">mobilier urbain</span></>}
+            subtitle="Équipements pour réduire la vitesse, guider et protéger les usagers vulnérables."
+          />
+          <ProductGrid products={securiteProducts} />
+        </div>
+      </section>
+
       {/* Matériel chantier */}
-      <section className="section-pad" aria-label="Matériel de chantier et balisage">
+      <section className="section-pad bg-bg-light" aria-label="Matériel de chantier et balisage">
         <div className="container">
           <SectionHeader
             badge="Matériel de chantier"
