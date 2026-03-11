@@ -7,9 +7,9 @@ const links = [
   { href: '/',                       label: 'Accueil' },
   { href: '/a-propos',               label: 'À propos' },
   { href: '/nos-produits',           label: 'Nos produits' },
-  { href: '/location-feux-chantier', label: 'Location feux' },
-  { href: '/nos-services',           label: 'Nos services' },
   { href: '/nos-catalogues',         label: 'Catalogues' },
+  { href: '/nos-services',           label: 'Nos services' },
+  { href: '/location-feux-chantier', label: 'Location feux' },
   { href: '/contact',                label: 'Contact' },
 ]
 
@@ -18,17 +18,20 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 bg-navy shadow-card-lg" aria-label="Navigation principale">
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" aria-label="Robalex Signalisation — Accueil">
-          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={40} priority />
+        <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex-shrink-0">
+          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={170} height={44} priority />
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-6">
+        <ul className="hidden xl:flex items-center gap-8">
           {links.map(l => (
             <li key={l.href}>
-              <Link href={l.href} className="text-sm font-head font-600 text-white/80 hover:text-white transition-colors uppercase tracking-wide">
+              <Link
+                href={l.href}
+                className="text-sm font-head font-600 text-white/75 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap py-1 border-b-2 border-transparent hover:border-red"
+              >
                 {l.label}
               </Link>
             </li>
@@ -36,32 +39,37 @@ export default function Nav() {
         </ul>
 
         {/* Phone CTA */}
-        <a href="tel:+41216570705" className="hidden lg:flex items-center gap-2 bg-red hover:bg-red-dark text-white text-sm font-head font-700 px-4 py-2 rounded transition-colors">
+        <a href="tel:+41216570705" className="hidden xl:flex items-center gap-2 bg-red hover:bg-red-dark text-white text-sm font-head font-700 px-5 py-2.5 rounded transition-colors flex-shrink-0">
           <PhoneIcon /> 021 657 07 05
         </a>
 
-        {/* Burger */}
+        {/* Burger (visible below xl) */}
         <button
-          className="lg:hidden text-white p-2"
+          className="xl:hidden text-white p-2 ml-auto"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          <span className="block w-5 h-0.5 bg-white mb-1" />
-          <span className="block w-5 h-0.5 bg-white mb-1" />
-          <span className="block w-5 h-0.5 bg-white" />
+          <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'rotate-45 translate-y-1.5' : 'mb-1.5'}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all ${open ? 'opacity-0' : 'mb-1.5'}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all ${open ? '-rotate-45 -translate-y-1.5' : ''}`} />
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-navy border-t border-white/10 px-6 py-4 flex flex-col gap-3">
+        <div className="xl:hidden bg-navy-dark border-t border-white/10 px-6 py-5 flex flex-col gap-4">
           {links.map(l => (
-            <Link key={l.href} href={l.href} className="text-white/80 hover:text-white font-head font-600 text-sm uppercase tracking-wide" onClick={() => setOpen(false)}>
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-white/80 hover:text-white font-head font-600 text-sm uppercase tracking-wider py-1 border-l-2 border-transparent hover:border-red hover:pl-3 transition-all"
+              onClick={() => setOpen(false)}
+            >
               {l.label}
             </Link>
           ))}
-          <a href="tel:+41216570705" className="mt-2 flex items-center gap-2 text-white font-head font-700 text-sm">
+          <a href="tel:+41216570705" className="mt-2 flex items-center gap-2 bg-red text-white font-head font-700 text-sm px-4 py-3 rounded w-fit">
             <PhoneIcon /> 021 657 07 05
           </a>
         </div>

@@ -5,9 +5,9 @@ const navLinks = [
   { href: '/',                       label: 'Accueil' },
   { href: '/a-propos',               label: 'À propos' },
   { href: '/nos-produits',           label: 'Nos produits' },
-  { href: '/location-feux-chantier', label: 'Location feux de chantier' },
-  { href: '/nos-services',           label: 'Nos services' },
   { href: '/nos-catalogues',         label: 'Catalogues' },
+  { href: '/nos-services',           label: 'Nos services' },
+  { href: '/location-feux-chantier', label: 'Location feux de chantier' },
   { href: '/contact',                label: 'Contact' },
 ]
 

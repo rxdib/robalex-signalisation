@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ bgImage, badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
   return (
-    <header className="relative min-h-[88vh] flex items-center pt-16" aria-label="En-tête principale">
+    <header className="relative min-h-[72vh] flex items-center pt-20" aria-label="En-tête principale">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"

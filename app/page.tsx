@@ -29,14 +29,15 @@ const expertises = [
 ]
 
 const clients = [
-  { src: '/images/logo-canton-vaud.png',      alt: 'Canton de Vaud' },
-  { src: '/images/logo-police-vaudoise.jpg',  alt: 'Police cantonale vaudoise' },
-  { src: '/images/logo-police-geneve.jpg',    alt: 'Police cantonale genevoise' },
-  { src: '/images/logo-canton-valais.png',    alt: 'Canton du Valais' },
-  { src: '/images/logo-romande-energie.svg',  alt: 'Romande Energie' },
-  { src: '/images/logo-walo.jpg',             alt: 'Walo Bertschinger' },
-  { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi' },
-  { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA' },
+  { src: '/images/logo-canton-vaud.png',      alt: 'Canton de Vaud',             href: 'https://www.vd.ch' },
+  { src: '/images/logo-police-vaudoise.jpg',  alt: 'Police cantonale vaudoise',  href: 'https://www.police.vd.ch' },
+  { src: '/images/logo-police-geneve.jpg',    alt: 'Police cantonale genevoise', href: 'https://www.police.ge.ch' },
+  { src: '/images/logo-canton-valais.png',    alt: 'Canton du Valais',           href: 'https://www.vs.ch' },
+  { src: '/images/logo-romande-energie.svg',  alt: 'Romande Energie',            href: 'https://www.romande-energie.ch' },
+  { src: '/images/logo-walo.jpg',             alt: 'Walo Bertschinger',          href: 'https://www.walo.ch' },
+  { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi',                 href: 'https://www.bernasconi-freres.ch' },
+  { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA',                  href: 'https://www.cornaz.ch' },
+  { src: '/images/logo-commune-yvonand.jpg',  alt: "Commune d'Yvonand",          href: 'https://www.yvonand.ch' },
 ]
 
 export default function HomePage() {
@@ -56,12 +57,11 @@ export default function HomePage() {
 
       {/* 2. Stats bar */}
       <section className="bg-navy py-8" aria-label="Chiffres clés">
-        <div className="container grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/10">
+        <div className="container grid grid-cols-3 gap-6 divide-x divide-white/10">
           {[
             { num: '+20 ans', label: "D'expérience" },
             { num: '+1000',   label: 'Clients satisfaits' },
             { num: '+500',    label: 'Produits disponibles' },
-            { num: 'Romande', label: "Zone d'intervention" },
           ].map(s => (
             <div key={s.label} className="text-center px-4">
               <div className="font-head font-800 text-2xl lg:text-3xl text-red">{s.num}</div>
@@ -97,7 +97,7 @@ export default function HomePage() {
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/travaux-installation.jpg', alt: 'Installation de signalisation routière en Suisse romande par Robalex Signalisation' }}
+            image={{ src: '/images/autoroute-geneve.jpg', alt: 'Signalisation routière sur autoroute en Suisse romande par Robalex Signalisation' }}
             imageBadge="+20 ans d'expertise terrain"
             dark
           >
@@ -134,9 +134,9 @@ export default function HomePage() {
           <FeatureBlock
             image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar pédagogique sur chantier routier à Lausanne' }}
             dark
+            reverse
           >
             <SectionHeader
-              badge="Service phare"
               title={<>Location de <span className="text-red">feux de chantier</span></>}
               white
             />
@@ -166,7 +166,6 @@ export default function HomePage() {
           <FeatureBlock
             image={{ src: '/images/triopan-bg.jpg', alt: 'Panneaux Triopan — signalisation pliante suisse, disponibles chez Robalex Signalisation' }}
             imageBadge="Représentant officiel Triopan"
-            reverse
           >
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
             <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande — leur principal représentant dans notre région.</p>
@@ -190,7 +189,7 @@ export default function HomePage() {
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { img: '/images/cone-signalisation.webp', cat: 'Signalisation temporaire', name: 'Cônes de signalisation', desc: 'Cônes type K1, K2, K3 pour délimiter vos zones de travaux.' },
+              { img: '/images/cone-signalisation.webp', cat: 'Signalisation temporaire', name: 'Cônes de signalisation', desc: 'Tous types de cônes pour délimiter et sécuriser vos zones de travaux ou chantiers.' },
               { img: '/images/barriere-vauban.png',     cat: 'Délimitation',             name: 'Barrières Vauban & extensibles', desc: 'Barrières légères et robustes pour sécuriser vos périmètres.' },
               { img: '/images/panneaux-signalisation.jpg', cat: 'Signalisation permanente', name: 'Panneaux routiers', desc: 'Panneaux OSR en aluminium rétroréfléchissant R1, R2, R3.' },
               { img: '/images/miroir-signalisation.jpg', cat: 'Sécurité',                name: 'Miroirs de sécurité', desc: 'Miroirs convexes pour carrefours, parkings et zones à faible visibilité.' },
@@ -221,11 +220,11 @@ export default function HomePage() {
       <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, forces de l'ordre et entreprises de construction." centered />
-          <div className="flex flex-wrap justify-center items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             {clients.map(c => (
-              <div key={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+              <a key={c.alt} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 p-2">
                 <Image src={c.src} alt={c.alt} width={120} height={60} className="object-contain max-h-14" />
-              </div>
+              </a>
             ))}
           </div>
         </div>
