@@ -45,12 +45,12 @@ const services: Array<{
     reverse: true,
   },
   {
-    img: '/images/travaux-marquage.jpg',
-    alt: 'Marquage routier réalisé par Robalex Signalisation en Suisse romande',
+    img: '/images/travaux-marquage-parking.jpg',
+    alt: 'Marquage de places de parking réalisé par Robalex Signalisation en Suisse romande',
     badge: 'Service 3',
     titleNode: <>Marquage <span className="text-red">routier</span></>,
-    desc: 'Nous réalisons tout type de marquage routier : lignes, passages piétons, zones de stationnement, flèches directionnelles et signalétique au sol.',
-    points: ['Lignes axiales et de rive','Passages piétons','Marquages de zones','Flèches et symboles'],
+    desc: 'Nous réalisons tout type de marquage routier : lignes, passages piétons, zones de stationnement numérotées, flèches directionnelles et signalétique au sol.',
+    points: ['Lignes axiales et de rive','Passages piétons','Marquage de parking & numérotation','Flèches et symboles'],
     reverse: false,
   },
   {
@@ -63,8 +63,8 @@ const services: Array<{
     reverse: true,
   },
   {
-    img: '/images/travaux-installation.jpg',
-    alt: 'Montage et installation de panneaux de signalisation routière par Robalex Signalisation en Suisse romande',
+    img: '/images/panneau-candelabre.jpg',
+    alt: 'Montage et installation de panneau de signalisation sur candélabre par Robalex Signalisation',
     badge: 'Service 5',
     titleNode: <>Montage et <span className="text-red">installation</span></>,
     desc: "Nos équipes prennent en charge le montage et l'installation de tous vos équipements de signalisation sur site, qu'il s'agisse de panneaux permanents ou de dispositifs temporaires. Interventions conformes à la norme VSS 40 886, sur la base de vos plans ou avec notre propre expertise terrain.",

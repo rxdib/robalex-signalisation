@@ -30,13 +30,18 @@ const expertises = [
 
 const clients = [
   { src: '/images/logo-canton-vaud.png',      alt: 'Canton de Vaud',             href: 'https://www.vd.ch' },
+  { src: '/images/logo-ville-lausanne.jpg',   alt: 'Ville de Lausanne',          href: 'https://www.lausanne.ch' },
   { src: '/images/logo-police-vaudoise.jpg',  alt: 'Police cantonale vaudoise',  href: 'https://www.police.vd.ch' },
   { src: '/images/logo-police-geneve.jpg',    alt: 'Police cantonale genevoise', href: 'https://www.police.ge.ch' },
   { src: '/images/logo-canton-valais.png',    alt: 'Canton du Valais',           href: 'https://www.vs.ch' },
+  { src: '/images/logo-ville-yverdon.png',    alt: 'Yverdon-les-Bains',          href: 'https://www.yverdon-les-bains.ch' },
+  { src: '/images/logo-ville-pully.png',      alt: 'Ville de Pully',             href: 'https://www.pully.ch' },
   { src: '/images/logo-romande-energie.svg',  alt: 'Romande Energie',            href: 'https://www.romande-energie.ch' },
   { src: '/images/logo-walo.jpg',             alt: 'Walo Bertschinger',          href: 'https://www.walo.ch' },
+  { src: '/images/logo-bollini-sa.png',       alt: 'Bollini SA',                 href: 'https://www.bollini.ch' },
   { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi',                 href: 'https://www.bernasconisa.ch/' },
   { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA',                  href: 'https://www.cornaz-fontanellaz-sa.ch/' },
+  { src: '/images/logo-jacques-lugrin.png',   alt: 'Jacques Lugrin SA',          href: 'https://www.jacqueslugrin.ch' },
   { src: '/images/logo-commune-yvonand.jpg',  alt: "Commune d'Yvonand",          href: 'https://www.yvonand.ch' },
 ]
 
@@ -189,16 +194,16 @@ export default function HomePage() {
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { img: '/images/cone-signalisation.webp', cat: 'Signalisation temporaire', name: 'Cônes de signalisation', desc: 'Tous types de cônes pour délimiter et sécuriser vos zones de travaux ou chantiers.' },
-              { img: '/images/barriere-vauban.png',     cat: 'Délimitation',             name: 'Barrières Vauban & extensibles', desc: 'Barrières légères et robustes pour sécuriser vos périmètres.' },
-              { img: '/images/panneaux-signalisation.jpg', cat: 'Signalisation permanente', name: 'Panneaux routiers', desc: 'Panneaux OSR en aluminium rétroréfléchissant R1, R2, R3.' },
-              { img: '/images/miroir-signalisation.jpg', cat: 'Sécurité',                name: 'Miroirs de sécurité', desc: 'Miroirs convexes pour carrefours, parkings et zones à faible visibilité.' },
-              { img: '/images/feux-radar-1.jpg',         cat: 'Location feux',           name: 'Feux de chantier', desc: 'Location clé en main avec radar pédagogique ou décompte de temps.' },
-              { img: '/images/radar-pedagogique.jpg',    cat: 'Sécurité routière',       name: 'Radars pédagogiques', desc: 'Affichage de vitesse pour sensibiliser les conducteurs.' },
+              { img: '/images/cone-signalisation.webp',    pos: 'object-center', cat: 'Signalisation temporaire',  name: 'Cônes de signalisation',        desc: 'Tous types de cônes pour délimiter et sécuriser vos zones de travaux ou chantiers.' },
+              { img: '/images/barriere-vauban.png',         pos: 'object-center', cat: 'Délimitation',              name: 'Barrières Vauban & extensibles', desc: 'Barrières légères et robustes pour sécuriser vos périmètres.' },
+              { img: '/images/panneaux-signalisation.jpg',  pos: 'object-center', cat: 'Signalisation permanente',  name: 'Panneaux routiers',             desc: 'Panneaux OSR en aluminium rétroréfléchissant R1, R2, R3.' },
+              { img: '/images/installation-miroir.jpg',     pos: 'object-top',    cat: 'Sécurité',                  name: 'Miroirs de sécurité',           desc: 'Miroirs convexes pour carrefours, parkings et zones à faible visibilité.' },
+              { img: '/images/feux-radar-4.jpg',            pos: 'object-center', cat: 'Location feux',             name: 'Feux de chantier',              desc: 'Location clé en main avec radar pédagogique ou décompte de temps.' },
+              { img: '/images/travaux-ralentisseurs.jpg',   pos: 'object-center', cat: 'Sécurité routière',         name: 'Radars & ralentisseurs',        desc: 'Radars pédagogiques et ralentisseurs pour réduire la vitesse en zone sensible.' },
             ].map(p => (
               <article key={p.name} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
-                <div className="aspect-video overflow-hidden">
-                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={225} className="w-full h-full object-cover" />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full object-cover ${p.pos}`} />
                 </div>
                 <div className="p-5">
                   <p className="text-red text-xs font-head font-700 uppercase tracking-wide mb-1">{p.cat}</p>
