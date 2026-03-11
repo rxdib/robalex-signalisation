@@ -20,17 +20,17 @@ export default function Nav() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-navy shadow-card-lg" aria-label="Navigation principale">
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
-        <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex-shrink-0">
-          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={170} height={44} priority />
+        <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex-shrink-0 min-w-[160px]">
+          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={42} priority />
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden xl:flex items-center gap-8">
+        {/* Desktop links — flex-1 + justify-center keeps them truly centred between logo and CTA */}
+        <ul className="hidden xl:flex flex-1 items-center justify-center gap-6">
           {links.map(l => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-sm font-head font-600 text-white/75 hover:text-white transition-colors uppercase tracking-wider whitespace-nowrap py-1 border-b-2 border-transparent hover:border-red"
+                className="text-xs font-head font-600 text-white/75 hover:text-white transition-colors uppercase tracking-wide whitespace-nowrap py-1 border-b-2 border-transparent hover:border-red"
               >
                 {l.label}
               </Link>
