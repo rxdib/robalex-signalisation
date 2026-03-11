@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 }
 
 const expertises = [
-  { icon: <TempIcon />, title: 'Signalisation temporaire',  desc: 'Signaux pliants Triopan, cônes, barrières, lampes flash et tout le matériel pour sécuriser vos chantiers.', link: '/nos-produits' },
-  { icon: <PermIcon />, title: 'Signalisation permanente', desc: 'Panneaux OSR en classes R1, R2 ou R3, miroirs, mise à ban, mobilier urbain.', link: '/nos-produits' },
-  { icon: <InstIcon />, title: 'Montage et installation',  desc: 'Pose et installation de signalisation selon les normes en vigueur, notamment la norme VSS 40 886.', link: '/nos-services' },
-  { icon: <FeuxIcon />, title: 'Location feux de chantier', desc: 'Service clé en main : livraison, installation, maintenance et retrait inclus.', link: '/location-feux-chantier' },
-  { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Nous réalisons tout type de marquage routier pour communes et entreprises.', link: '/nos-services' },
+  { icon: <TempIcon />, title: 'Signalisation temporaire',  desc: 'Balisage temporaire de chantier — signaux pliants Triopan, cônes, barrières et lampes flash pour sécuriser toutes vos interventions.', link: '/nos-produits' },
+  { icon: <PermIcon />, title: 'Signalisation permanente', desc: 'Signaux OSR en rétro-réflexion R1, R2 ou R3 — miroirs, mise à ban et mobilier urbain.', link: '/nos-produits' },
+  { icon: <InstIcon />, title: 'Montage et installation',  desc: 'Pose et installation conformes aux directives OFROU et à la norme VSS 40 886.', link: '/nos-services' },
+  { icon: <FeuxIcon />, title: 'Location feux de chantier', desc: 'Service clé en main : livraison, installation, maintenance et retrait — intervention 7j/7.', link: '/location-feux-chantier' },
+  { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Marquage routier conforme aux prescriptions suisses pour communes, entreprises et régies.', link: '/nos-services' },
 ]
 
 const clients = [
@@ -55,7 +55,7 @@ export default function HomePage() {
         bgImage="/images/triopan-bg.jpg"
         badge="Suisse romande"
         title={<>Votre expert en <span className="text-red">signalisation routière</span></>}
-        subtitle="La fourniture, la location et la pose : nous prenons en charge tous vos besoins en signalisation routière."
+        subtitle="De la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière — conformes aux normes OFROU/VSS."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: 'Voir nos produits', href: '/nos-produits' }}
       />
@@ -121,7 +121,7 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="text-white/75 text-sm mb-6">
-              Représentant officiel et exclusif de <strong className="text-white">Triopan SA</strong> pour toute la Suisse romande — leur principal représentant dans notre région.
+              Représentant officiel et exclusif de <strong className="text-white">Triopan SA</strong> pour toute la Suisse romande — accès direct à l'ensemble de la gamme Triopan.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/a-propos" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">En savoir plus</a>
@@ -173,9 +173,9 @@ export default function HomePage() {
             imageBadge="Représentant officiel Triopan"
           >
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
-            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande — leur principal représentant dans notre région.</p>
+            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande — accès direct à toute la gamme de signaux pliants et dispositifs innovants.</p>
             <ul className="flex flex-col gap-2 mb-6">
-              {['Gamme complète de panneaux Triopan en stock','Livraison rapide dans toute la Suisse romande','Conformes aux normes VSS et ASTRA','Conseils personnalisés'].map(item => (
+              {['Gamme complète de panneaux Triopan en stock','Livraison rapide dans toute la Suisse romande','Conformes aux normes OFROU/VSS','Conseils personnalisés'].map(item => (
                 <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold">✓</span> {item}
                 </li>
