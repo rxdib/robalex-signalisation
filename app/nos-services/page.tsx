@@ -29,45 +29,45 @@ const services: Array<{
   {
     img: '/images/signalisation-chantier-hd.jpg',
     alt: 'Signalisation temporaire de chantier posée par Robalex Signalisation à Lausanne',
-    badge: 'Service 1',
+    badge: 'Temporaire',
     titleNode: <>Signalisation <span className="text-red">temporaire</span></>,
-    desc: "Nous prenons en charge la mise en place complète de votre signalisation de chantier : fourniture, transport et installation sur site selon les normes en vigueur (VSS 40 886). Nous suivons les plans fournis ou conseillons si aucun plan n'est disponible.",
+    desc: "Nous prenons en charge la mise en place complète de votre signalisation de chantier : fourniture, transport et installation sur site conformément aux directives OFROU et à la norme VSS 40 886. Nous nous adaptons aux plans fournis ou proposons notre expertise terrain si aucun plan n'est disponible.",
     points: ['Fermetures de routes','Travaux sur chaussée',"Interventions d'urgence",'Événements temporaires'],
     reverse: false,
   },
   {
     img: '/images/installation-panneaux.jpg',
     alt: 'Installation de panneaux de signalisation permanente par Robalex Signalisation',
-    badge: 'Service 2',
+    badge: 'Permanente',
     titleNode: <>Signalisation <span className="text-red">permanente</span></>,
-    desc: "Fourniture et pose de panneaux de signalisation permanente conformes à l'OSR : zones 30, passages piétons, panneaux d'interdiction et directionnels. Tous nos panneaux sont disponibles en rétro-réflexion R1, R2 ou R3.",
+    desc: "Fourniture et pose de signaux OSR conformes à l'ordonnance sur la signalisation routière : zones 30, passages piétons, panneaux d'interdiction et directionnels. Tous nos signaux sont disponibles en rétro-réflexion R1, R2 ou R3.",
     points: ['Zones 30 et 20','Passages piétons','Panneaux indicateurs','Mise à ban'],
     reverse: true,
   },
   {
     img: '/images/travaux-marquage-parking.jpg',
     alt: 'Marquage de places de parking réalisé par Robalex Signalisation en Suisse romande',
-    badge: 'Service 3',
+    badge: 'Marquage routier',
     titleNode: <>Marquage <span className="text-red">routier</span></>,
-    desc: 'Nous réalisons tout type de marquage routier : lignes, passages piétons, zones de stationnement numérotées, flèches directionnelles et signalétique au sol.',
+    desc: 'Nous réalisons tout type de marquage routier conformes aux prescriptions suisses : lignes axiales et de rive, passages piétons, zones de stationnement numérotées, flèches directionnelles et signalétique au sol.',
     points: ['Lignes axiales et de rive','Passages piétons','Marquage de parking & numérotation','Flèches et symboles'],
     reverse: false,
   },
   {
     img: '/images/travaux-location-materiel.jpg',
     alt: 'Location et installation de matériel de signalisation temporaire pour chantier en Suisse romande',
-    badge: 'Service 4',
+    badge: 'Location matériel',
     titleNode: <>Location de <span className="text-red">matériel</span> de signalisation</>,
-    desc: "Nous louons et installons le matériel de signalisation routière pour toutes vos situations temporaires. Service complet : fourniture, installation sur site, et retrait en fin d'intervention. Nous suivons les plans fournis ou gérons la signalisation nous-mêmes si aucun plan n'est disponible. Norme de référence : VSS 40 886.",
+    desc: "Location et installation de matériel de signalisation routière pour toutes vos interventions temporaires. Service complet et clé en main : fourniture, installation sur site et retrait en fin d'intervention, conformément à la norme VSS 40 886.",
     points: ['Fermetures de routes','Pose de grues et engins de chantier','Modifications temporaires de circulation','Réservation de places de stationnement'],
     reverse: true,
   },
   {
     img: '/images/panneau-candelabre.jpg',
     alt: 'Montage et installation de panneau de signalisation sur candélabre par Robalex Signalisation',
-    badge: 'Service 5',
+    badge: 'Montage',
     titleNode: <>Montage et <span className="text-red">installation</span></>,
-    desc: "Nos équipes prennent en charge le montage et l'installation de tous vos équipements de signalisation sur site, qu'il s'agisse de panneaux permanents ou de dispositifs temporaires. Interventions conformes à la norme VSS 40 886, sur la base de vos plans ou avec notre propre expertise terrain.",
+    desc: "Nos équipes prennent en charge le montage et l'installation de tous vos équipements de signalisation sur site, qu'il s'agisse de signaux permanents ou de dispositifs temporaires. Interventions conformes aux directives OFROU, sur la base de vos plans ou avec notre propre expertise terrain.",
     points: ['Pose de panneaux permanents','Installation de signalisation temporaire','Démontage et retrait du matériel','Interventions d\'urgence et délais courts'],
     reverse: false,
   },
@@ -80,7 +80,7 @@ export default function NosServices() {
         bgImage="/images/travaux-installation.jpg"
         badge="Nos services"
         title={<>Nos services de <span className="text-red">signalisation routière</span></>}
-        subtitle="Nous prenons en charge l'ensemble : fourniture, pose et signalisation selon les normes en vigueur, notamment la norme VSS 40 886."
+        subtitle="De la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière, conformément aux directives OFROU et à la norme VSS 40 886."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
       />
 
