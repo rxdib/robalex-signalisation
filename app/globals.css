@@ -63,4 +63,18 @@
   /* Font family utilities */
   .font-head { font-family: var(--font-family-head); }
   .font-body { font-family: var(--font-family-body); }
+
+  /* Logo marquee carousel */
+  .marquee-track {
+    animation: marquee 55s linear infinite;
+    will-change: transform;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }

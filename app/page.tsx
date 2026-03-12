@@ -6,6 +6,7 @@ import ServiceCard from '@/components/ServiceCard'
 import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
 import PartnerLogo from '@/components/PartnerLogo'
+import LogoMarquee from '@/components/LogoMarquee'
 import { localBusinessSchema } from './schema'
 
 export const metadata: Metadata = {
@@ -29,20 +30,37 @@ const expertises = [
 ]
 
 const clients = [
-  { src: '/images/logo-canton-vaud.png',      alt: 'Canton de Vaud',             href: 'https://www.vd.ch' },
-  { src: '/images/logo-ville-lausanne.jpg',   alt: 'Ville de Lausanne',          href: 'https://www.lausanne.ch' },
-  { src: '/images/logo-police-vaudoise.jpg',  alt: 'Police cantonale vaudoise',  href: 'https://www.police.vd.ch' },
-  { src: '/images/logo-police-geneve.jpg',    alt: 'Police cantonale genevoise', href: 'https://www.police.ge.ch' },
-  { src: '/images/logo-canton-valais.png',    alt: 'Canton du Valais',           href: 'https://www.vs.ch' },
-  { src: '/images/logo-ville-yverdon.png',    alt: 'Yverdon-les-Bains',          href: 'https://www.yverdon-les-bains.ch' },
-  { src: '/images/logo-ville-pully.png',      alt: 'Ville de Pully',             href: 'https://www.pully.ch' },
-  { src: '/images/logo-romande-energie.svg',  alt: 'Romande Energie',            href: 'https://www.romande-energie.ch' },
-  { src: '/images/logo-walo.jpg',             alt: 'Walo Bertschinger',          href: 'https://www.walo.ch' },
-  { src: '/images/logo-bollini-sa.png',       alt: 'Bollini SA',                 href: 'https://www.bollini.ch' },
-  { src: '/images/logo-bernasconi.png',       alt: 'Bernasconi',                 href: 'https://www.bernasconisa.ch/' },
-  { src: '/images/logo-cornaz.avif',          alt: 'Cornaz SA',                  href: 'https://www.cornaz-fontanellaz-sa.ch/' },
-  { src: '/images/logo-jacques-lugrin.png',   alt: 'Jacques Lugrin SA',          href: 'https://www.jacqueslugrin.ch' },
-  { src: '/images/logo-commune-yvonand.jpg',  alt: "Commune d'Yvonand",          href: 'https://www.yvonand.ch' },
+  // Cantons & collectivités publiques
+  { src: '/images/logo-canton-vaud.png',              alt: 'Canton de Vaud',                    href: 'https://www.vd.ch' },
+  { src: '/images/logo-canton-valais.png',            alt: 'Canton du Valais',                  href: 'https://www.vs.ch' },
+  { src: '/images/logo-canton-fribourg.svg',          alt: 'Canton de Fribourg',                href: 'https://www.fr.ch' },
+  { src: '/images/logo-canton-jura.png',              alt: 'Canton du Jura',                    href: 'https://www.jura.ch' },
+  // Polices
+  { src: '/images/logo-police-vaudoise.jpg',          alt: 'Police cantonale vaudoise',         href: 'https://www.police.vd.ch' },
+  { src: '/images/logo-police-geneve.jpg',            alt: 'Police cantonale genevoise',        href: 'https://www.police.ge.ch' },
+  { src: '/images/logo-police-neuchatel.png',         alt: 'Police cantonale neuchâteloise',    href: 'https://www.ne.ch' },
+  { src: '/images/logo-police-sion-sierre.png',       alt: 'Police régionale Sion-Sierre',      href: 'https://www.vs.ch' },
+  // Villes & communes
+  { src: '/images/logo-ville-lausanne.jpg',           alt: 'Ville de Lausanne',                 href: 'https://www.lausanne.ch' },
+  { src: '/images/logo-ville-yverdon.png',            alt: 'Yverdon-les-Bains',                 href: 'https://www.yverdon-les-bains.ch' },
+  { src: '/images/logo-ville-pully.png',              alt: 'Ville de Pully',                    href: 'https://www.pully.ch' },
+  { src: '/images/logo-ville-nyon.png',               alt: 'Ville de Nyon',                     href: 'https://www.nyon.ch' },
+  { src: '/images/logo-commune-yvonand.jpg',          alt: "Commune d'Yvonand",                 href: 'https://www.yvonand.ch' },
+  { src: '/images/logo-commune-estavayer.png',        alt: "Commune d'Estavayer",               href: 'https://www.estavayer.ch' },
+  { src: '/images/logo-commune-bourg-en-lavaux.png',  alt: 'Commune de Bourg-en-Lavaux',        href: 'https://www.bourg-en-lavaux.ch' },
+  { src: '/images/logo-commune-gibloux.png',          alt: 'Commune de Gibloux',                href: 'https://www.gibloux.ch' },
+  { src: '/images/logo-commune-orvin.png',            alt: "Commune d'Orvin",                   href: 'https://www.orvin.ch' },
+  // Aéroport & régies
+  { src: '/images/logo-geneve-aeroport.svg',          alt: 'Genève Aéroport',                   href: 'https://www.gva.ch' },
+  { src: '/images/logo-regie-turrian.svg',            alt: 'Régie Turrian',                     href: 'https://www.turrian.ch' },
+  // Entreprises de construction & génie civil
+  { src: '/images/logo-romande-energie.svg',          alt: 'Romande Energie',                   href: 'https://www.romande-energie.ch' },
+  { src: '/images/logo-walo.jpg',                     alt: 'Walo Bertschinger',                 href: 'https://www.walo.ch' },
+  { src: '/images/logo-bollini-sa.png',               alt: 'Bollini SA',                        href: 'https://www.bollini.ch' },
+  { src: '/images/logo-bernasconi.png',               alt: 'Bernasconi',                        href: 'https://www.bernasconisa.ch/' },
+  { src: '/images/logo-cornaz.avif',                  alt: 'Cornaz SA',                         href: 'https://www.cornaz-fontanellaz-sa.ch/' },
+  { src: '/images/logo-jacques-lugrin.png',           alt: 'Jacques Lugrin SA',                 href: 'https://www.jacqueslugrin.ch' },
+  { src: '/images/logo-orllati.png',                  alt: 'Orllati SA',                        href: 'https://www.orllati.ch' },
 ]
 
 export default function HomePage() {
@@ -102,13 +120,9 @@ export default function HomePage() {
       <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Police et entreprises de construction." centered />
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {clients.map(c => (
-              <a key={c.alt} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 p-2">
-                <Image src={c.src} alt={c.alt} width={120} height={60} className="object-contain max-h-14" />
-              </a>
-            ))}
-          </div>
+        </div>
+        <div className="mt-10">
+          <LogoMarquee logos={clients} />
         </div>
       </section>
 
