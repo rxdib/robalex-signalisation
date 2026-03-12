@@ -9,7 +9,7 @@ export const localBusinessSchema = {
   email: 'info@robalex-signalisation.ch',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Chemin de Grandchamp 6',
+    streetAddress: 'Chemin du Grand Champ 6',
     addressLocality: 'Lausanne',
     addressRegion: 'Vaud',
     postalCode: '1018',

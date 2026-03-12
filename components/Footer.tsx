@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Nav */}
           <div>
-            <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Navigation</h4>
+            <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Menu</h4>
             <ul className="flex flex-col gap-2">
               {navLinks.map(l => (
                 <li key={l.href + l.label}>
@@ -71,7 +71,7 @@ export default function Footer() {
             <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Adresse</h4>
             <address className="not-italic text-sm leading-relaxed">
               Robalex Signalisation Sàrl<br />
-              Chemin de Grandchamp 6<br />
+              Chemin du Grand Champ 6<br />
               1018 Lausanne<br />
               Suisse
             </address>
