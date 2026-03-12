@@ -27,8 +27,8 @@ const services: Array<{
   reverse: boolean
 }> = [
   {
-    img: '/images/signalisation-chantier-hd.jpg',
-    alt: 'Signalisation temporaire de chantier posée par Robalex Signalisation à Lausanne',
+    img: '/images/installation-signalisation-temporaire-location.jpg',
+    alt: 'Installation de signalisation temporaire de chantier par Robalex Signalisation',
     badge: 'Temporaire',
     titleNode: <>Signalisation <span className="text-red">temporaire</span></>,
     desc: "Nous prenons en charge la mise en place complète de votre signalisation de chantier : fourniture, transport et installation sur site conformément aux directives OFROU et à la norme VSS 40 886. Nous nous adaptons aux plans fournis ou proposons notre expertise terrain si aucun plan n'est disponible.",
@@ -41,7 +41,7 @@ const services: Array<{
     badge: 'Permanente',
     titleNode: <>Signalisation <span className="text-red">permanente</span></>,
     desc: "Fourniture et pose de signaux OSR conformes à l'ordonnance sur la signalisation routière : zones 30, passages piétons, panneaux d'interdiction et directionnels. Tous nos signaux sont disponibles en rétro-réflexion R1, R2 ou R3.",
-    points: ['Zones 30 et 20','Passages piétons','Panneaux indicateurs','Mise à ban'],
+    points: ['Zones 30 et 20','Passages piétons','Panneaux d\'interdiction','Panneaux indicateurs','Chemins privés','Mise à ban'],
     reverse: true,
   },
   {
@@ -77,7 +77,7 @@ export default function NosServices() {
   return (
     <>
       <Hero
-        bgImage="/images/travaux-installation.jpg"
+        bgImage="/images/passage-pieton.jpg"
         badge="Nos services"
         title={<>Nos services de <span className="text-red">signalisation routière</span></>}
         subtitle="De la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière, conformément aux directives OFROU et à la norme VSS 40 886."
