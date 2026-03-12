@@ -112,7 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Votre spécialiste */}
+      {/* 5. Votre spécialiste */}
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
           <FeatureBlock
@@ -145,7 +145,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Location feux promo */}
+      {/* 6. Location feux promo */}
       <section className="section-pad bg-bg-light" aria-labelledby="feux-title">
         <div className="container">
           <FeatureBlock
@@ -175,7 +175,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Triopan feature */}
+      {/* 7. Triopan feature */}
       <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
@@ -198,7 +198,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Produits phares */}
+      {/* 8. Produits phares */}
       <section className="section-pad" aria-labelledby="produits-title">
         <div className="container">
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
