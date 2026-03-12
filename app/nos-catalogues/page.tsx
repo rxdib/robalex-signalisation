@@ -31,7 +31,8 @@ export default function NosCatalogues() {
         <div className="container">
           <SectionHeader
             badge="Nos publications"
-            title={<>Deux catalogues à <span className="text-red">votre disposition</span></>}
+            title={<>Nos catalogues à <span className="text-red">votre disposition</span></>}
+            subtitle="Consultez ou téléchargez nos catalogues pour découvrir notre gamme complète."
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
@@ -104,6 +105,41 @@ export default function NosCatalogues() {
               </div>
             </article>
 
+          </div>
+
+          <div className="max-w-sm mx-auto mt-10">
+            <article className="bg-white border border-gray-light rounded-xl overflow-hidden shadow-card hover:shadow-card-lg transition-shadow">
+              <div className="aspect-[3/4] overflow-hidden bg-bg-light">
+                <Image
+                  src="/images/catalogue-robalex-cover.png"
+                  alt="Couverture liste des signaux routiers OSR — Robalex Signalisation"
+                  width={400}
+                  height={533}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <span className="inline-block bg-navy text-white text-xs font-head font-700 uppercase tracking-wide px-3 py-1 rounded mb-3">Référence OSR</span>
+                <h2 className="font-head font-800 text-xl text-dark mb-3">Liste des signaux routiers OSR</h2>
+                <p className="text-gray-dark text-sm leading-relaxed mb-4">
+                  Répertoire complet de tous les signaux routiers OSR disponibles à la commande chez Robalex Signalisation — panneaux d&apos;interdiction, obligation, danger, indication et localisation.
+                </p>
+                <ul className="flex flex-col gap-1.5 mb-5 text-sm text-gray-dark">
+                  {['Tous les symboles OSR', 'Tous formats disponibles', 'Sur devis'].map(i => (
+                    <li key={i} className="flex items-center gap-2"><span className="text-red font-bold">✓</span>{i}</li>
+                  ))}
+                </ul>
+                <a
+                  href="/catalogues/Robalex_Signaux_Routiers.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Télécharger la liste des signaux routiers OSR (s'ouvre dans un nouvel onglet)"
+                  className="w-full block text-center bg-navy hover:bg-navy-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors"
+                >
+                  Télécharger la liste
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
