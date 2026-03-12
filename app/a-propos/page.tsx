@@ -24,7 +24,7 @@ export default function AProposPage() {
         bgImage="/images/autoroute-suisse-pont.jpg"
         badge="À propos"
         title={<>À propos de <span className="text-red">Robalex Signalisation</span></>}
-        subtitle="Depuis 2004, nous assurons la fourniture, la pose et la sécurisation des chantiers en Suisse romande — conformes aux normes OFROU/VSS."
+        subtitle="Depuis 2004, votre partenaire de confiance pour la signalisation routière en Suisse romande."
         primaryCta={{ label: 'Nous contacter', href: '/contact' }}
       />
 
@@ -36,7 +36,7 @@ export default function AProposPage() {
           >
             <SectionHeader badge="Notre histoire" title={<>Plus de 20 ans <span className="text-red">d'expertise</span></>} />
             <p className="text-gray-dark mb-4">Fondée en 2004 à Lausanne, Robalex Signalisation Sàrl s'est imposée comme un acteur incontournable de la signalisation routière en Suisse romande.</p>
-            <p className="text-gray-dark mb-4">Notre approche repose sur deux piliers : des <strong>produits de haute qualité</strong> et un <strong>service client irréprochable</strong>. Nous intervenons pour les services d'autoroutes, les communes, la police, les corps de pompiers, les entreprises de génie civil et les régies immobilières.</p>
+            <p className="text-gray-dark mb-4">Notre approche repose sur deux piliers : des <strong>produits de haute qualité</strong> et un <strong>service client irréprochable</strong>. Nous intervenons pour les services d'autoroutes, les communes, la police, les corps de pompiers, les entreprises de génie civil, les géomètres et les clients privés.</p>
             <p className="text-gray-dark">En tant que représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande, nous offrons un accès direct à la gamme complète des panneaux pliants et systèmes de signalisation innovants Triopan.</p>
           </FeatureBlock>
         </div>
@@ -46,22 +46,27 @@ export default function AProposPage() {
       <section className="section-pad bg-bg-light">
         <div className="container">
           <SectionHeader badge="Nos valeurs" title={<>Ce qui nous <span className="text-red">distingue</span></>} centered />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
             {[
               {
                 icon: <QualityIcon />,
                 title: 'Qualité',
-                desc: 'Nos produits sont conformes aux normes OFROU/VSS et sélectionnés pour leur durabilité et leur lisibilité optimale sur le terrain.',
+                desc: 'Produits de haute qualité, sélectionnés pour leur durabilité et conformes aux normes suisses.',
               },
               {
                 icon: <ReactivityIcon />,
                 title: 'Réactivité',
-                desc: "Devis sous 24h et intervention dans les meilleurs délais — disponibles pour les urgences et les interventions de nuit.",
+                desc: 'Intervention rapide pour vos besoins urgents. Devis et réponse dans les meilleurs délais.',
               },
               {
                 icon: <AdviceIcon />,
                 title: 'Conseils personnalisés',
-                desc: "De la conception à la pose, notre équipe terrain vous accompagne pour trouver la solution la mieux adaptée à votre situation.",
+                desc: "Accompagnement personnalisé basé sur notre expérience terrain. De la conception à la pose.",
+              },
+              {
+                icon: <TagIcon />,
+                title: 'Prix compétitifs',
+                desc: "Tarifs transparents et compétitifs, sans frais cachés. Rapport qualité-prix au cœur de notre offre.",
               },
             ].map(v => (
               <div key={v.title} className="text-center">
@@ -122,6 +127,14 @@ function AdviceIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
       <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+    </svg>
+  )
+}
+
+function TagIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
     </svg>
   )
 }
