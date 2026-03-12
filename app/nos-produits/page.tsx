@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 
 const tempProducts = [
   { img: '/images/Liste produit/Triopan.jpg',              name: 'Signaux pliants Triopan',       desc: "Fabrication sur mesure — tous les symboles et textes sont possibles." },
-  { img: '/images/Liste produit/Fireball.png',             name: 'Lampes flash Fireball',          desc: "Très compactes, particulièrement appréciées des services d'urgence." },
+  { img: '/images/Liste produit/Fireball.png',             name: 'Lampes flash Fireball',          desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Très appréciées des services d'urgence, communes et forces de l'ordre." },
   { img: '/images/Liste produit/Cône-de-signalisation.webp', name: 'Cônes de signalisation',      desc: "Délimitation de zones de travaux et d'interventions. Disponibles en plusieurs tailles." },
   { img: '/images/Liste produit/barriere-extensible.webp', name: 'Barrière extensible aluminium', desc: "Légère et robuste, s'adapte à toutes les configurations de chantier." },
-  { img: '/images/Liste produit/Ruban de barrage 500m + texte.png', name: 'Ruban de barrage rouge-blanc', desc: "Personnalisable : POLICE, POLICE ZONE INTERDITE, nom d'entreprise…" },
+  { img: '/images/ruban-barrage-personnalise.jpg', name: 'Ruban de barrage rouge-blanc', desc: "Personnalisable : POLICE, POLICE ZONE INTERDITE, nom d'entreprise…" },
   { img: '/images/Liste produit/Barrière_Vauban.png',      name: 'Barrière mobile Vauban',         desc: 'Délimitation de périmètre robuste pour chantiers et événements.' },
 ]
 
@@ -31,9 +31,10 @@ const permProducts = [
 ]
 
 const securiteProducts = [
-  { img: '/images/Liste produit/Radar-pedagogique.jpg', name: 'Radar pédagogique',  desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque." },
-  { img: '/images/Liste produit/Potelet.jpeg',           name: 'Potelets de guidage', desc: 'Délimitation de trottoirs, pistes cyclables et zones piétonnes. Disponibles en plusieurs modèles.' },
-  { img: '/images/travaux-ralentisseurs.jpg',            name: 'Ralentisseurs',        desc: "Dos-d'âne et coussins berlinois pour réduire la vitesse en zone sensible, conformes aux normes suisses." },
+  { img: '/images/Liste produit/Radar-pedagogique.jpg',        name: 'Radar pédagogique',    desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque." },
+  { img: '/images/installation-potelet-mobilier-urbain.jpg',   name: 'Potelets de guidage',  desc: "Délimitation de trottoirs, pistes cyclables et zones piétonnes. Disponibles en plusieurs modèles et hauteurs." },
+  { img: '/images/installation-barriere-urbain.jpg',           name: 'Barrières piétonnes',  desc: "Barrières de protection piétonnes pour chantiers, événements et zones à risque. Robustes et faciles à installer." },
+  { img: '/images/travaux-ralentisseurs.jpg',                  name: 'Ralentisseurs',         desc: "Dos-d'âne et coussins berlinois pour réduire la vitesse en zone sensible, conformes aux normes suisses." },
 ]
 
 const chantierProducts = [
@@ -67,7 +68,7 @@ export default function NosProduits() {
         bgImage="/images/panneaux-signalisation.jpg"
         badge="Nos produits"
         title={<>Nos produits de <span className="text-red">signalisation routière</span></>}
-        subtitle="Fourniture de signalisation routière conforme aux normes OFROU/VSS — de la signalisation temporaire de chantier aux signaux OSR permanents."
+        subtitle="Fourniture de matériel de signalisation routière conforme aux normes suisses."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: 'Voir les catalogues', href: '/nos-catalogues' }}
       />
@@ -92,9 +93,9 @@ export default function NosProduits() {
       <section className="section-pad bg-bg-light" aria-label="Signalisation permanente">
         <div className="container">
           <SectionHeader
-            badge="Signalisation permanente"
-            title={<>Signaux OSR et dispositifs <span className="text-red">permanents</span></>}
-            subtitle="Signaux OSR conformes aux prescriptions suisses, disponibles en rétro-réflexion R1, R2 ou R3."
+            badge="Signaux OSR"
+            title={<>Signaux OSR et <span className="text-red">panneaux permanents</span></>}
+            subtitle="Zones 30, passages piétons, panneaux d'interdiction, indicateurs et chemins privés — disponibles en rétro-réflexion R1, R2 ou R3."
           />
           <ProductGrid products={permProducts} />
         </div>
@@ -104,8 +105,8 @@ export default function NosProduits() {
       <section className="section-pad" aria-label="Sécurité et mobilier urbain">
         <div className="container">
           <SectionHeader
-            badge="Sécurité routière"
-            title={<>Sécurité & <span className="text-red">mobilier urbain</span></>}
+            badge="Mobilier urbain"
+            title={<>Signalisation lumineuse & <span className="text-red">mobilier urbain</span></>}
             subtitle="Équipements pour réduire la vitesse, guider et protéger les usagers vulnérables."
           />
           <ProductGrid products={securiteProducts} />
