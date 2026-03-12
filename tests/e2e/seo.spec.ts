@@ -29,6 +29,6 @@ test.describe('SEO', () => {
       return el ? JSON.parse(el.textContent || '{}') : {}
     })
     expect(schema['@type']).toBe('LocalBusiness')
-    expect(schema.address.streetAddress).toBe('Chemin de Grandchamp 6')
+    expect(schema.address.streetAddress).toBe('Chemin du Grand Champ 6')
   })
 })

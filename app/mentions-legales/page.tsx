@@ -14,7 +14,7 @@ export default function MentionsLegales() {
         <div className="prose prose-sm max-w-none text-gray-dark leading-relaxed space-y-6">
           <section>
             <h2 className="font-head font-700 text-xl text-dark mb-2">Éditeur du site</h2>
-            <p>Robalex Signalisation Sàrl<br />Chemin de Grandchamp 6<br />1018 Lausanne<br />Suisse</p>
+            <p>Robalex Signalisation Sàrl<br />Chemin du Grand Champ 6<br />1018 Lausanne<br />Suisse</p>
             <p>Tél. : <a href="tel:+41216570705" className="text-red hover:underline">021 657 07 05</a><br />Email : <a href="mailto:info@robalex-signalisation.ch" className="text-red hover:underline">info@robalex-signalisation.ch</a></p>
           </section>
           <section>

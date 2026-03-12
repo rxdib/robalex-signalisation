@@ -14,7 +14,7 @@ export default function PolitiqueConf() {
         <div className="prose prose-sm max-w-none text-gray-dark leading-relaxed space-y-6">
           <section>
             <h2 className="font-head font-700 text-xl text-dark mb-2">Responsable du traitement</h2>
-            <p>Robalex Signalisation Sàrl — Chemin de Grandchamp 6, 1018 Lausanne. Email : info@robalex-signalisation.ch</p>
+            <p>Robalex Signalisation Sàrl — Chemin du Grand Champ 6, 1018 Lausanne. Email : info@robalex-signalisation.ch</p>
           </section>
           <section>
             <h2 className="font-head font-700 text-xl text-dark mb-2">Données collectées</h2>
