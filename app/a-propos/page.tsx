@@ -36,7 +36,7 @@ export default function AProposPage() {
           >
             <SectionHeader badge="Notre histoire" title={<>Plus de 20 ans <span className="text-red">d'expertise</span></>} />
             <p className="text-gray-dark mb-4">Fondée en 2004 à Lausanne, Robalex Signalisation Sàrl s'est imposée comme un acteur incontournable de la signalisation routière en Suisse romande.</p>
-            <p className="text-gray-dark mb-4">Notre approche repose sur deux piliers : des <strong>produits de haute qualité</strong> et un <strong>service client irréprochable</strong>. Nous intervenons pour les services d'autoroutes, les communes, la police, les corps de pompiers, les entreprises de génie civil, les géomètres et les clients privés.</p>
+            <p className="text-gray-dark mb-4">Notre approche repose sur deux piliers : des <strong>produits de haute qualité</strong> et un <strong>service client irréprochable</strong>. Nous intervenons pour les services d'autoroutes, les communes, les polices, les corps de pompiers, les entreprises de génie civil, les géomètres et les clients privés.</p>
             <p className="text-gray-dark">En tant que représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande, nous offrons un accès direct à la gamme complète des panneaux pliants et systèmes de signalisation innovants Triopan.</p>
           </FeatureBlock>
         </div>

@@ -119,7 +119,7 @@ export default function HomePage() {
       {/* 4. Ils nous font confiance */}
       <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Police et entreprises de construction." centered />
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises de construction." centered />
         </div>
         <div className="mt-10">
           <LogoMarquee logos={clients} />
@@ -142,7 +142,7 @@ export default function HomePage() {
             />
             <p className="text-white/75 mb-4">Nous intervenons auprès des :</p>
             <ul className="grid grid-cols-2 gap-2 mb-6">
-              {["Services d'autoroutes",'Communes','Police','Corps de pompiers','Entreprises de génie civil','Régies immobilières'].map(c => (
+              {["Services d'autoroutes",'Communes','Polices','Corps de pompiers','Entreprises de génie civil','Régies immobilières'].map(c => (
                 <li key={c} className="flex items-center gap-2 text-white/80 text-sm">
                   <span className="text-red font-bold">✓</span> {c}
                 </li>
