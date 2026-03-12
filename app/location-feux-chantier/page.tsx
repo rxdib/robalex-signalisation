@@ -37,7 +37,7 @@ export default function LocationFeux() {
   return (
     <>
       <Hero
-        bgImage="/images/feux-radar-1.jpg"
+        bgImage="/images/feux-decompte-2.jpg"
         badge="Location feux de chantier"
         title={<>Location de <span className="text-red">feux de chantier</span> en Suisse romande</>}
         subtitle="Service clé en main : installation, maintenance et retrait toujours inclus. Nous intervenons dans tout le Canton de Vaud et en Suisse romande."
@@ -91,6 +91,9 @@ export default function LocationFeux() {
             title={<>Comment ça <span className="text-red">marche</span> ?</>}
             centered
           />
+          <p className="text-gray-dark text-sm text-center max-w-2xl mx-auto mb-8">
+            Nous gérons l'intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n'avez rien à gérer — nous nous occupons de tout.
+          </p>
           <StepProcess steps={steps} />
         </div>
       </section>
