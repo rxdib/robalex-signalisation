@@ -98,6 +98,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 4. Ils nous font confiance */}
+      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
+        <div className="container">
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Police et entreprises de construction." centered />
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {clients.map(c => (
+              <a key={c.alt} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 p-2">
+                <Image src={c.src} alt={c.alt} width={120} height={60} className="object-contain max-h-14" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. Votre spécialiste */}
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
@@ -132,18 +146,14 @@ export default function HomePage() {
       </section>
 
       {/* 5. Location feux promo */}
-      <section className="relative py-20 bg-[#0d1525] overflow-hidden" aria-labelledby="feux-title">
-        <div className="absolute inset-0 bg-[url('/images/feux-decompte-1.jpg')] bg-cover bg-center opacity-10" aria-hidden="true" />
-        <div className="absolute top-0 inset-x-0 h-1 bg-red" aria-hidden="true" />
-        <div className="container relative z-10">
+      <section className="section-pad bg-bg-light" aria-labelledby="feux-title">
+        <div className="container">
           <FeatureBlock
             image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar pédagogique sur chantier routier à Lausanne' }}
-            dark
             reverse
           >
             <SectionHeader
               title={<>Location de <span className="text-red">feux de chantier</span></>}
-              white
             />
             <ul className="flex flex-col gap-3 mb-6">
               {[
@@ -152,14 +162,14 @@ export default function HomePage() {
                 'Feu à décompte de temps',
                 'Couverture dans tout le Canton de Vaud et en Suisse romande',
               ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-white/80 text-sm">
+                <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold mt-0.5">✓</span> {item}
                 </li>
               ))}
             </ul>
             <div className="flex flex-wrap gap-3">
               <a href="/location-feux-chantier" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">En savoir plus</a>
-              <a href="tel:+41216570705" className="border-2 border-white/40 text-white hover:border-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">021 657 07 05</a>
+              <a href="tel:+41216570705" className="border-2 border-navy text-navy hover:bg-navy hover:text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">021 657 07 05</a>
             </div>
           </FeatureBlock>
         </div>
@@ -169,13 +179,13 @@ export default function HomePage() {
       <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/triopan-bg.jpg', alt: 'Panneaux Triopan — signalisation pliante suisse, disponibles chez Robalex Signalisation' }}
+            image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure — Robalex Signalisation représentant officiel Suisse romande' }}
             imageBadge="Représentant officiel Triopan"
           >
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
-            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande — accès direct à toute la gamme de signaux pliants et dispositifs innovants.</p>
+            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes — disponibles dans tous les formats et configurations.</p>
             <ul className="flex flex-col gap-2 mb-6">
-              {['Gamme complète de panneaux Triopan en stock','Livraison rapide dans toute la Suisse romande','Conformes aux normes OFROU/VSS','Conseils personnalisés'].map(item => (
+              {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Conformes aux normes OFROU/VSS','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés'].map(item => (
                 <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold">✓</span> {item}
                 </li>
@@ -194,12 +204,12 @@ export default function HomePage() {
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { img: '/images/cone-signalisation.webp',    pos: 'object-center', cat: 'Signalisation temporaire',  name: 'Cônes de signalisation',        desc: 'Tous types de cônes pour délimiter et sécuriser vos zones de travaux ou chantiers.' },
-              { img: '/images/barriere-vauban.png',         pos: 'object-center', cat: 'Délimitation',              name: 'Barrières Vauban & extensibles', desc: 'Barrières légères et robustes pour sécuriser vos périmètres.' },
-              { img: '/images/panneaux-signalisation.jpg',  pos: 'object-center', cat: 'Signalisation permanente',  name: 'Panneaux routiers',             desc: 'Panneaux OSR en aluminium rétroréfléchissant R1, R2, R3.' },
-              { img: '/images/installation-miroir.jpg',     pos: 'object-top',    cat: 'Sécurité',                  name: 'Miroirs de sécurité',           desc: 'Miroirs convexes pour carrefours, parkings et zones à faible visibilité.' },
-              { img: '/images/feux-radar-4.jpg',            pos: 'object-center', cat: 'Location feux',             name: 'Feux de chantier',              desc: 'Location clé en main avec radar pédagogique ou décompte de temps.' },
-              { img: '/images/travaux-ralentisseurs.jpg',   pos: 'object-center', cat: 'Sécurité routière',         name: 'Radars & ralentisseurs',        desc: 'Radars pédagogiques et ralentisseurs pour réduire la vitesse en zone sensible.' },
+              { img: '/images/cone-signalisation.webp',                    pos: 'object-center', cat: 'Signalisation temporaire', name: 'Cônes de signalisation',   desc: "Non-réfléchissants, réfléchissants R1 ou R2, ou entièrement réfléchissants — lestés ou non. Disponibles en plusieurs hauteurs pour toutes vos situations." },
+              { img: '/images/barriere-vauban.png',                         pos: 'object-center', cat: 'Délimitation',             name: 'Barrières Vauban',          desc: 'Barrières robustes en acier galvanisé pour fermer un accès ou sécuriser un périmètre temporairement. Stables, modulables et faciles à déplacer.' },
+              { img: '/images/passage-pieton.jpg',                          pos: 'object-center', cat: 'Signalisation permanente', name: 'Panneaux routiers OSR',     desc: 'Signaux OSR en aluminium rétroréfléchissant. Tous niveaux de réflexion disponibles (R1, R2, R3). Fabrication conforme aux normes suisses.' },
+              { img: '/images/installation-miroir.jpg',                     pos: 'object-center', cat: 'Sécurité',                 name: 'Miroirs de signalisation',  desc: "Miroirs convexes ronds ou rectangulaires pour carrefours, sorties de parkings et zones à faible visibilité. Option anti-givre disponible." },
+              { img: '/images/fireball.png',                                pos: 'object-center', cat: 'Signalisation temporaire', name: 'Lampes flash Fireball',     desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Utilisées par les services d'urgence, communes et forces de l'ordre." },
+              { img: '/images/Liste produit/Radar-pedagogique.jpg',         pos: 'object-center', cat: 'Sécurité routière',        name: 'Radar pédagogique',         desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque — zones 30, abords d'écoles, zones résidentielles." },
             ].map(p => (
               <article key={p.name} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -221,25 +231,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Ils nous font confiance */}
-      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
-        <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, forces de l'ordre et entreprises de construction." centered />
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {clients.map(c => (
-              <a key={c.alt} href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 p-2">
-                <Image src={c.src} alt={c.alt} width={120} height={60} className="object-contain max-h-14" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 9. Partenaires */}
       <section className="section-pad" aria-labelledby="partenaires-title">
         <div className="container">
           <SectionHeader badge="Partenaires" title={<>Nos <span className="text-red">partenaires</span></>} centered />
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             <PartnerLogo src="/images/logo-triopan.png" alt="Triopan AG — partenaire Robalex Signalisation" href="https://www.triopan.ch" />
             <PartnerLogo src="/images/logo-nissen.svg"  alt="Nissen AG — partenaire Robalex Signalisation" href="https://www.nissen.ch" />
           </div>
