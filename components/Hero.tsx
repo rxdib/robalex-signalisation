@@ -11,18 +11,23 @@ interface HeroProps {
 
 export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
   return (
-    <header className="relative min-h-[72vh] flex items-center pt-20" aria-label="En-tête principale">
+    <header className="relative flex min-h-[72vh] items-center overflow-hidden pt-20" aria-label="En-tête principale">
       {/* Background */}
       <div
-        className={`absolute inset-0 bg-cover bg-center ${bgFlip ? '-scale-x-100' : ''}`}
+        className={`absolute inset-0 bg-cover bg-center transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
         style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: bgPosition }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-navy/75" aria-hidden="true" />
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(90deg, rgba(22,14,55,0.9) 0%, rgba(22,14,55,0.82) 42%, rgba(22,14,55,0.7) 100%)' }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy/35 via-transparent to-transparent" aria-hidden="true" />
 
-      <div className="container relative z-10 py-20">
+      <div className="container relative z-10 py-24 lg:py-28">
         {badge && (
-          <span className="inline-block bg-white/15 text-white text-xs font-head font-700 uppercase tracking-widest px-3 py-1 rounded mb-5">
+          <span className="mb-5 inline-block rounded bg-white/15 px-3 py-1 text-xs font-head font-700 uppercase tracking-[0.18em] text-white">
             {badge}
           </span>
         )}
@@ -31,11 +36,11 @@ export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, b
         </h1>
         <p className="text-white/80 text-lg max-w-xl mb-8 leading-relaxed">{subtitle}</p>
         <div className="flex flex-wrap gap-4">
-          <a href={primaryCta.href} className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-7 py-3.5 rounded transition-colors">
+          <a href={primaryCta.href} className="rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
             {primaryCta.label}
           </a>
           {secondaryCta && (
-            <a href={secondaryCta.href} className="border-2 border-white text-white hover:bg-white hover:text-navy font-head font-700 text-sm uppercase tracking-wide px-7 py-3.5 rounded transition-colors">
+            <a href={secondaryCta.href} className="rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
               {secondaryCta.label}
             </a>
           )}

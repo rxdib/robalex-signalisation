@@ -6,18 +6,28 @@ interface FeatureBlockProps {
   children: React.ReactNode   // text content (heading, paragraphs, list, CTA)
   reverse?: boolean
   dark?: boolean
+  imageClassName?: string
+  imageWrapperClassName?: string
 }
 
-export default function FeatureBlock({ image, imageBadge, children, reverse, dark }: FeatureBlockProps) {
+export default function FeatureBlock({
+  image,
+  imageBadge,
+  children,
+  reverse,
+  dark,
+  imageClassName,
+  imageWrapperClassName,
+}: FeatureBlockProps) {
   return (
-    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-      <div className="relative">
+    <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+      <div className={`relative overflow-hidden rounded-xl bg-bg-light shadow-card-lg ${imageWrapperClassName ?? ''}`}>
         <Image
           src={image.src}
           alt={image.alt}
           width={600}
           height={420}
-          className="w-full h-auto rounded-xl object-cover shadow-card-lg"
+          className={`aspect-[10/7] w-full object-cover ${imageClassName ?? ''}`}
         />
         {imageBadge && (
           <div className="absolute bottom-4 left-4 bg-red text-white text-xs font-head font-700 uppercase tracking-wide px-3 py-1.5 rounded">
