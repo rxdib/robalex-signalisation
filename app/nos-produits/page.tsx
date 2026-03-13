@@ -44,10 +44,17 @@ const chantierProducts = [
 ]
 
 function ProductGrid({ products }: { products: { img: string; name: string; desc: string }[] }) {
+  const gridClassName =
+    products.length === 2
+      ? 'mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2'
+      : products.length === 4
+        ? 'grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4'
+        : 'grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className={gridClassName}>
       {products.map(p => (
-        <article key={p.name} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
+        <article key={p.name} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white shadow-card transition-shadow hover:shadow-card-lg">
           <div className="aspect-[16/10] overflow-hidden bg-bg-light">
             <Image src={p.img} alt={`${p.name} — Robalex Signalisation Lausanne`} width={400} height={225} className="w-full h-full object-contain p-4" />
           </div>
