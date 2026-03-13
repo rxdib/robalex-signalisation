@@ -6,11 +6,11 @@ import StepProcess from '@/components/StepProcess'
 import CtaBand from '@/components/CtaBand'
 
 export const metadata: Metadata = {
-  title: 'Location feux de chantier — Suisse romande',
+  title: 'Location feux de chantier - Suisse romande',
   description: 'Location de feux de chantier clé en main dans tout le Canton de Vaud et en Suisse romande. Installation, maintenance et retrait inclus. Devis rapide.',
   alternates: { canonical: 'https://www.robalex-signalisation.ch/location-feux-chantier/' },
   openGraph: {
-    title: 'Location feux de chantier clé en main — Suisse romande',
+    title: 'Location feux de chantier clé en main - Suisse romande',
     description: 'Location de feux de chantier dans tout le Canton de Vaud et en Suisse romande. Installation, maintenance et retrait inclus.',
     url: 'https://www.robalex-signalisation.ch/location-feux-chantier/',
     images: [{ url: '/images/feux-radar-1.jpg' }],
@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 }
 
 const steps = [
-  { number: 1, label: 'Contactez-nous',      desc: 'Appelez ou envoyez votre demande en ligne.' },
-  { number: 2, label: 'Devis rapide',         desc: 'Réponse sous 24h, prix tout compris.' },
-  { number: 3, label: 'Installation',         desc: 'Pose sur site par notre équipe.' },
-  { number: 4, label: 'Suivi & maintenance',  desc: 'Disponible 7j/7 pendant toute la durée.' },
-  { number: 5, label: 'Retrait',              desc: 'Démontage et reprise du matériel inclus.' },
+  { number: 1, label: 'Contactez-nous', desc: 'Appelez ou envoyez votre demande en ligne.' },
+  { number: 2, label: 'Devis rapide', desc: 'Réponse sous 24h, prix tout compris.' },
+  { number: 3, label: 'Installation', desc: 'Pose sur site par notre équipe.' },
+  { number: 4, label: 'Suivi & maintenance', desc: 'Disponible 7j/7 pendant toute la durée.' },
+  { number: 5, label: 'Retrait', desc: 'Démontage et reprise du matériel inclus.' },
 ]
 
 const clientLogos = [
-  { src: '/images/Logo client/Location feux/Logo_AGV-Toni.jpg',              alt: 'AGV Toni — client location feux de chantier Robalex Signalisation' },
-  { src: '/images/Logo client/Location feux/Logo_bernasconi.png',             alt: 'Bernasconi — client location feux de chantier Robalex Signalisation' },
-  { src: '/images/Logo client/Location feux/Logo_cornaz-fontanellaz.avif',    alt: 'Cornaz Fontanellaz — client location feux de chantier Robalex Signalisation' },
-  { src: '/images/Logo client/Location feux/Logo_walo.jpg',                   alt: 'Walo Bertschinger — client location feux de chantier Robalex Signalisation' },
-  { src: '/images/Logo client/Location feux/Romande_Energie_Logo.svg',        alt: 'Romande Energie — client location feux de chantier Robalex Signalisation' },
+  { src: '/images/Logo client/Location feux/Logo_AGV-Toni.jpg', alt: 'AGV Toni - client location feux de chantier Robalex Signalisation', href: 'https://www.agv-toni.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_bernasconi.png', alt: 'Bernasconi - client location feux de chantier Robalex Signalisation', href: 'https://www.bernasconisa.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_cornaz-fontanellaz.avif', alt: 'Cornaz Fontanellaz - client location feux de chantier Robalex Signalisation', href: 'https://www.cornaz-fontanellaz-sa.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_walo.jpg', alt: 'Walo Bertschinger - client location feux de chantier Robalex Signalisation', href: 'https://www.walo.ch/en/' },
+  { src: '/images/Logo client/Location feux/Romande_Energie_Logo.svg', alt: 'Romande Energie - client location feux de chantier Robalex Signalisation', href: 'https://www.romande-energie.ch/' },
 ]
 
 export default function LocationFeux() {
@@ -47,7 +47,6 @@ export default function LocationFeux() {
         secondaryCta={{ label: '021 657 07 05', href: 'tel:+41216570705' }}
       />
 
-      {/* Nos feux */}
       <section className="section-pad" aria-label="Types de feux de chantier">
         <div className="container">
           <SectionHeader
@@ -68,9 +67,9 @@ export default function LocationFeux() {
                 img: '/images/feux-decompte-1.jpg',
                 alt: 'Feux avec décompte de temps sur chantier routier en Suisse romande',
                 title: 'Feux avec décompte de temps',
-                desc: "Affiche le temps d'attente restant aux usagers, réduisant la frustration et améliorant la fluidité du trafic.",
+                desc: 'Affiche le temps d’attente restant aux usagers, réduisant la frustration et améliorant la fluidité du trafic.',
               },
-            ].map(f => (
+            ].map((f) => (
               <article key={f.title} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
                 <div className="aspect-video overflow-hidden">
                   <Image src={f.img} alt={f.alt} width={500} height={280} className="w-full h-full object-cover" />
@@ -85,7 +84,6 @@ export default function LocationFeux() {
         </div>
       </section>
 
-      {/* Comment ça marche */}
       <section className="section-pad bg-bg-light" aria-label="Processus de location feux de chantier">
         <div className="container">
           <SectionHeader
@@ -94,13 +92,12 @@ export default function LocationFeux() {
             centered
           />
           <p className="text-gray-dark text-sm text-center max-w-2xl mx-auto mb-8">
-            Nous gérons l&apos;intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n&apos;avez rien à gérer — nous nous occupons de tout.
+            Nous gérons l’intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n’avez rien à gérer - nous nous occupons de tout.
           </p>
           <StepProcess steps={steps} />
         </div>
       </section>
 
-      {/* Avantages */}
       <section className="section-pad" aria-label="Avantages de notre service location feux">
         <div className="container">
           <SectionHeader badge="Pourquoi nous choisir" title={<>Nos <span className="text-red">avantages</span></>} centered />
@@ -109,7 +106,7 @@ export default function LocationFeux() {
               {
                 icon: <ClockIcon />,
                 title: 'Réactivité',
-                desc: "Devis sous 24h, livraison et pose dans les meilleurs délais, même pour les interventions d'urgence.",
+                desc: 'Devis sous 24h, livraison et pose dans les meilleurs délais, même pour les interventions d’urgence.',
               },
               {
                 icon: <TagIcon />,
@@ -119,9 +116,9 @@ export default function LocationFeux() {
               {
                 icon: <MapPinIcon />,
                 title: 'Couverture étendue',
-                desc: "Tout le Canton de Vaud et l'ensemble de la Suisse romande. Interventions possibles 7j/7.",
+                desc: 'Tout le Canton de Vaud et l’ensemble de la Suisse romande. Interventions possibles 7j/7.',
               },
-            ].map(a => (
+            ].map((a) => (
               <div key={a.title} className="text-center p-6 bg-bg-light rounded-xl">
                 <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red/10 text-red mx-auto mb-4">
                   {a.icon}
@@ -134,15 +131,21 @@ export default function LocationFeux() {
         </div>
       </section>
 
-      {/* Ils nous font confiance */}
       <section className="section-pad bg-bg-light" aria-label="Clients location feux de chantier">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} centered />
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {clientLogos.map(c => (
-              <div key={c.alt} className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
+            {clientLogos.map((c) => (
+              <a
+                key={c.alt}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${c.alt} - ouvre le site partenaire`}
+                className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-red/40 rounded"
+              >
                 <Image src={c.src} alt={c.alt} width={110} height={55} className="object-contain max-h-14" />
-              </div>
+              </a>
             ))}
           </div>
         </div>
