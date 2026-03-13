@@ -64,8 +64,8 @@ export default function LocationFeux() {
               },
               {
                 img: '/images/feux-decompte-1.jpg',
-                alt: 'Feu à décompte de temps sur chantier routier en Suisse romande',
-                title: 'Feu à décompte de temps',
+                alt: 'Feux avec décompte de temps sur chantier routier en Suisse romande',
+                title: 'Feux avec décompte de temps',
                 desc: "Affiche le temps d'attente restant aux usagers, réduisant la frustration et améliorant la fluidité du trafic.",
               },
             ].map(f => (

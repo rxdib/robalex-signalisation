@@ -24,9 +24,9 @@ export const metadata: Metadata = {
 const expertises = [
   { icon: <TempIcon />, title: 'Signalisation temporaire',  desc: 'Balisage temporaire de chantier — signaux pliants Triopan, cônes, barrières et lampes flash pour sécuriser toutes vos interventions.', link: '/nos-produits' },
   { icon: <PermIcon />, title: 'Signalisation permanente', desc: 'Signaux OSR en rétro-réflexion R1, R2 ou R3 — miroirs, mise à ban et mobilier urbain.', link: '/nos-produits' },
-  { icon: <InstIcon />, title: 'Montage et installation',  desc: 'Pose et installation conformes aux directives OFROU et à la norme VSS 40 886.', link: '/nos-services' },
+  { icon: <InstIcon />, title: 'Montage et installation',  desc: 'Pose et installation sur site pour une mise en place rapide et soignée.', link: '/nos-services' },
   { icon: <FeuxIcon />, title: 'Location feux de chantier', desc: 'Service clé en main : livraison, installation, maintenance et retrait — intervention 7j/7.', link: '/location-feux-chantier' },
-  { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Marquage routier conforme aux prescriptions suisses pour communes, entreprises et régies.', link: '/nos-services' },
+  { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Marquage routier précis et durable pour communes, entreprises et régies.', link: '/nos-services' },
 ]
 
 const clients = [
@@ -72,8 +72,8 @@ export default function HomePage() {
       <Hero
         bgImage="/images/triopan-bg.jpg"
         badge="Suisse romande"
-        title={<>Votre expert en <span className="text-red">signalisation routière</span></>}
-        subtitle="Depuis plus de 20 ans, de la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière — conformes aux normes OFROU/VSS."
+        title={<>Votre expert en <span className="text-red">signalisation et sécurité routière</span></>}
+        subtitle="Depuis plus de 20 ans, de la planification à l'installation, nous prenons en charge l'ensemble de vos besoins en signalisation et sécurité routière dans toute la Suisse romande."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: 'Voir nos produits', href: '/nos-produits' }}
       />
@@ -116,17 +116,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Ils nous font confiance */}
-      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
-        <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises de construction." centered />
-        </div>
-        <div className="mt-10">
-          <LogoMarquee logos={clients} />
-        </div>
-      </section>
-
-      {/* 5. Votre spécialiste */}
+      {/* 4. Votre spécialiste */}
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
           <FeatureBlock
@@ -159,6 +149,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 5. Ils nous font confiance */}
+      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
+        <div className="container">
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises de construction." centered />
+        </div>
+        <div className="mt-10">
+          <LogoMarquee logos={clients} />
+        </div>
+      </section>
+
       {/* 6. Location feux promo */}
       <section className="section-pad bg-bg-light" aria-labelledby="feux-title">
         <div className="container">
@@ -173,7 +173,7 @@ export default function HomePage() {
               {[
                 "Nous prenons en charge l'installation, la maintenance et le retrait de vos feux de chantier.",
                 'Feux avec radar pédagogique intégré',
-                'Feu à décompte de temps',
+                'Feux avec décompte de temps',
                 'Couverture dans tout le Canton de Vaud et en Suisse romande',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
@@ -199,7 +199,7 @@ export default function HomePage() {
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
             <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes — disponibles dans tous les formats et configurations.</p>
             <ul className="flex flex-col gap-2 mb-6">
-              {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Conformes aux normes OFROU/VSS','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés'].map(item => (
+              {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés','Accompagnement de proximité'].map(item => (
                 <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold">✓</span> {item}
                 </li>
@@ -218,16 +218,16 @@ export default function HomePage() {
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { img: '/images/cone-signalisation.webp',                    pos: 'object-center', cat: 'Signalisation temporaire', name: 'Cônes de signalisation',   desc: "Non-réfléchissants, réfléchissants R1 ou R2, ou entièrement réfléchissants — lestés ou non. Disponibles en plusieurs hauteurs pour toutes vos situations." },
-              { img: '/images/barriere-vauban.png',                         pos: 'object-center', cat: 'Délimitation',             name: 'Barrières Vauban',          desc: 'Barrières robustes en acier galvanisé pour fermer un accès ou sécuriser un périmètre temporairement. Stables, modulables et faciles à déplacer.' },
-              { img: '/images/passage-pieton.jpg',                          pos: 'object-center', cat: 'Signalisation permanente', name: 'Panneaux routiers OSR',     desc: 'Signaux OSR en aluminium rétroréfléchissant. Tous niveaux de réflexion disponibles (R1, R2, R3). Fabrication conforme aux normes suisses.' },
-              { img: '/images/installation-miroir.jpg',                     pos: 'object-center', cat: 'Sécurité',                 name: 'Miroirs de signalisation',  desc: "Miroirs convexes ronds ou rectangulaires pour carrefours, sorties de parkings et zones à faible visibilité. Option anti-givre disponible." },
-              { img: '/images/fireball.png',                                pos: 'object-center', cat: 'Signalisation temporaire', name: 'Lampes flash Fireball',     desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Utilisées par les services d'urgence, communes et forces de l'ordre." },
-              { img: '/images/Liste produit/Radar-pedagogique.jpg',         pos: 'object-center', cat: 'Sécurité routière',        name: 'Radar pédagogique',         desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque — zones 30, abords d'écoles, zones résidentielles." },
+              { img: '/images/cone-signalisation.webp',                    pos: 'object-center', fit: 'object-cover',   cat: 'Signalisation temporaire', name: 'Cônes de signalisation',   desc: "Non-réfléchissants, réfléchissants R1 ou R2, ou entièrement réfléchissants — lestés ou non. Disponibles en plusieurs hauteurs pour toutes vos situations." },
+              { img: '/images/barriere-vauban.png',                         pos: 'object-center', fit: 'object-contain p-2 bg-bg-light', cat: 'Délimitation',             name: 'Barrières Vauban',          desc: 'Barrières robustes en acier galvanisé pour fermer un accès ou sécuriser un périmètre temporairement. Stables, modulables et faciles à déplacer.' },
+              { img: '/images/passage-pieton.jpg',                          pos: 'object-center', fit: 'object-cover',   cat: 'Signalisation permanente', name: 'Panneaux routiers OSR',     desc: 'Signaux OSR en aluminium rétroréfléchissant. Tous niveaux de réflexion disponibles (R1, R2, R3).' },
+              { img: '/images/installation-miroir.jpg',                     pos: 'object-center', fit: 'object-cover',   cat: 'Sécurité',                 name: 'Miroirs de signalisation',  desc: "Miroirs convexes ronds ou rectangulaires pour carrefours, sorties de parkings et zones à faible visibilité. Option anti-givre disponible." },
+              { img: '/images/fireball.png',                                pos: 'object-center', fit: 'object-contain p-3 bg-bg-light', cat: 'Signalisation temporaire', name: 'Lampes flash Fireball',     desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Utilisées par les services d'urgence, communes et forces de l'ordre." },
+              { img: '/images/Liste produit/Radar-pedagogique.jpg',         pos: 'object-center', fit: 'object-contain p-2 bg-bg-light', cat: 'Sécurité routière',        name: 'Radar pédagogique',         desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque — zones 30, abords d'écoles, zones résidentielles." },
             ].map(p => (
               <article key={p.name} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full object-cover ${p.pos}`} />
+                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full ${p.fit} ${p.pos}`} />
                 </div>
                 <div className="p-5">
                   <p className="text-red text-xs font-head font-700 uppercase tracking-wide mb-1">{p.cat}</p>
