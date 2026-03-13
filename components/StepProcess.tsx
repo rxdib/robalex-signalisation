@@ -4,20 +4,26 @@ interface StepProcessProps { steps: Step[] }
 
 export default function StepProcess({ steps }: StepProcessProps) {
   return (
-    <div className="flex flex-wrap items-start justify-center gap-2">
+    <div className="grid gap-4 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-2">
       {steps.map((step, i) => (
-        <div key={step.number} className="flex items-start gap-2">
-          <div className="flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-red text-white font-head font-800 text-lg flex items-center justify-center mb-2">
+        <div key={step.number} className="flex items-start gap-3 rounded-xl border border-gray-light bg-white p-4 text-left sm:gap-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
+          <div className="flex flex-row items-start gap-3 text-left sm:flex-col sm:items-center sm:gap-0 sm:text-center">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red text-lg font-head font-800 text-white sm:mb-2">
               {step.number}
             </div>
-            <span className="text-xs font-head font-700 text-dark max-w-[110px] leading-tight">{step.label}</span>
-            {step.desc && (
-              <p className="text-xs text-gray-dark mt-1 max-w-[110px] leading-snug">{step.desc}</p>
-            )}
+            <div>
+              <span className="block max-w-[180px] text-sm font-head font-700 leading-tight text-dark sm:max-w-[110px] sm:text-xs">
+                {step.label}
+              </span>
+              {step.desc && (
+                <p className="mt-1 max-w-[180px] text-xs leading-snug text-gray-dark sm:max-w-[110px]">
+                  {step.desc}
+                </p>
+              )}
+            </div>
           </div>
           {i < steps.length - 1 && (
-            <span className="text-red font-head font-700 text-xl mt-3 hidden sm:block">→</span>
+            <span className="mt-3 hidden text-xl font-head font-700 text-red sm:block">→</span>
           )}
         </div>
       ))}

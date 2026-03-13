@@ -11,7 +11,7 @@ interface HeroProps {
 
 export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
   return (
-    <header className="relative flex min-h-[72vh] items-center overflow-hidden pt-20" aria-label="En-tête principale">
+    <header className="relative flex min-h-[64vh] items-center overflow-hidden pt-20 sm:min-h-[72vh]" aria-label="En-tête principale">
       {/* Background */}
       <div
         className={`absolute inset-0 bg-cover bg-center transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
@@ -25,22 +25,22 @@ export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, b
       />
       <div className="absolute inset-0 bg-gradient-to-t from-navy/35 via-transparent to-transparent" aria-hidden="true" />
 
-      <div className="container relative z-10 py-24 lg:py-28">
+      <div className="container relative z-10 py-20 sm:py-24 lg:py-28">
         {badge && (
           <span className="mb-5 inline-block rounded bg-white/15 px-3 py-1 text-xs font-head font-700 uppercase tracking-[0.18em] text-white">
             {badge}
           </span>
         )}
-        <h1 className="font-head font-900 text-4xl lg:text-6xl text-white leading-tight max-w-3xl mb-5">
+        <h1 className="mb-5 max-w-3xl font-head text-3xl font-900 leading-tight text-white sm:text-4xl lg:text-6xl">
           {title}
         </h1>
-        <p className="text-white/80 text-lg max-w-xl mb-8 leading-relaxed">{subtitle}</p>
-        <div className="flex flex-wrap gap-4">
-          <a href={primaryCta.href} className="rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+        <p className="mb-8 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">{subtitle}</p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+          <a href={primaryCta.href} className="flex w-full items-center justify-center rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
             {primaryCta.label}
           </a>
           {secondaryCta && (
-            <a href={secondaryCta.href} className="rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            <a href={secondaryCta.href} className="flex w-full items-center justify-center rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
               {secondaryCta.label}
             </a>
           )}
