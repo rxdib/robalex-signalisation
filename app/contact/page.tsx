@@ -43,7 +43,7 @@ export default function Contact() {
 
       <section className="section-pad bg-bg-light">
         <div className="container">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8 lg:gap-10">
 
             {/* Contact info */}
             <div className="rounded-xl border border-gray-light bg-white p-8 shadow-card">

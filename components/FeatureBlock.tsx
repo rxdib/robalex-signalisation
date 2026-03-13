@@ -20,7 +20,7 @@ export default function FeatureBlock({
   imageWrapperClassName,
 }: FeatureBlockProps) {
   return (
-    <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 ${reverse ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+    <div className={`grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-10 lg:gap-14 ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}>
       <div className={`relative overflow-hidden rounded-xl bg-bg-light shadow-card-lg ${imageWrapperClassName ?? ''}`}>
         <Image
           src={image.src}
