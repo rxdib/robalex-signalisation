@@ -1,6 +1,7 @@
 interface HeroProps {
   bgImage: string
   bgPosition?: string
+  bgFlip?: boolean
   badge?: string
   title: React.ReactNode
   subtitle: string
@@ -8,12 +9,12 @@ interface HeroProps {
   secondaryCta?: { label: string; href: string }
 }
 
-export default function Hero({ bgImage, bgPosition = 'center', badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
+export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
   return (
     <header className="relative min-h-[72vh] flex items-center pt-20" aria-label="En-tête principale">
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className={`absolute inset-0 bg-cover bg-center ${bgFlip ? '-scale-x-100' : ''}`}
         style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: bgPosition }}
         aria-hidden="true"
       />
