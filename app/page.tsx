@@ -65,6 +65,51 @@ const clients = [
   { src: '/images/logo-orllati.png',                  alt: 'Orllati SA',                        href: 'https://www.orllati.ch' },
 ]
 
+const featuredProducts = [
+  {
+    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Signaux-pliants-Triopan.jpg',
+    fit: 'object-contain p-3 bg-bg-light',
+    cat: 'Signalisation temporaire',
+    name: 'Signaux pliants Triopan',
+    desc: 'Signalisation pliable, légère et très visible pour chantiers, urgences et interventions mobiles.',
+  },
+  {
+    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Cône-de-signalisation.webp',
+    fit: 'object-contain p-3 bg-bg-light',
+    cat: 'Signalisation temporaire',
+    name: 'Cônes de signalisation',
+    desc: 'Délimitation simple et rapide des zones de travaux, déviations et interventions ponctuelles.',
+  },
+  {
+    img: '/images/passage-pieton.jpg',
+    fit: 'object-cover',
+    cat: 'Signalisation permanente',
+    name: 'Panneaux de signalisation OSR',
+    desc: 'Panneaux permanents pour limitation, prescription, danger et indication sur voirie.',
+  },
+  {
+    img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Miroir-signalisation.jpg',
+    fit: 'object-contain p-3 bg-bg-light',
+    cat: 'Sécurité',
+    name: 'Miroirs de signalisation',
+    desc: 'Améliorent la visibilité dans les carrefours, sorties de parking et zones à angle mort. Disponibles en version normale ou anti-givre.',
+  },
+  {
+    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Fireball_V5.png',
+    fit: 'object-contain p-3 bg-bg-light',
+    cat: 'Signalisation temporaire',
+    name: 'Lampe flash Fireball',
+    desc: "Lampe clignotante compacte pour renforcer la visibilité des zones d'intervention et de danger. Utilisée par les services d'urgence, communes et polices.",
+  },
+  {
+    img: '/images/Liste produit/Signalisation lumineuse/Radar-pedagogique.jpg',
+    fit: 'object-contain p-3 bg-bg-light',
+    cat: 'Sécurité routière',
+    name: 'Radars pédagogiques',
+    desc: 'Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones sensibles.',
+  },
+]
+
 export default function HomePage() {
   return (
     <>
@@ -227,17 +272,10 @@ export default function HomePage() {
         <div className="container">
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { img: '/images/cone-signalisation.webp',                    pos: 'object-center', fit: 'object-cover',   cat: 'Signalisation temporaire', name: 'Cônes de signalisation',   desc: "Non-réfléchissants, réfléchissants R1 ou R2, ou entièrement réfléchissants — lestés ou non. Disponibles en plusieurs hauteurs pour toutes vos situations." },
-              { img: '/images/barriere-vauban.png',                         pos: 'object-center', fit: 'object-contain p-2 bg-bg-light', cat: 'Délimitation',             name: 'Barrières Vauban',          desc: 'Barrières robustes en acier galvanisé pour fermer un accès ou sécuriser un périmètre temporairement. Stables, modulables et faciles à déplacer.' },
-              { img: '/images/passage-pieton.jpg',                          pos: 'object-center', fit: 'object-cover',   cat: 'Signalisation permanente', name: 'Panneaux routiers OSR',     desc: 'Signaux OSR en aluminium rétroréfléchissant. Tous niveaux de réflexion disponibles (R1, R2, R3).' },
-              { img: '/images/installation-miroir.jpg',                     pos: 'object-center', fit: 'object-cover',   cat: 'Sécurité',                 name: 'Miroirs de signalisation',  desc: "Miroirs convexes ronds ou rectangulaires pour carrefours, sorties de parkings et zones à faible visibilité. Option anti-givre disponible." },
-              { img: '/images/fireball.png',                                pos: 'object-center', fit: 'object-contain p-3 bg-bg-light', cat: 'Signalisation temporaire', name: 'Lampes flash Fireball',     desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Utilisées par les services d'urgence, communes et forces de l'ordre." },
-              { img: '/images/Liste produit/Radar-pedagogique.jpg',         pos: 'object-center', fit: 'object-contain p-2 bg-bg-light', cat: 'Sécurité routière',        name: 'Radar pédagogique',         desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque — zones 30, abords d'écoles, zones résidentielles." },
-            ].map(p => (
+            {featuredProducts.map((p) => (
               <article key={p.name} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
                 <div className="aspect-[4/3] overflow-hidden bg-white">
-                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full ${p.fit} ${p.pos}`} />
+                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full ${p.fit}`} />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <p className="text-red text-xs font-head font-700 uppercase tracking-wide mb-1">{p.cat}</p>
