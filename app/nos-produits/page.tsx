@@ -31,19 +31,9 @@ const tempProducts: Product[] = [
     desc: 'Signalisation pliable, légère et très visible pour chantiers, urgences et interventions mobiles.',
   },
   {
-    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan-1.14-construction-90cm-R2.webp',
-    name: 'Triopan 1.14 Construction 90 cm R2',
-    desc: 'Signal pliant de chantier haute visibilité pour travaux de voirie et balisage temporaire.',
-  },
-  {
-    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan-1.14_2.34_2.35-construction-90cm-R2.webp',
-    name: 'Triopan combiné 90 cm R2',
-    desc: 'Version combinée pour annoncer clairement les phases de travaux et la circulation alternée.',
-  },
-  {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Fireball_V5.png',
     name: 'Lampe flash Fireball',
-    desc: 'Lampe clignotante compacte pour renforcer la visibilité des zones d intervention et de danger.',
+    desc: "Lampe clignotante compacte pour renforcer la visibilité des zones d'intervention et de danger.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Helios_Blaze_v5.png',
@@ -58,12 +48,12 @@ const tempProducts: Product[] = [
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/PowerFlare.png',
     name: 'PowerFlare',
-    desc: 'Balise lumineuse LED rechargeable pour interventions d urgence et sécurisation ponctuelle.',
+    desc: "Balise lumineuse LED rechargeable pour interventions d'urgence et sécurisation ponctuelle.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Eflare_AT700.png',
     name: 'eFlare AT700',
-    desc: 'Balise de sécurité compacte pour véhicules d intervention, dépannages et zones à risque.',
+    desc: "Balise de sécurité compacte pour véhicules d'intervention, dépannages et zones à risque.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Cône-de-signalisation.webp',
@@ -73,7 +63,7 @@ const tempProducts: Product[] = [
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Bâton-led.jpg',
     name: 'Bâton LED de signalisation',
-    desc: 'Guidage manuel lumineux pour circulation alternée, événements et interventions d urgence.',
+    desc: "Guidage manuel lumineux pour circulation alternée, événements et interventions d'urgence.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/barriere-extensible.webp',
@@ -86,7 +76,7 @@ const tempProducts: Product[] = [
     desc: 'Barrière de canalisation robuste pour chantiers, manifestations et gestion de flux piétons.',
   },
   {
-    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Ruban de barrage 500m + texte.png',
+    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/ruban-de-barrage-500m.png',
     name: 'Ruban de barrage personnalisé',
     desc: 'Ruban rouge-blanc personnalisable pour délimiter et identifier clairement les périmètres.',
   },
@@ -140,7 +130,7 @@ const permProducts: Product[] = [
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/borne-ilot.png',
-    name: 'Bornes d îlot',
+    name: "Bornes d'îlot",
     desc: 'Équipement de canalisation pour îlots directionnels, séparateurs et aménagements routiers.',
   },
   {
@@ -181,7 +171,7 @@ const permProducts: Product[] = [
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rectangulaire.PNG',
     name: 'Cadres rectangulaires',
-    desc: 'Cadres standards pour panneaux d indication et signalétique permanente.',
+    desc: "Cadres standards pour panneaux d'indication et signalétique permanente.",
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rectangulaire-soudé.PNG',
@@ -215,6 +205,11 @@ const lightProducts: Product[] = [
 
 const chantierProducts: Product[] = [
   {
+    img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Triopan-1.14-construction-90cm-R2.webp',
+    name: 'Triopan 1.14 Construction 90 cm R2',
+    desc: 'Signal pliant de chantier haute visibilité pour travaux de voirie et balisage temporaire.',
+  },
+  {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Balise-de-signalisation-flèche.png',
     name: 'Balises directionnelles à flèche',
     desc: 'Guidage visuel des usagers pour déviations, contournements et rétrécissements de voie.',
@@ -245,6 +240,17 @@ const chantierProducts: Product[] = [
     desc: 'Support pratique pour panneaux temporaires et signalisation avancée de chantier.',
   },
 ]
+
+function CatalogLink() {
+  return (
+    <p className="mt-6 text-sm italic text-gray-dark">
+      ...et bien plus encore dans notre catalogue{' '}
+      <a href="/nos-catalogues" className="font-700 text-red hover:underline">
+        Voir les catalogues {'->'}
+      </a>
+    </p>
+  )
+}
 
 function ProductGrid({ products }: { products: Product[] }) {
   const gridClassName =
@@ -308,12 +314,7 @@ export default function NosProduits() {
             subtitle="Tout le matériel nécessaire pour le balisage temporaire de vos chantiers, interventions d urgence et événements."
           />
           <ProductGrid products={tempProducts} />
-          <p className="mt-6 text-sm italic text-gray-dark">
-            ...et bien plus encore dans notre catalogue{' '}
-            <a href="/nos-catalogues" className="font-700 text-red hover:underline">
-              Voir les catalogues {'->'}
-            </a>
-          </p>
+          <CatalogLink />
         </div>
       </section>
 
@@ -326,9 +327,10 @@ export default function NosProduits() {
                 Panneaux permanents et <span className="text-red">mobilier urbain</span>
               </>
             }
-            subtitle="Panneaux, supports et équipements durables pour l aménagement routier, les accès privés et les espaces publics."
+            subtitle="Panneaux, supports et équipements durables pour l'aménagement routier, les accès privés et les espaces publics."
           />
           <ProductGrid products={permProducts} />
+          <CatalogLink />
         </div>
       </section>
 
@@ -344,6 +346,7 @@ export default function NosProduits() {
             subtitle="Équipements lumineux pour réguler la circulation, alerter les usagers et renforcer la visibilité des zones sensibles."
           />
           <ProductGrid products={lightProducts} />
+          <CatalogLink />
         </div>
       </section>
 
@@ -359,6 +362,7 @@ export default function NosProduits() {
             subtitle="Balises, lampes, socles et supports pour organiser et sécuriser efficacement vos zones de chantier."
           />
           <ProductGrid products={chantierProducts} />
+          <CatalogLink />
         </div>
       </section>
 
