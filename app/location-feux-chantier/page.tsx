@@ -38,6 +38,7 @@ export default function LocationFeux() {
     <>
       <Hero
         bgImage="/images/feux-decompte-2.jpg"
+        bgPosition="28% center"
         badge="Location feux de chantier"
         title={<>Location de <span className="text-red">feux de chantier</span> en Suisse romande</>}
         subtitle="Service clé en main : installation, maintenance et retrait toujours inclus. Nous intervenons dans tout le Canton de Vaud et en Suisse romande."
