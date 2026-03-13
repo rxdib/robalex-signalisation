@@ -92,7 +92,7 @@ export default function LocationFeux() {
             centered
           />
           <p className="text-gray-dark text-sm text-center max-w-2xl mx-auto mb-8">
-            Nous gérons l'intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n'avez rien à gérer — nous nous occupons de tout.
+            Nous gérons l&apos;intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n&apos;avez rien à gérer — nous nous occupons de tout.
           </p>
           <StepProcess steps={steps} />
         </div>

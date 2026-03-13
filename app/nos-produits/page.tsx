@@ -105,7 +105,7 @@ export default function NosProduits() {
       <section className="section-pad" aria-label="Sécurité et mobilier urbain">
         <div className="container">
           <SectionHeader
-            badge="Mobilier urbain"
+            badge="Sécurité routière"
             title={<>Signalisation lumineuse & <span className="text-red">mobilier urbain</span></>}
             subtitle="Équipements pour réduire la vitesse, guider et protéger les usagers vulnérables."
           />

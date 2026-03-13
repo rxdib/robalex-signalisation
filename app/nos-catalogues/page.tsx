@@ -52,7 +52,7 @@ export default function NosCatalogues() {
                 <span className="inline-block bg-red text-white text-xs font-head font-700 uppercase tracking-wide px-3 py-1 rounded mb-3">Produit phare</span>
                 <h2 className="font-head font-800 text-xl text-dark mb-3">Catalogue Signaux pliants Triopan</h2>
                 <p className="text-gray-dark text-sm leading-relaxed mb-4">
-                  En tant que représentant officiel de Triopan SA pour toute la Suisse romande, ce catalogue est le cœur de notre offre. Il couvre l'intégralité des signaux pliants, accessoires et produits spécifiques Triopan — fabrication sur mesure possible.
+                  En tant que représentant officiel de Triopan SA pour toute la Suisse romande, ce catalogue est le cœur de notre offre. Il couvre l&apos;intégralité des signaux pliants, accessoires et produits spécifiques Triopan — fabrication sur mesure possible.
                 </p>
                 <ul className="flex flex-col gap-1.5 mb-5 text-sm text-gray-dark">
                   {['Signaux pliants (tous symboles et textes possibles)','Accessoires Triopan','Systèmes modulaires pour interventions d\'urgence'].map(i => (
@@ -86,7 +86,7 @@ export default function NosCatalogues() {
                 <span className="inline-block bg-navy text-white text-xs font-head font-700 uppercase tracking-wide px-3 py-1 rounded mb-3">Gamme complète</span>
                 <h2 className="font-head font-800 text-xl text-dark mb-3">Catalogue Signalisation & Sécurité routière</h2>
                 <p className="text-gray-dark text-sm leading-relaxed mb-4">
-                  Notre catalogue maison couvre l'ensemble de notre gamme de produits de signalisation et de sécurité routière : panneaux OSR, cônes, barrières, miroirs, lampes, et tout le matériel de chantier.
+                  Notre catalogue maison couvre l&apos;ensemble de notre gamme de produits de signalisation et de sécurité routière : panneaux OSR, cônes, barrières, miroirs, lampes, et tout le matériel de chantier.
                 </p>
                 <ul className="flex flex-col gap-1.5 mb-5 text-sm text-gray-dark">
                   {['Panneaux OSR R1, R2, R3','Matériel de chantier complet','Dispositifs de sécurité et mobilier urbain'].map(i => (

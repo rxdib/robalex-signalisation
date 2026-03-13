@@ -73,7 +73,7 @@ export default function HomePage() {
         bgImage="/images/triopan-bg.jpg"
         badge="Suisse romande"
         title={<>Votre expert en <span className="text-red">signalisation routière</span></>}
-        subtitle="De la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière — conformes aux normes OFROU/VSS."
+        subtitle="Depuis plus de 20 ans, de la conception à la pose, nous prenons en charge l'ensemble de vos besoins en signalisation routière — conformes aux normes OFROU/VSS."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: 'Voir nos produits', href: '/nos-produits' }}
       />
@@ -149,7 +149,7 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="text-white/75 text-sm mb-6">
-              Représentant officiel et exclusif de <strong className="text-white">Triopan SA</strong> pour toute la Suisse romande — accès direct à l'ensemble de la gamme Triopan.
+              Représentant officiel et exclusif de <strong className="text-white">Triopan SA</strong> pour toute la Suisse romande — accès direct à l&apos;ensemble de la gamme Triopan.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="/a-propos" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">En savoir plus</a>

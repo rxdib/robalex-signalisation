@@ -29,7 +29,7 @@ const services: Array<{
   {
     img: '/images/installation-signalisation-temporaire-location.jpg',
     alt: 'Installation de signalisation temporaire de chantier par Robalex Signalisation',
-    badge: 'Temporaire',
+    badge: 'Signalisation temporaire',
     titleNode: <>Signalisation <span className="text-red">temporaire</span></>,
     desc: "Nous prenons en charge la mise en place complète de votre signalisation de chantier : fourniture, transport et installation sur site conformément aux directives OFROU et à la norme VSS 40 886. Nous nous adaptons aux plans fournis ou proposons notre expertise terrain si aucun plan n'est disponible.",
     points: ['Fermetures de routes','Travaux sur chaussée',"Interventions d'urgence",'Événements temporaires'],
@@ -38,7 +38,7 @@ const services: Array<{
   {
     img: '/images/installation-panneaux.jpg',
     alt: 'Installation de panneaux de signalisation permanente par Robalex Signalisation',
-    badge: 'Permanente',
+    badge: 'Signalisation permanente',
     titleNode: <>Signalisation <span className="text-red">permanente</span></>,
     desc: "Fourniture et pose de signaux OSR conformes à l'ordonnance sur la signalisation routière : zones 30, passages piétons, panneaux d'interdiction et directionnels. Tous nos signaux sont disponibles en rétro-réflexion R1, R2 ou R3.",
     points: ['Zones 30 et 20','Passages piétons','Panneaux d\'interdiction','Panneaux indicateurs','Chemins privés','Mise à ban'],
@@ -56,7 +56,7 @@ const services: Array<{
   {
     img: '/images/travaux-location-materiel.jpg',
     alt: 'Location et installation de matériel de signalisation temporaire pour chantier en Suisse romande',
-    badge: 'Location matériel',
+    badge: 'Location de matériel',
     titleNode: <>Location de <span className="text-red">matériel</span> de signalisation</>,
     desc: "Location et installation de matériel de signalisation routière pour toutes vos interventions temporaires. Service complet et clé en main : fourniture, installation sur site et retrait en fin d'intervention, conformément à la norme VSS 40 886.",
     points: ['Fermetures de routes','Pose de grues et engins de chantier','Modifications temporaires de circulation','Réservation de places de stationnement'],
@@ -65,7 +65,7 @@ const services: Array<{
   {
     img: '/images/panneau-candelabre.jpg',
     alt: 'Montage et installation de panneau de signalisation sur candélabre par Robalex Signalisation',
-    badge: 'Montage',
+    badge: 'Montage et installation',
     titleNode: <>Montage et <span className="text-red">installation</span></>,
     desc: "Nos équipes prennent en charge le montage et l'installation de tous vos équipements de signalisation sur site, qu'il s'agisse de signaux permanents ou de dispositifs temporaires. Interventions conformes aux directives OFROU, sur la base de vos plans ou avec notre propre expertise terrain.",
     points: ['Pose de panneaux permanents','Installation de signalisation temporaire','Démontage et retrait du matériel','Interventions d\'urgence et délais courts'],
