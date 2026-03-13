@@ -174,7 +174,6 @@ export default function HomePage() {
                 "Nous prenons en charge l'installation, la maintenance et le retrait de vos feux de chantier.",
                 'Feux avec radar',
                 'Feux avec décompte de temps',
-                'Détection automatique des véhicules pour une gestion intelligente du trafic',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold mt-0.5">✓</span> {item}
