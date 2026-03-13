@@ -24,6 +24,23 @@ export default function Nav() {
     }
   }, [open])
 
+  useEffect(() => {
+    if (!open) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [open])
+
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-navy shadow-card-lg" aria-label="Navigation principale">
       <div className="container flex h-20 items-center justify-between gap-4">
@@ -56,6 +73,7 @@ export default function Nav() {
           type="button"
           className="xl:hidden inline-flex h-11 w-11 items-center justify-center rounded border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-controls="site-menu"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
@@ -75,6 +93,10 @@ export default function Nav() {
       />
 
       <div
+        id="site-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu principal"
         className={`xl:hidden fixed right-0 top-20 h-[calc(100vh-5rem)] w-full max-w-sm overflow-y-auto border-l border-white/10 bg-navy-dark shadow-card-lg transition-transform duration-300 ${open ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex min-h-full flex-col px-6 py-6">

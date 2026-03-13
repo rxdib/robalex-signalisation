@@ -49,7 +49,7 @@ export default function LogoMarquee({ logos }: { logos: Logo[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={logo.alt}
-                  className="opacity-50 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0 flex items-center justify-center"
+                  className="flex items-center justify-center opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 focus-visible:opacity-100 focus-visible:grayscale-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
                 >
                   {inner}
                 </a>

@@ -72,6 +72,13 @@
   .marquee-track:hover {
     animation-play-state: paused;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
 }
 
 @keyframes marquee {
