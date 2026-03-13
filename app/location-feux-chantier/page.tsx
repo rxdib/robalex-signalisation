@@ -7,7 +7,7 @@ import CtaBand from '@/components/CtaBand'
 
 export const metadata: Metadata = {
   title: 'Location feux de chantier - Suisse romande',
-  description: 'Location de feux de chantier clé en main dans tout le Canton de Vaud et en Suisse romande. Installation, maintenance et retrait inclus. Devis rapide.',
+  description: 'Location de feux de chantier clé en main dans le Canton de Vaud et toute la Suisse romande. Installation, maintenance et retrait inclus. Devis rapide.',
   alternates: { canonical: 'https://www.robalex-signalisation.ch/location-feux-chantier/' },
   openGraph: {
     title: 'Location feux de chantier clé en main - Suisse romande',
@@ -42,7 +42,7 @@ export default function LocationFeux() {
         bgFlip
         badge="Location feux de chantier"
         title={<>Location de <span className="text-red">feux de chantier</span> en Suisse romande</>}
-        subtitle="Service clé en main : installation, maintenance et retrait toujours inclus. Nous intervenons dans tout le Canton de Vaud et en Suisse romande."
+        subtitle="Service clé en main: installation, maintenance et retrait toujours inclus. Nous intervenons dans tout le Canton de Vaud et en Suisse romande."
         primaryCta={{ label: 'Demander un devis', href: '/contact' }}
         secondaryCta={{ label: '021 657 07 05', href: 'tel:+41216570705' }}
       />
@@ -52,7 +52,7 @@ export default function LocationFeux() {
           <SectionHeader
             badge="Notre équipement"
             title={<>Nos types de <span className="text-red">feux de chantier</span></>}
-            subtitle="Installation et retrait toujours inclus dans le service."
+            subtitle="Deux configurations de feux pour adapter la circulation à vos besoins de chantier."
             centered
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -70,11 +70,11 @@ export default function LocationFeux() {
                 desc: 'Affiche le temps d’attente restant aux usagers, réduisant la frustration et améliorant la fluidité du trafic.',
               },
             ].map((f) => (
-              <article key={f.title} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
+              <article key={f.title} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
                 <div className="aspect-video overflow-hidden">
                   <Image src={f.img} alt={f.alt} width={500} height={280} className="w-full h-full object-cover" />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-head font-700 text-lg text-dark mb-2">{f.title}</h3>
                   <p className="text-gray-dark text-sm leading-relaxed">{f.desc}</p>
                 </div>
@@ -89,10 +89,11 @@ export default function LocationFeux() {
           <SectionHeader
             badge="Notre processus"
             title={<>Comment ça <span className="text-red">marche</span> ?</>}
+            subtitle="Un interlocuteur unique du devis jusqu'au retrait du matériel."
             centered
           />
           <p className="text-gray-dark text-sm text-center max-w-2xl mx-auto mb-8">
-            Nous gérons l’intégralité de la location : installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n’avez rien à gérer - nous nous occupons de tout.
+            Nous gérons l&apos;intégralité de la location: installation sur site, maintenance préventive, remplacement des batteries et dépannage en cas de panne. Vous n&apos;avez rien à gérer, nous nous occupons de tout.
           </p>
           <StepProcess steps={steps} />
         </div>
@@ -100,7 +101,7 @@ export default function LocationFeux() {
 
       <section className="section-pad" aria-label="Avantages de notre service location feux">
         <div className="container">
-          <SectionHeader badge="Pourquoi nous choisir" title={<>Nos <span className="text-red">avantages</span></>} centered />
+          <SectionHeader badge="Pourquoi nous choisir" title={<>Nos <span className="text-red">avantages</span></>} subtitle="Un service réactif, simple à piloter et pensé pour les contraintes du terrain." centered />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
               {
@@ -119,7 +120,7 @@ export default function LocationFeux() {
                 desc: 'Tout le Canton de Vaud et l’ensemble de la Suisse romande. Interventions possibles 7j/7.',
               },
             ].map((a) => (
-              <div key={a.title} className="text-center p-6 bg-bg-light rounded-xl">
+              <div key={a.title} className="rounded-xl border border-gray-light bg-white p-6 text-center">
                 <div className="flex items-center justify-center w-14 h-14 rounded-full bg-red/10 text-red mx-auto mb-4">
                   {a.icon}
                 </div>
@@ -133,8 +134,8 @@ export default function LocationFeux() {
 
       <section className="section-pad bg-bg-light" aria-label="Clients location feux de chantier">
         <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} centered />
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Des entreprises qui nous confient régulièrement leurs besoins en location de feux de chantier." centered />
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10">
             {clientLogos.map((c) => (
               <a
                 key={c.alt}

@@ -1,43 +1,81 @@
 import type { Metadata } from 'next'
+import LegalPageShell from '@/components/LegalPageShell'
 
 export const metadata: Metadata = {
   title: 'Politique de confidentialité — Robalex Signalisation',
+  description: 'Informations sur la collecte et le traitement des données personnelles par Robalex Signalisation Sàrl.',
   robots: { index: false, follow: false },
 }
 
-export default function PolitiqueConf() {
+const sections = [
+  {
+    title: 'Responsable du traitement',
+    content: (
+      <p>
+        Robalex Signalisation Sàrl<br />
+        Chemin du Grand Champ 6<br />
+        1018 Lausanne<br />
+        Email: <a href="mailto:info@robalex-signalisation.ch">info@robalex-signalisation.ch</a>
+      </p>
+    ),
+  },
+  {
+    title: 'Données collectées',
+    content: (
+      <p>
+        Nous collectons uniquement les informations que vous nous transmettez via le formulaire de contact:
+        nom, prénom, adresse email, numéro de téléphone éventuel et message. Ces données sont utilisées
+        exclusivement pour répondre à votre demande.
+      </p>
+    ),
+  },
+  {
+    title: 'Finalité du traitement',
+    content: (
+      <p>
+        Les données reçues nous permettent de vous répondre, d&apos;établir un devis ou de traiter une demande
+        relative à nos produits et services en signalisation et sécurité routière.
+      </p>
+    ),
+  },
+  {
+    title: 'Durée de conservation',
+    content: (
+      <p>
+        Vos données sont conservées pendant la durée nécessaire au traitement de votre demande, puis
+        supprimées dans un délai maximal de 12 mois si aucun suivi commercial ou administratif ne justifie
+        une conservation plus longue.
+      </p>
+    ),
+  },
+  {
+    title: 'Vos droits',
+    content: (
+      <p>
+        Conformément à la législation suisse sur la protection des données, vous disposez d&apos;un droit
+        d&apos;accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous
+        à <a href="mailto:info@robalex-signalisation.ch">info@robalex-signalisation.ch</a>.
+      </p>
+    ),
+  },
+  {
+    title: 'Cookies',
+    content: (
+      <p>
+        Ce site ne dépose aucun cookie publicitaire ou de suivi. Seuls les éléments techniques nécessaires
+        au bon fonctionnement du site peuvent être utilisés.
+      </p>
+    ),
+  },
+]
+
+export default function PolitiqueConfidentialite() {
   return (
-    <main className="pt-24 pb-20">
-      <div className="container max-w-3xl">
-        <h1 className="font-head font-800 text-3xl text-dark mb-2">Politique de confidentialité</h1>
-        <div className="w-12 h-1 bg-red mb-8" />
-        <div className="prose prose-sm max-w-none text-gray-dark leading-relaxed space-y-6">
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Responsable du traitement</h2>
-            <p>Robalex Signalisation Sàrl — Chemin du Grand Champ 6, 1018 Lausanne. Email : info@robalex-signalisation.ch</p>
-          </section>
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Données collectées</h2>
-            <p>Nous collectons uniquement les données que vous nous transmettez via le formulaire de contact : nom, prénom, adresse email, numéro de téléphone (optionnel) et message. Ces données sont utilisées exclusivement pour répondre à votre demande.</p>
-          </section>
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Base légale</h2>
-            <p>Le traitement est basé sur votre consentement (art. 6 al. 1 lit. a nLPD) et sur notre intérêt légitime à répondre aux demandes commerciales.</p>
-          </section>
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Durée de conservation</h2>
-            <p>Vos données sont conservées pendant la durée nécessaire au traitement de votre demande, puis supprimées dans un délai de 12 mois.</p>
-          </section>
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Vos droits</h2>
-            <p>Conformément à la loi fédérale suisse sur la protection des données (nLPD), vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression de vos données. Contactez-nous à info@robalex-signalisation.ch.</p>
-          </section>
-          <section>
-            <h2 className="font-head font-700 text-xl text-dark mb-2">Cookies</h2>
-            <p>Ce site ne dépose aucun cookie de suivi ou publicitaire. Seuls des cookies techniques essentiels au fonctionnement du site peuvent être utilisés.</p>
-          </section>
-        </div>
-      </div>
-    </main>
+    <LegalPageShell
+      badge="Protection des données"
+      title={<>Politique de <span className="text-red">confidentialité</span></>}
+      subtitle="La manière dont nous collectons, utilisons et conservons les données transmises via le site."
+      sections={sections}
+    />
   )
 }

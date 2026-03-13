@@ -10,12 +10,12 @@ import LogoMarquee from '@/components/LogoMarquee'
 import { localBusinessSchema } from './schema'
 
 export const metadata: Metadata = {
-  title: 'Robalex Signalisation — Spécialiste signalisation routière Suisse romande',
-  description: 'Fourniture, location et pose de signalisation routière en Suisse romande. Représentant Triopan SA. Devis gratuit — 021 657 07 05.',
+  title: 'Robalex Signalisation - Signalisation et sécurité routière en Suisse romande',
+  description: 'Fourniture, location et installation en signalisation et sécurité routière en Suisse romande. Représentant Triopan SA. Devis sur demande au 021 657 07 05.',
   alternates: { canonical: 'https://www.robalex-signalisation.ch/' },
   openGraph: {
-    title: 'Robalex Signalisation — Spécialiste en signalisation routière en Suisse romande',
-    description: 'Fourniture, location et pose de signalisation routière. Représentant Triopan SA pour la Suisse romande.',
+    title: 'Robalex Signalisation - Signalisation et sécurité routière en Suisse romande',
+    description: 'Fourniture, location et installation en signalisation et sécurité routière. Représentant Triopan SA pour la Suisse romande.',
     url: 'https://www.robalex-signalisation.ch/',
     images: [{ url: '/images/triopan-bg.jpg' }],
   },
@@ -100,7 +100,7 @@ export default function HomePage() {
           <SectionHeader
             badge="Ce que nous faisons"
             title={<>Nos <span className="text-red">expertises</span></>}
-            subtitle="De la fourniture à la pose, nous couvrons l'ensemble de vos besoins en signalisation routière."
+            subtitle="De la fourniture à l'installation, nous couvrons l'ensemble de vos besoins en signalisation et sécurité routière."
             centered
           />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
@@ -152,7 +152,7 @@ export default function HomePage() {
       {/* 5. Ils nous font confiance */}
       <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises de construction." centered />
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises actives sur le terrain dans toute la Suisse romande." centered />
           <div className="mt-10">
             <LogoMarquee logos={clients} />
           </div>
@@ -165,6 +165,7 @@ export default function HomePage() {
           <FeatureBlock
             image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar sur chantier routier à Lausanne' }}
             reverse
+            imageClassName="object-[62%_center]"
           >
             <SectionHeader
               title={<>Location de <span className="text-red">feux de chantier</span></>}
@@ -192,11 +193,12 @@ export default function HomePage() {
       <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure — Robalex Signalisation représentant officiel Suisse romande' }}
+            image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure - Robalex Signalisation représentant officiel Suisse romande' }}
             imageBadge="Représentant officiel Triopan"
+            imageClassName="object-[44%_center]"
           >
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
-            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes — disponibles dans tous les formats et configurations.</p>
+            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes, dans tous les formats et configurations.</p>
             <ul className="flex flex-col gap-2 mb-6">
               {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés','Accompagnement de proximité'].map(item => (
                 <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
@@ -224,11 +226,11 @@ export default function HomePage() {
               { img: '/images/fireball.png',                                pos: 'object-center', fit: 'object-contain p-3 bg-bg-light', cat: 'Signalisation temporaire', name: 'Lampes flash Fireball',     desc: "Lampes clignotantes compactes haute performance, conçues pour une visibilité maximale en journée. Utilisées par les services d'urgence, communes et forces de l'ordre." },
               { img: '/images/Liste produit/Radar-pedagogique.jpg',         pos: 'object-center', fit: 'object-contain p-2 bg-bg-light', cat: 'Sécurité routière',        name: 'Radar pédagogique',         desc: "Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones à risque — zones 30, abords d'écoles, zones résidentielles." },
             ].map(p => (
-              <article key={p.name} className="bg-white border border-gray-light rounded-xl overflow-hidden hover:shadow-card transition-shadow">
-                <div className="aspect-[4/3] overflow-hidden">
+              <article key={p.name} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
+                <div className="aspect-[4/3] overflow-hidden bg-white">
                   <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full ${p.fit} ${p.pos}`} />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <p className="text-red text-xs font-head font-700 uppercase tracking-wide mb-1">{p.cat}</p>
                   <h3 className="font-head font-700 text-base text-dark mb-2">{p.name}</h3>
                   <p className="text-gray-dark text-sm">{p.desc}</p>
@@ -247,10 +249,10 @@ export default function HomePage() {
       {/* 9. Partenaires */}
       <section className="section-pad bg-bg-light" aria-labelledby="partenaires-title">
         <div className="container">
-          <SectionHeader badge="Partenaires" title={<>Nos <span className="text-red">partenaires</span></>} centered />
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            <PartnerLogo src="/images/logo-triopan.png" alt="Triopan AG — partenaire Robalex Signalisation" href="https://www.triopan.ch" />
-            <PartnerLogo src="/images/logo-nissen.svg"  alt="Nissen AG — partenaire Robalex Signalisation" href="https://www.nissen.ch" />
+          <SectionHeader badge="Partenaires" title={<>Nos <span className="text-red">partenaires</span></>} subtitle="Des partenaires reconnus qui complètent notre offre en signalisation et sécurité routière." centered />
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+            <PartnerLogo src="/images/logo-triopan.png" alt="Triopan AG - partenaire Robalex Signalisation" href="https://www.triopan.ch" />
+            <PartnerLogo src="/images/logo-nissen.svg"  alt="Nissen AG - partenaire Robalex Signalisation" href="https://www.nissen.ch" />
           </div>
         </div>
       </section>

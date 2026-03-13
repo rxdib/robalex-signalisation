@@ -3,7 +3,7 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Robalex Signalisation Sàrl',
-  description: 'Spécialiste en signalisation routière et sécurité en Suisse romande. Fourniture, pose et location de matériel de signalisation temporaire et permanente.',
+  description: 'Spécialiste en signalisation et sécurité routière en Suisse romande. Fourniture, installation et location de matériel pour chantiers et équipements permanents.',
   url: 'https://www.robalex-signalisation.ch',
   telephone: '+41216570705',
   email: 'info@robalex-signalisation.ch',

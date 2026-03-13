@@ -6,11 +6,11 @@ import CtaBand from '@/components/CtaBand'
 
 export const metadata: Metadata = {
   title: 'À propos — Robalex Signalisation Sàrl Lausanne',
-  description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en Suisse romande.",
+  description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en signalisation et sécurité routière en Suisse romande.",
   alternates: { canonical: 'https://www.robalex-signalisation.ch/a-propos/' },
   openGraph: {
     title: 'À propos — Robalex Signalisation Sàrl Lausanne',
-    description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en Suisse romande.",
+    description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en signalisation et sécurité routière en Suisse romande.",
     url: 'https://www.robalex-signalisation.ch/a-propos/',
     images: [{ url: '/images/autoroute-suisse-pont.jpg' }],
   },
@@ -23,7 +23,7 @@ export default function AProposPage() {
         bgImage="/images/autoroute-suisse-pont.jpg"
         badge="À propos"
         title={<>À propos de <span className="text-red">Robalex Signalisation</span></>}
-        subtitle="Depuis 2004, votre partenaire de confiance pour la signalisation routière en Suisse romande."
+        subtitle="Depuis 2004, votre partenaire de confiance pour la signalisation et la sécurité routière en Suisse romande."
         primaryCta={{ label: 'Nous contacter', href: '/contact' }}
       />
 
@@ -32,9 +32,10 @@ export default function AProposPage() {
         <div className="container">
           <FeatureBlock
             image={{ src: '/images/autoroute-geneve.jpg', alt: "Autoroute genevoise — terrain d'intervention de Robalex Signalisation en Suisse romande" }}
+            imageClassName="object-[42%_center]"
           >
             <SectionHeader badge="Notre histoire" title={<>Plus de 20 ans <span className="text-red">d&apos;expertise</span></>} />
-            <p className="text-gray-dark mb-4">Fondée en 2004 à Lausanne, Robalex Signalisation Sàrl s&apos;est imposée comme un acteur incontournable de la signalisation routière en Suisse romande.</p>
+            <p className="text-gray-dark mb-4">Fondée en 2004 à Lausanne, Robalex Signalisation Sàrl s&apos;est imposée comme un acteur incontournable de la signalisation et de la sécurité routière en Suisse romande.</p>
             <p className="text-gray-dark mb-4">Notre approche repose sur deux piliers : des <strong>produits de haute qualité</strong> et un <strong>service client irréprochable</strong>. Nous intervenons pour les services d&apos;autoroutes, les communes, les polices, les corps de pompiers, les entreprises de génie civil, les géomètres et les clients privés.</p>
             <p className="text-gray-dark">En tant que représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande, nous offrons un accès direct à la gamme complète des panneaux pliants et systèmes de signalisation innovants Triopan.</p>
           </FeatureBlock>
@@ -50,7 +51,7 @@ export default function AProposPage() {
               {
                 icon: <QualityIcon />,
                 title: 'Qualité',
-                desc: 'Produits de haute qualité, sélectionnés pour leur durabilité et conformes aux exigences OFROU/VSS.',
+                desc: 'Produits de haute qualité, sélectionnés pour leur fiabilité et leur durabilité sur le terrain.',
               },
               {
                 icon: <ReactivityIcon />,
@@ -60,7 +61,7 @@ export default function AProposPage() {
               {
                 icon: <AdviceIcon />,
                 title: 'Conseils personnalisés',
-                desc: "Accompagnement personnalisé basé sur notre expérience terrain. De la conception à la pose.",
+                desc: "Accompagnement personnalisé basé sur notre expérience terrain, de la planification à l'installation.",
               },
               {
                 icon: <TagIcon />,
@@ -88,7 +89,7 @@ export default function AProposPage() {
           <SectionHeader
             badge="Notre couverture"
             title={<>Toute la <span className="text-red">Suisse romande</span></>}
-            subtitle="Interventions dans 6 cantons, de la signalisation temporaire de chantier aux signaux OSR permanents."
+            subtitle="Interventions dans 6 cantons, de la signalisation de chantier aux équipements permanents et de sécurité routière."
             centered white
           />
           <div className="flex flex-wrap justify-center gap-3 mt-6">
