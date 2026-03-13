@@ -150,65 +150,72 @@ export default function HomePage() {
       </section>
 
       {/* 5. Ils nous font confiance */}
-      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
+      <section className="section-pad bg-white border-y border-gray-light/70" aria-labelledby="clients-title">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises de construction." centered />
+          <div className="h-px w-24 bg-red/40 mx-auto mt-2" />
         </div>
-        <div className="mt-10">
-          <LogoMarquee logos={clients} />
+        <div className="container mt-10">
+          <div className="bg-bg-light border border-gray-light rounded-2xl py-6 px-4 shadow-card">
+            <LogoMarquee logos={clients} />
+          </div>
         </div>
       </section>
 
       {/* 6. Location feux promo */}
       <section className="section-pad bg-bg-light" aria-labelledby="feux-title">
         <div className="container">
-          <FeatureBlock
-            image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar pédagogique sur chantier routier à Lausanne' }}
-            reverse
-          >
-            <SectionHeader
-              title={<>Location de <span className="text-red">feux de chantier</span></>}
-            />
-            <ul className="flex flex-col gap-3 mb-6">
-              {[
-                "Nous prenons en charge l'installation, la maintenance et le retrait de vos feux de chantier.",
-                'Feux avec radar pédagogique intégré',
-                'Feux avec décompte de temps',
-                'Couverture dans tout le Canton de Vaud et en Suisse romande',
-              ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
-                  <span className="text-red font-bold mt-0.5">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-3">
-              <a href="/location-feux-chantier" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">En savoir plus</a>
-              <a href="tel:+41216570705" className="border-2 border-navy text-navy hover:bg-navy hover:text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">021 657 07 05</a>
-            </div>
-          </FeatureBlock>
+          <div className="bg-white border border-gray-light rounded-2xl p-6 lg:p-8 shadow-card">
+            <FeatureBlock
+              image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar pédagogique sur chantier routier à Lausanne' }}
+              reverse
+            >
+              <SectionHeader
+                title={<>Location de <span className="text-red">feux de chantier</span></>}
+              />
+              <ul className="flex flex-col gap-3 mb-6">
+                {[
+                  "Nous prenons en charge l'installation, la maintenance et le retrait de vos feux de chantier.",
+                  'Feux avec radar pédagogique intégré',
+                  'Feux avec décompte de temps',
+                  'Couverture dans tout le Canton de Vaud et en Suisse romande',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
+                    <span className="text-red font-bold mt-0.5">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-3">
+                <a href="/location-feux-chantier" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">En savoir plus</a>
+                <a href="tel:+41216570705" className="border-2 border-navy text-navy hover:bg-navy hover:text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">021 657 07 05</a>
+              </div>
+            </FeatureBlock>
+          </div>
         </div>
       </section>
 
       {/* 7. Triopan feature */}
-      <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
+      <section className="section-pad bg-white border-t border-gray-light/70" aria-labelledby="triopan-title">
         <div className="container">
-          <FeatureBlock
-            image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure — Robalex Signalisation représentant officiel Suisse romande' }}
-            imageBadge="Représentant officiel Triopan"
-          >
-            <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
-            <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes — disponibles dans tous les formats et configurations.</p>
-            <ul className="flex flex-col gap-2 mb-6">
-              {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés','Accompagnement de proximité'].map(item => (
-                <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
-                  <span className="text-red font-bold">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            <a href="/nos-catalogues" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors inline-block">
-              Voir le catalogue Triopan
-            </a>
-          </FeatureBlock>
+          <div className="bg-bg-light border border-gray-light rounded-2xl p-6 lg:p-8 shadow-card">
+            <FeatureBlock
+              image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure — Robalex Signalisation représentant officiel Suisse romande' }}
+              imageBadge="Représentant officiel Triopan"
+            >
+              <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
+              <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes — disponibles dans tous les formats et configurations.</p>
+              <ul className="flex flex-col gap-2 mb-6">
+                {['Signaux pliants fabriqués sur mesure','Livraison dans toute la Suisse romande','Entièrement personnalisables (symboles, textes, dimensions)','Conseils personnalisés','Accompagnement de proximité'].map(item => (
+                  <li key={item} className="flex items-center gap-2 text-gray-dark text-sm">
+                    <span className="text-red font-bold">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <a href="/nos-catalogues" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors inline-block">
+                Voir le catalogue Triopan
+              </a>
+            </FeatureBlock>
+          </div>
         </div>
       </section>
 
