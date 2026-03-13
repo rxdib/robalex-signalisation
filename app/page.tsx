@@ -7,19 +7,21 @@ import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
 import PartnerLogo from '@/components/PartnerLogo'
 import LogoMarquee from '@/components/LogoMarquee'
-import { localBusinessSchema } from './schema'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from './seo'
+import { createWebPageSchema } from './schema'
 
-export const metadata: Metadata = {
-  title: 'Robalex Signalisation - Signalisation et sécurité routière en Suisse romande',
-  description: 'Fourniture, location et installation en signalisation et sécurité routière en Suisse romande. Représentant Triopan SA. Devis sur demande au 021 657 07 05.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/' },
-  openGraph: {
-    title: 'Robalex Signalisation - Signalisation et sécurité routière en Suisse romande',
-    description: 'Fourniture, location et installation en signalisation et sécurité routière. Représentant Triopan SA pour la Suisse romande.',
-    url: 'https://www.robalex-signalisation.ch/',
-    images: [{ url: '/images/triopan-bg.jpg' }],
-  },
-}
+const pageTitle = 'Signalisation et sécurité routière en Suisse romande'
+const pageDescription =
+  'Fourniture, location et installation en signalisation et sécurité routière en Suisse romande. Représentant Triopan SA. Demandez votre devis au 021 657 07 05.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/',
+  image: '/images/triopan-bg.jpg',
+  imageAlt: 'Signalisation et sécurité routière en Suisse romande par Robalex Signalisation',
+})
 
 const expertises = [
   { icon: <TempIcon />, title: 'Signalisation temporaire',  desc: 'Balisage temporaire de chantier — signaux pliants Triopan, cônes, barrières et lampes flash pour sécuriser toutes vos interventions.', link: '/nos-produits' },
@@ -66,7 +68,14 @@ const clients = [
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <JsonLd
+        data={createWebPageSchema({
+          name: pageTitle,
+          description: pageDescription,
+          path: '/',
+          image: '/images/triopan-bg.jpg',
+        })}
+      />
 
       {/* 1. Hero */}
       <Hero

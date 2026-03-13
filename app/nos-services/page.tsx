@@ -4,18 +4,21 @@ import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createBreadcrumbSchema, createCollectionPageSchema, createServiceSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'Nos services — Signalisation et sécurité routière',
-  description: 'Planification, installation, marquage routier et location de matériel pour vos besoins en signalisation et sécurité routière en Suisse romande.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/nos-services/' },
-  openGraph: {
-    title: 'Nos services de signalisation et sécurité routière — Robalex Signalisation',
-    description: 'Planification, installation, marquage routier et location de matériel pour vos besoins en signalisation et sécurité routière en Suisse romande.',
-    url: 'https://www.robalex-signalisation.ch/nos-services/',
-    images: [{ url: '/images/travaux-installation.jpg' }],
-  },
-}
+const pageTitle = 'Nos services'
+const pageDescription =
+  'Planification, installation, marquage routier et location de matériel pour vos besoins en signalisation et sécurité routière en Suisse romande.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/nos-services/',
+  image: '/images/travaux-installation.jpg',
+  imageAlt: 'Services de signalisation et sécurité routière en Suisse romande',
+})
 
 const services: Array<{
   img: string
@@ -82,6 +85,26 @@ const services: Array<{
 export default function NosServices() {
   return (
     <>
+      <JsonLd
+        data={[
+          createCollectionPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/nos-services/',
+            image: '/images/travaux-installation.jpg',
+          }),
+          createServiceSchema({
+            name: 'Services de signalisation et sécurité routière',
+            description: pageDescription,
+            path: '/nos-services/',
+            image: '/images/travaux-installation.jpg',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'Nos services', path: '/nos-services/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/passage-pieton.jpg"
         badge="Nos services"

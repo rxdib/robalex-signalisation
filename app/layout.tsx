@@ -3,6 +3,9 @@ import { Montserrat, Open_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import JsonLd from '@/components/JsonLd'
+import { SITE_NAME, SITE_URL } from './seo'
+import { localBusinessSchema, organizationSchema, websiteSchema } from './schema'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -19,15 +22,31 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.robalex-signalisation.ch'),
-  openGraph: { type: 'website', locale: 'fr_CH' },
-  robots: { index: true, follow: true },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: 'website',
+    locale: 'fr_CH',
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${montserrat.variable} ${openSans.variable}`}>
       <body>
+        <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
         <Nav />
         {children}
         <Footer />

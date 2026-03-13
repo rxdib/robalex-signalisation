@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import LegalPageShell from '@/components/LegalPageShell'
+import { buildMetadata } from '@/app/seo'
 
-export const metadata: Metadata = {
-  title: 'Mentions légales — Robalex Signalisation',
+export const metadata: Metadata = buildMetadata({
+  title: 'Mentions légales',
   description: 'Informations légales relatives au site internet de Robalex Signalisation Sàrl.',
-  robots: { index: false, follow: false },
-}
+  path: '/mentions-legales/',
+  noIndex: true,
+})
 
 const sections = [
   {

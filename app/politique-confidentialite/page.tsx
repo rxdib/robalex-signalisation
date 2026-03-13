@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import LegalPageShell from '@/components/LegalPageShell'
+import { buildMetadata } from '@/app/seo'
 
-export const metadata: Metadata = {
-  title: 'Politique de confidentialité — Robalex Signalisation',
+export const metadata: Metadata = buildMetadata({
+  title: 'Politique de confidentialité',
   description: 'Informations sur la collecte et le traitement des données personnelles par Robalex Signalisation Sàrl.',
-  robots: { index: false, follow: false },
-}
+  path: '/politique-confidentialite/',
+  noIndex: true,
+})
 
 const sections = [
   {

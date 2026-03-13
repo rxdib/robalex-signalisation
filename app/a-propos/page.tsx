@@ -3,22 +3,39 @@ import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createAboutPageSchema, createBreadcrumbSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'À propos — Robalex Signalisation Sàrl Lausanne',
-  description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en signalisation et sécurité routière en Suisse romande.",
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/a-propos/' },
-  openGraph: {
-    title: 'À propos — Robalex Signalisation Sàrl Lausanne',
-    description: "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en signalisation et sécurité routière en Suisse romande.",
-    url: 'https://www.robalex-signalisation.ch/a-propos/',
-    images: [{ url: '/images/autoroute-suisse-pont.jpg' }],
-  },
-}
+const pageTitle = 'À propos'
+const pageDescription =
+  "Depuis plus de 20 ans, Robalex Signalisation accompagne communes, services d'urgence et entreprises de génie civil en signalisation et sécurité routière en Suisse romande."
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/a-propos/',
+  image: '/images/autoroute-suisse-pont.jpg',
+  imageAlt: 'À propos de Robalex Signalisation en Suisse romande',
+})
 
 export default function AProposPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          createAboutPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/a-propos/',
+            image: '/images/autoroute-suisse-pont.jpg',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'À propos', path: '/a-propos/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/autoroute-suisse-pont.jpg"
         badge="À propos"

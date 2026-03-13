@@ -1,10 +1,18 @@
 import type { MetadataRoute } from 'next'
+import { SITE_URL } from './seo'
 
 export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/', disallow: ['/mentions-legales/', '/politique-confidentialite/'] },
-    sitemap: 'https://www.robalex-signalisation.ch/sitemap.xml',
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/mentions-legales/', '/politique-confidentialite/'],
+      },
+    ],
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   }
 }

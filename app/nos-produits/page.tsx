@@ -3,20 +3,21 @@ import Image from 'next/image'
 import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createBreadcrumbSchema, createCollectionPageSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'Nos produits - Signalisation et sécurité routière',
-  description:
-    'Signalisation temporaire, permanente, lumineuse et matériel de chantier. Signaux pliants Triopan, cônes, barrières, panneaux OSR, miroirs et équipements de sécurité routière.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/nos-produits/' },
-  openGraph: {
-    title: 'Nos produits de signalisation et sécurité routière - Robalex Signalisation',
-    description:
-      'Signalisation temporaire, permanente, lumineuse et matériel de chantier. Signaux pliants Triopan, cônes, barrières, panneaux OSR, miroirs et équipements de sécurité routière.',
-    url: 'https://www.robalex-signalisation.ch/nos-produits/',
-    images: [{ url: '/images/panneaux-signalisation.jpg' }],
-  },
-}
+const pageTitle = 'Nos produits'
+const pageDescription =
+  'Signalisation temporaire, permanente, lumineuse et matériel de chantier. Signaux pliants Triopan, cônes, barrières, panneaux OSR, miroirs et équipements de sécurité routière.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/nos-produits/',
+  image: '/images/panneaux-signalisation.jpg',
+  imageAlt: 'Produits de signalisation et sécurité routière',
+})
 
 type Product = {
   img: string
@@ -289,6 +290,20 @@ function ProductGrid({ products }: { products: Product[] }) {
 export default function NosProduits() {
   return (
     <>
+      <JsonLd
+        data={[
+          createCollectionPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/nos-produits/',
+            image: '/images/panneaux-signalisation.jpg',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'Nos produits', path: '/nos-produits/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/panneaux-signalisation.jpg"
         badge="Nos produits"

@@ -4,18 +4,21 @@ import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import StepProcess from '@/components/StepProcess'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createBreadcrumbSchema, createServiceSchema, createWebPageSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'Location feux de chantier - Suisse romande',
-  description: 'Location de feux de chantier clé en main dans le Canton de Vaud et toute la Suisse romande. Installation, maintenance et retrait inclus. Devis rapide.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/location-feux-chantier/' },
-  openGraph: {
-    title: 'Location feux de chantier clé en main - Suisse romande',
-    description: 'Location de feux de chantier dans tout le Canton de Vaud et en Suisse romande. Installation, maintenance et retrait inclus.',
-    url: 'https://www.robalex-signalisation.ch/location-feux-chantier/',
-    images: [{ url: '/images/feux-radar-1.jpg' }],
-  },
-}
+const pageTitle = 'Location de feux de chantier en Suisse romande'
+const pageDescription =
+  'Location de feux de chantier clé en main dans le canton de Vaud et toute la Suisse romande. Installation, maintenance et retrait inclus. Devis rapide.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/location-feux-chantier/',
+  image: '/images/feux-radar-1.jpg',
+  imageAlt: 'Location de feux de chantier en Suisse romande',
+})
 
 const steps = [
   { number: 1, label: 'Contactez-nous', desc: 'Appelez ou envoyez votre demande en ligne.' },
@@ -36,6 +39,26 @@ const clientLogos = [
 export default function LocationFeux() {
   return (
     <>
+      <JsonLd
+        data={[
+          createWebPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/location-feux-chantier/',
+            image: '/images/feux-radar-1.jpg',
+          }),
+          createServiceSchema({
+            name: 'Location de feux de chantier',
+            description: pageDescription,
+            path: '/location-feux-chantier/',
+            image: '/images/feux-radar-1.jpg',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'Location feux de chantier', path: '/location-feux-chantier/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/feux-decompte-2.jpg"
         bgPosition="72% center"

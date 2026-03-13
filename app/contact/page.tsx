@@ -2,18 +2,21 @@ import type { Metadata } from 'next'
 import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createBreadcrumbSchema, createContactPageSchema, createFaqSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'Contact — Robalex Signalisation Lausanne',
-  description: 'Contactez Robalex Signalisation à Lausanne pour votre demande de devis, vos questions produits ou vos besoins en signalisation et sécurité routière.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/contact/' },
-  openGraph: {
-    title: 'Contactez Robalex Signalisation — Lausanne',
-    description: 'Demande de devis, questions sur nos produits et services de signalisation et sécurité routière. Tél : 021 657 07 05.',
-    url: 'https://www.robalex-signalisation.ch/contact/',
-    images: [{ url: '/images/signalisation-chantier-hd.jpg' }],
-  },
-}
+const pageTitle = 'Contact'
+const pageDescription =
+  'Contactez Robalex Signalisation à Lausanne pour votre demande de devis, vos questions produits ou vos besoins en signalisation et sécurité routière.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/contact/',
+  image: '/images/signalisation-chantier-hd.jpg',
+  imageAlt: 'Contact Robalex Signalisation à Lausanne',
+})
 
 const faq = [
   {
@@ -33,6 +36,21 @@ const faq = [
 export default function Contact() {
   return (
     <>
+      <JsonLd
+        data={[
+          createContactPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/contact/',
+            image: '/images/signalisation-chantier-hd.jpg',
+          }),
+          createFaqSchema(faq),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'Contact', path: '/contact/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/signalisation-chantier-hd.jpg"
         badge="Contact"

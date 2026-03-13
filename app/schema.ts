@@ -1,12 +1,73 @@
-// app/schema.ts
+﻿import { absoluteUrl, SITE_NAME, SITE_URL } from './seo'
+
+const organizationId = `${SITE_URL}/#organization`
+const localBusinessId = `${SITE_URL}/#local-business`
+const websiteId = `${SITE_URL}/#website`
+
+const serviceAreas = [
+  'Vaud',
+  'Genève',
+  'Valais',
+  'Fribourg',
+  'Neuchâtel',
+  'Jura',
+].map((name) => ({
+  '@type': 'AdministrativeArea',
+  name,
+  containedInPlace: {
+    '@type': 'Country',
+    name: 'Suisse',
+  },
+}))
+
+export const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: {
+    '@type': 'ImageObject',
+    url: absoluteUrl('/images/logo-robalex.png'),
+  },
+  image: absoluteUrl('/images/triopan-bg.jpg'),
+  email: 'info@robalex-signalisation.ch',
+  telephone: '+41216570705',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+41216570705',
+      email: 'info@robalex-signalisation.ch',
+      contactType: 'customer service',
+      areaServed: 'CH-VD',
+      availableLanguage: ['fr'],
+    },
+    {
+      '@type': 'ContactPoint',
+      telephone: '+41216570705',
+      email: 'info@robalex-signalisation.ch',
+      contactType: 'sales',
+      areaServed: 'CH',
+      availableLanguage: ['fr'],
+    },
+  ],
+}
+
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Robalex Signalisation Sàrl',
-  description: 'Spécialiste en signalisation et sécurité routière en Suisse romande. Fourniture, installation et location de matériel pour chantiers et équipements permanents.',
-  url: 'https://www.robalex-signalisation.ch',
+  '@id': localBusinessId,
+  name: SITE_NAME,
+  description:
+    'Spécialiste en signalisation et sécurité routière en Suisse romande. Fourniture, installation, location et maintenance de matériel pour chantiers et équipements permanents.',
+  url: SITE_URL,
+  parentOrganization: { '@id': organizationId },
+  image: [absoluteUrl('/images/triopan-bg.jpg'), absoluteUrl('/images/signalisation-chantier-hd.jpg')],
   telephone: '+41216570705',
   email: 'info@robalex-signalisation.ch',
+  priceRange: '$$',
+  paymentAccepted: ['Facture', 'Virement bancaire'],
+  currenciesAccepted: 'CHF',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Chemin du Grand Champ 6',
@@ -15,10 +76,145 @@ export const localBusinessSchema = {
     postalCode: '1018',
     addressCountry: 'CH',
   },
-  geo: { '@type': 'GeoCoordinates', latitude: 46.5197, longitude: 6.6323 },
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '17:00' }
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
   ],
-  areaServed: 'Suisse romande',
+  areaServed: serviceAreas,
+  serviceArea: serviceAreas,
   foundingDate: '2004',
+  hasMap: 'https://maps.google.com/?q=Chemin+du+Grand+Champ+6,+1018+Lausanne',
+  knowsAbout: [
+    'Signalisation temporaire',
+    'Signalisation permanente',
+    'Location de feux de chantier',
+    'Marquage routier',
+    'Mobilier urbain',
+    'Sécurité routière',
+  ],
+}
+
+export const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': websiteId,
+  url: SITE_URL,
+  name: SITE_NAME,
+  inLanguage: 'fr-CH',
+  publisher: { '@id': organizationId },
+}
+
+type BreadcrumbItem = {
+  name: string
+  path: string
+}
+
+type BasePageSchemaOptions = {
+  type: string
+  name: string
+  description: string
+  path: string
+  image?: string
+}
+
+function createPageSchema({ type, name, description, path, image }: BasePageSchemaOptions) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': type,
+    '@id': `${absoluteUrl(path)}#webpage`,
+    url: absoluteUrl(path),
+    name,
+    description,
+    inLanguage: 'fr-CH',
+    isPartOf: { '@id': websiteId },
+    about: { '@id': localBusinessId },
+    primaryImageOfPage: image
+      ? {
+          '@type': 'ImageObject',
+          url: absoluteUrl(image),
+        }
+      : undefined,
+  }
+}
+
+export function createBreadcrumbSchema(items: BreadcrumbItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  }
+}
+
+export function createWebPageSchema(options: Omit<BasePageSchemaOptions, 'type'>) {
+  return createPageSchema({ ...options, type: 'WebPage' })
+}
+
+export function createAboutPageSchema(options: Omit<BasePageSchemaOptions, 'type'>) {
+  return createPageSchema({ ...options, type: 'AboutPage' })
+}
+
+export function createCollectionPageSchema(options: Omit<BasePageSchemaOptions, 'type'>) {
+  return createPageSchema({ ...options, type: 'CollectionPage' })
+}
+
+export function createContactPageSchema(options: Omit<BasePageSchemaOptions, 'type'>) {
+  return {
+    ...createPageSchema({ ...options, type: 'ContactPage' }),
+    mainEntity: { '@id': localBusinessId },
+  }
+}
+
+type ServiceSchemaOptions = {
+  name: string
+  description: string
+  path: string
+  image: string
+}
+
+export function createServiceSchema({ name, description, path, image }: ServiceSchemaOptions) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${absoluteUrl(path)}#service`,
+    name,
+    description,
+    url: absoluteUrl(path),
+    image: absoluteUrl(image),
+    provider: { '@id': localBusinessId },
+    areaServed: serviceAreas,
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: absoluteUrl(path),
+      servicePhone: '+41216570705',
+    },
+  }
+}
+
+type FAQItem = {
+  q: string
+  a: string
+}
+
+export function createFaqSchema(items: FAQItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  }
 }

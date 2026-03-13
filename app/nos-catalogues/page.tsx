@@ -4,18 +4,21 @@ import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
+import JsonLd from '@/components/JsonLd'
+import { buildMetadata } from '@/app/seo'
+import { createBreadcrumbSchema, createCollectionPageSchema } from '@/app/schema'
 
-export const metadata: Metadata = {
-  title: 'Nos catalogues - Signalisation et sécurité routière',
-  description: 'Consultez ou téléchargez nos catalogues Triopan, Robalex et notre liste des signaux routiers pour préparer vos commandes en signalisation et sécurité routière.',
-  alternates: { canonical: 'https://www.robalex-signalisation.ch/nos-catalogues/' },
-  openGraph: {
-    title: 'Nos catalogues - Robalex Signalisation',
-    description: 'Consultez ou téléchargez nos catalogues Triopan, Robalex et notre liste des signaux routiers pour préparer vos commandes en signalisation et sécurité routière.',
-    url: 'https://www.robalex-signalisation.ch/nos-catalogues/',
-    images: [{ url: '/images/triopan-bg.jpg' }],
-  },
-}
+const pageTitle = 'Nos catalogues'
+const pageDescription =
+  'Consultez ou téléchargez nos catalogues Triopan, Robalex et notre liste des signaux routiers pour préparer vos commandes en signalisation et sécurité routière.'
+
+export const metadata: Metadata = buildMetadata({
+  title: pageTitle,
+  description: pageDescription,
+  path: '/nos-catalogues/',
+  image: '/images/triopan-bg.jpg',
+  imageAlt: 'Catalogues de signalisation et sécurité routière',
+})
 
 const mainCatalogues = [
   {
@@ -45,6 +48,20 @@ const mainCatalogues = [
 export default function NosCatalogues() {
   return (
     <>
+      <JsonLd
+        data={[
+          createCollectionPageSchema({
+            name: `${pageTitle} - Robalex Signalisation`,
+            description: pageDescription,
+            path: '/nos-catalogues/',
+            image: '/images/triopan-bg.jpg',
+          }),
+          createBreadcrumbSchema([
+            { name: 'Accueil', path: '/' },
+            { name: 'Nos catalogues', path: '/nos-catalogues/' },
+          ]),
+        ]}
+      />
       <Hero
         bgImage="/images/triopan-bg.jpg"
         badge="Nos catalogues"
