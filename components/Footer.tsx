@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Image from 'next/image'
 
 const navLinks = [
@@ -20,55 +20,40 @@ const productLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white/60 pt-16 pb-6" role="contentinfo">
+    <footer className="bg-navy pt-18 pb-6 text-white/65" role="contentinfo">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
           <div>
-            <Link href="/" className="block mb-4">
-              <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={150} height={38} />
+            <Link href="/" className="mb-5 block">
+              <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={156} height={40} />
             </Link>
-            <p className="text-sm leading-relaxed mb-4">
+            <p className="mb-5 max-w-xs text-sm leading-relaxed">
               Votre spécialiste en signalisation et sécurité routière pour toute la Suisse romande depuis plus de 20 ans.
             </p>
-            <div className="flex flex-col gap-2 text-sm">
-              <a href="tel:+41216570705" className="hover:text-white transition-colors flex items-center gap-2">
-                <PhoneIcon /> 021 657 07 05
+            <div className="flex flex-col gap-3 text-sm">
+              <a
+                href="tel:+41216570705"
+                className="inline-flex items-center gap-2 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <PhoneIcon />
+                021 657 07 05
               </a>
-              <a href="mailto:info@robalex-signalisation.ch" className="hover:text-white transition-colors flex items-center gap-2">
-                <MailIcon /> info@robalex-signalisation.ch
+              <a
+                href="mailto:info@robalex-signalisation.ch"
+                className="inline-flex items-center gap-2 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <MailIcon />
+                info@robalex-signalisation.ch
               </a>
             </div>
           </div>
 
-          <div>
-            <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Menu</h4>
-            <ul className="flex flex-col gap-2">
-              {navLinks.map((l) => (
-                <li key={l.href + l.label}>
-                  <Link href={l.href} className="text-sm hover:text-white transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn title="Menu" links={navLinks} />
+          <FooterColumn title="Nos produits" links={productLinks} />
 
           <div>
-            <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Nos produits</h4>
-            <ul className="flex flex-col gap-2">
-              {productLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-sm hover:text-white transition-colors">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-head font-700 text-sm uppercase tracking-wider mb-4">Adresse</h4>
-            <address className="not-italic text-sm leading-relaxed">
+            <h4 className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">Adresse</h4>
+            <address className="not-italic text-sm leading-relaxed text-white/70">
               Robalex Signalisation Sàrl
               <br />
               Chemin du Grand Champ 6
@@ -77,19 +62,22 @@ export default function Footer() {
               <br />
               Suisse
             </address>
-            <Link href="/contact" className="inline-block mt-4 bg-red hover:bg-red-dark text-white text-xs font-head font-700 uppercase tracking-wide px-4 py-2 rounded transition-colors">
+            <Link
+              href="/contact"
+              className="mt-5 inline-flex min-h-11 items-center justify-center rounded bg-red px-4 py-2.5 text-xs font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
               Nous contacter
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div className="flex flex-col items-start justify-between gap-4 text-xs text-white/45 sm:flex-row sm:items-center">
           <p>© 2026 Robalex Signalisation Sàrl - Tous droits réservés</p>
-          <div className="flex gap-6">
-            <Link href="/mentions-legales" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap gap-5">
+            <Link href="/mentions-legales" className="transition-colors hover:text-white">
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-white transition-colors">
+            <Link href="/politique-confidentialite" className="transition-colors hover:text-white">
               Politique de confidentialité
             </Link>
           </div>
@@ -99,10 +87,35 @@ export default function Footer() {
   )
 }
 
+function FooterColumn({ title, links }: { title: string; links: Array<{ href: string; label: string }> }) {
+  return (
+    <div>
+      <h4 className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">{title}</h4>
+      <ul className="flex flex-col gap-2.5">
+        {links.map((link) => (
+          <li key={link.href + link.label}>
+            <Link href={link.href} className="text-sm transition-colors hover:text-white">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function PhoneIcon() {
-  return <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z" /></svg>
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z" />
+    </svg>
+  )
 }
 
 function MailIcon() {
-  return <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" /></svg>
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+    </svg>
+  )
 }
