@@ -163,7 +163,7 @@ export default function HomePage() {
       <section className="section-pad bg-white" aria-labelledby="feux-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar pédagogique sur chantier routier à Lausanne' }}
+            image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar sur chantier routier à Lausanne' }}
             reverse
           >
             <SectionHeader
@@ -172,9 +172,9 @@ export default function HomePage() {
             <ul className="flex flex-col gap-3 mb-6">
               {[
                 "Nous prenons en charge l'installation, la maintenance et le retrait de vos feux de chantier.",
-                'Feux avec radar pédagogique intégré',
+                'Feux avec radar',
                 'Feux avec décompte de temps',
-                'Couverture dans tout le Canton de Vaud et en Suisse romande',
+                'Détection automatique des véhicules pour une gestion intelligente du trafic',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2 text-gray-dark text-sm">
                   <span className="text-red font-bold mt-0.5">✓</span> {item}

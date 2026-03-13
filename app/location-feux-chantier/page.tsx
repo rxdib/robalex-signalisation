@@ -58,9 +58,9 @@ export default function LocationFeux() {
             {[
               {
                 img: '/images/feux-radar-2.jpg',
-                alt: 'Feux de chantier avec radar pédagogique intégré sur chantier routier à Lausanne',
-                title: 'Feux avec radar pédagogique',
-                desc: 'Combinaison idéale pour les zones de travaux : régulation du trafic et sensibilisation à la vitesse en une seule solution.',
+                alt: 'Feux de chantier avec radar sur chantier routier à Lausanne',
+                title: 'Feux avec radar',
+                desc: 'Les feux détectent automatiquement les véhicules grâce à leur radar et peuvent ainsi gérer le trafic de façon intelligente.',
               },
               {
                 img: '/images/feux-decompte-1.jpg',
