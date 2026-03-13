@@ -78,7 +78,7 @@ const services: Array<{
     desc: "Nos équipes assurent le montage et l'installation de vos équipements sur site, qu'il s'agisse de panneaux permanents, de dispositifs temporaires ou d'interventions ponctuelles.",
     points: ['Pose de panneaux permanents','Installation de signalisation temporaire','Démontage et retrait du matériel','Interventions d\'urgence et délais courts'],
     reverse: false,
-    imageClassName: 'object-[42%_center]',
+    imageClassName: 'object-[58%_center]',
   },
 ]
 
