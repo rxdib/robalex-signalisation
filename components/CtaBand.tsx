@@ -7,7 +7,7 @@ export default function CtaBand() {
         <h2 className="mb-3 font-head text-3xl font-800 text-white lg:text-[2.1rem]">
           Un projet spécifique ou une demande particulière ?
         </h2>
-        <p className="mb-8 text-base text-white/90 sm:text-lg">
+        <p className="mb-8 text-base text-white sm:text-lg">
           Nous sommes à votre disposition pour répondre à vos questions et établir votre devis.
         </p>
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
