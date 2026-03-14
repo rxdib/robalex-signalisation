@@ -27,6 +27,7 @@ export default function FeatureBlock({
           alt={image.alt}
           width={600}
           height={420}
+          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px"
           className={`aspect-[10/7] w-full object-cover ${imageClassName ?? ''}`}
         />
         {imageBadge && (

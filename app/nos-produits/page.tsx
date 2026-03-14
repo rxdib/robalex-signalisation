@@ -274,6 +274,7 @@ function ProductGrid({ products }: { products: Product[] }) {
               alt={`${product.name} - Robalex Signalisation Lausanne`}
               width={400}
               height={225}
+              sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
               className="h-full w-full object-contain p-4"
             />
           </div>

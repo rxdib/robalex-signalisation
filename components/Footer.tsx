@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="mb-12 grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
           <div>
             <Link href="/" className="mb-5 block">
-              <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={156} height={40} />
+              <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={156} height={40} sizes="156px" />
             </Link>
             <p className="mb-5 max-w-xs text-sm leading-relaxed">
               Votre spécialiste en signalisation et sécurité routière pour toute la Suisse romande depuis plus de 20 ans.

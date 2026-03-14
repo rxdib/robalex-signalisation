@@ -45,7 +45,7 @@ export default function Nav() {
     <nav className="fixed inset-x-0 top-0 z-50 bg-navy shadow-card-lg" aria-label="Navigation principale">
       <div className="container flex h-20 items-center justify-between gap-4">
         <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex min-w-[120px] flex-shrink-0 sm:min-w-[160px]">
-          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={42} priority className="h-auto w-[120px] sm:w-[160px]" />
+          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={42} priority sizes="(max-width: 639px) 120px, 160px" className="h-auto w-[120px] sm:w-[160px]" />
         </Link>
 
         <ul className="hidden xl:flex flex-1 items-center justify-center gap-6">

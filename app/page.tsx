@@ -275,7 +275,7 @@ export default function HomePage() {
             {featuredProducts.map((p) => (
               <article key={p.name} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
                 <div className="aspect-[4/3] overflow-hidden bg-white">
-                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} className={`w-full h-full ${p.fit}`} />
+                  <Image src={p.img} alt={`${p.name} — Robalex Signalisation`} width={400} height={300} sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" className={`w-full h-full ${p.fit}`} />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <p className="text-red text-xs font-head font-700 uppercase tracking-wide mb-1">{p.cat}</p>

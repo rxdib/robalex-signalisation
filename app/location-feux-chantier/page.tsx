@@ -95,7 +95,7 @@ export default function LocationFeux() {
             ].map((f) => (
               <article key={f.title} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white transition-shadow hover:shadow-card">
                 <div className="aspect-video overflow-hidden">
-                  <Image src={f.img} alt={f.alt} width={500} height={280} className="w-full h-full object-cover" />
+                  <Image src={f.img} alt={f.alt} width={500} height={280} sizes="(max-width: 639px) 100vw, 50vw" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-head font-700 text-lg text-dark mb-2">{f.title}</h3>
@@ -168,7 +168,7 @@ export default function LocationFeux() {
                 aria-label={`${c.alt} - ouvre le site partenaire`}
                 className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-red/40 rounded"
               >
-                <Image src={c.src} alt={c.alt} width={110} height={55} className="object-contain max-h-14" />
+                <Image src={c.src} alt={c.alt} width={110} height={55} sizes="110px" className="object-contain max-h-14" />
               </a>
             ))}
           </div>

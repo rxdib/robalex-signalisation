@@ -34,6 +34,7 @@ export default function LogoMarquee({ logos }: { logos: Logo[] }) {
               alt={logo.alt}
               width={110}
               height={55}
+              sizes="110px"
               className="object-contain max-h-12 w-auto"
             />
           )
