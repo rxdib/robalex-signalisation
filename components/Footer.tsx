@@ -52,7 +52,7 @@ export default function Footer() {
           <FooterColumn title="Nos produits" links={productLinks} />
 
           <div>
-            <h4 className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">Adresse</h4>
+            <p className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">Adresse</p>
             <address className="not-italic text-sm leading-relaxed text-white/78">
               Robalex Signalisation Sàrl
               <br />
@@ -90,7 +90,7 @@ export default function Footer() {
 function FooterColumn({ title, links }: { title: string; links: Array<{ href: string; label: string }> }) {
   return (
     <div>
-      <h4 className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">{title}</h4>
+      <p className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">{title}</p>
       <ul className="flex flex-col gap-2.5">
         {links.map((link) => (
           <li key={link.href + link.label}>
