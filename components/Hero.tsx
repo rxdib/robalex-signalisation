@@ -1,8 +1,15 @@
 import Image from 'next/image'
 import SmartLink from './SmartLink'
 
+interface HeroBackgroundSource {
+  srcSet: string
+  type: string
+  media?: string
+}
+
 interface HeroProps {
   bgImage: string
+  bgSources?: HeroBackgroundSource[]
   bgPosition?: string
   bgFlip?: boolean
   badge?: string
@@ -12,21 +19,54 @@ interface HeroProps {
   secondaryCta?: { label: string; href: string }
 }
 
-export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, badge, title, subtitle, primaryCta, secondaryCta }: HeroProps) {
+export default function Hero({
+  bgImage,
+  bgSources,
+  bgPosition = 'center',
+  bgFlip = false,
+  badge,
+  title,
+  subtitle,
+  primaryCta,
+  secondaryCta,
+}: HeroProps) {
   return (
     <header className="relative flex min-h-[64vh] items-center overflow-hidden pt-20 sm:min-h-[72vh]" aria-label="En-tête principale">
       {/* Background */}
       <div className="absolute inset-0" aria-hidden="true">
-        <Image
-          src={bgImage}
-          alt=""
-          fill
-          priority
-          unoptimized
-          sizes="100vw"
-          className={`object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
-          style={{ objectPosition: bgPosition }}
-        />
+        {bgSources?.length ? (
+          <picture className="block h-full w-full">
+            {bgSources.map((source) => (
+              <source
+                key={`${source.type}-${source.media ?? 'default'}`}
+                srcSet={source.srcSet}
+                type={source.type}
+                media={source.media}
+              />
+            ))}
+            <img
+              src={bgImage}
+              alt=""
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className={`h-full w-full object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
+              style={{ objectPosition: bgPosition }}
+            />
+          </picture>
+        ) : (
+          <Image
+            src={bgImage}
+            alt=""
+            fill
+            priority
+            fetchPriority="high"
+            unoptimized
+            sizes="100vw"
+            className={`object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
+            style={{ objectPosition: bgPosition }}
+          />
+        )}
       </div>
       <div
         className="absolute inset-0"

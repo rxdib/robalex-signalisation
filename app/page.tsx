@@ -126,7 +126,10 @@ export default function HomePage() {
 
       {/* 1. Hero */}
       <Hero
-        bgImage="/images/triopan-bg.jpg"
+        bgImage="/images/optimized/triopan-bg-home.jpg"
+        bgSources={[
+          { srcSet: '/images/optimized/triopan-bg-home.webp', type: 'image/webp' },
+        ]}
         badge="Suisse romande"
         title={<>Votre expert en <span className="text-red">signalisation et sécurité routière</span></>}
         subtitle="Depuis plus de 20 ans, de la planification à l'installation, nous prenons en charge l'ensemble de vos besoins en signalisation et sécurité routière dans toute la Suisse romande."
@@ -176,7 +179,7 @@ export default function HomePage() {
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/autoroute-geneve.jpg', alt: 'Signalisation routière sur autoroute en Suisse romande par Robalex Signalisation' }}
+            image={{ src: '/images/optimized/autoroute-geneve-display.webp', alt: 'Signalisation routière sur autoroute en Suisse romande par Robalex Signalisation' }}
             imageBadge="+20 ans d'expertise terrain"
             dark
           >

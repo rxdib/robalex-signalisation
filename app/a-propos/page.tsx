@@ -48,7 +48,7 @@ export default function AProposPage() {
       <section className="section-pad">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/autoroute-geneve.jpg', alt: "Autoroute genevoise — terrain d'intervention de Robalex Signalisation en Suisse romande" }}
+            image={{ src: '/images/optimized/autoroute-geneve-display.webp', alt: "Autoroute genevoise — terrain d'intervention de Robalex Signalisation en Suisse romande" }}
             imageClassName="object-[42%_center]"
           >
             <SectionHeader badge="Notre histoire" title={<>Plus de 20 ans <span className="text-red">d&apos;expertise</span></>} />
