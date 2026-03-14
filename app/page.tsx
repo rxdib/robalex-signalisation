@@ -10,6 +10,7 @@ import LogoMarquee from '@/components/LogoMarquee'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from './seo'
 import { createWebPageSchema } from './schema'
+import { autorouteGeneveDisplayImage, homeHeroImage } from './imageVariants'
 
 const pageTitle = 'Signalisation et sécurité routière en Suisse romande'
 const pageDescription =
@@ -126,9 +127,11 @@ export default function HomePage() {
 
       {/* 1. Hero */}
       <Hero
-        bgImage="/images/optimized/triopan-bg-home.jpg"
+        bgImage={homeHeroImage.fallback}
+        bgImageSrcSet={homeHeroImage.jpgSrcSet}
+        bgImageSizes={homeHeroImage.sizes}
         bgSources={[
-          { srcSet: '/images/optimized/triopan-bg-home.webp', type: 'image/webp' },
+          { srcSet: homeHeroImage.webpSrcSet, type: 'image/webp', sizes: homeHeroImage.sizes },
         ]}
         badge="Suisse romande"
         title={<>Votre expert en <span className="text-red">signalisation et sécurité routière</span></>}
@@ -154,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. Expertises (3+2 grid) */}
-      <section className="section-pad" aria-labelledby="expertises-title">
+      <section className="section-pad section-deferred" aria-labelledby="expertises-title">
         <div className="container">
           <SectionHeader
             badge="Ce que nous faisons"
@@ -176,10 +179,16 @@ export default function HomePage() {
       </section>
 
       {/* 4. Votre spécialiste */}
-      <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
+      <section className="section-pad section-deferred bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/optimized/autoroute-geneve-display.webp', alt: 'Signalisation routière sur autoroute en Suisse romande par Robalex Signalisation' }}
+            image={{
+              src: autorouteGeneveDisplayImage.fallback,
+              srcSet: autorouteGeneveDisplayImage.jpgSrcSet,
+              sources: [{ srcSet: autorouteGeneveDisplayImage.webpSrcSet, type: 'image/webp', sizes: autorouteGeneveDisplayImage.sizes }],
+              sizes: autorouteGeneveDisplayImage.sizes,
+              alt: 'Signalisation routière sur autoroute en Suisse romande par Robalex Signalisation',
+            }}
             imageBadge="+20 ans d'expertise terrain"
             dark
           >
@@ -209,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. Ils nous font confiance */}
-      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
+      <section className="section-pad section-deferred bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises actives sur le terrain dans toute la Suisse romande." centered />
           <div className="mt-10">
@@ -219,7 +228,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Location feux promo */}
-      <section className="section-pad bg-white" aria-labelledby="feux-title">
+      <section className="section-pad section-deferred bg-white" aria-labelledby="feux-title">
         <div className="container">
           <FeatureBlock
             image={{ src: '/images/feux-radar-2.jpg', alt: 'Feux de chantier avec radar sur chantier routier à Lausanne' }}
@@ -249,7 +258,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. Triopan feature */}
-      <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
+      <section className="section-pad section-deferred bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
             image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure - Robalex Signalisation représentant officiel Suisse romande' }}
@@ -273,7 +282,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. Produits phares */}
-      <section className="section-pad bg-white" aria-labelledby="produits-title">
+      <section className="section-pad section-deferred bg-white" aria-labelledby="produits-title">
         <div className="container">
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -299,7 +308,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. Partenaires */}
-      <section className="section-pad bg-bg-light" aria-labelledby="partenaires-title">
+      <section className="section-pad section-deferred bg-bg-light" aria-labelledby="partenaires-title">
         <div className="container">
           <SectionHeader badge="Partenaires" title={<>Nos <span className="text-red">partenaires</span></>} subtitle="Des partenaires reconnus qui complètent notre offre en signalisation et sécurité routière." centered />
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">

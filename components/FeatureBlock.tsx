@@ -1,7 +1,23 @@
 import Image from 'next/image'
+import ResponsivePicture from './ResponsivePicture'
+
+interface FeatureImageSource {
+  srcSet: string
+  type: string
+  media?: string
+  sizes?: string
+}
 
 interface FeatureBlockProps {
-  image: { src: string; alt: string }
+  image: {
+    src: string
+    alt: string
+    srcSet?: string
+    sources?: FeatureImageSource[]
+    sizes?: string
+    width?: number
+    height?: number
+  }
   imageBadge?: string
   children: React.ReactNode   // text content (heading, paragraphs, list, CTA)
   reverse?: boolean
@@ -22,14 +38,29 @@ export default function FeatureBlock({
   return (
     <div className={`grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-10 lg:gap-14 ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}>
       <div className={`relative overflow-hidden rounded-xl bg-bg-light shadow-card-lg ${imageWrapperClassName ?? ''}`}>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={600}
-          height={420}
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px"
-          className={`aspect-[10/7] w-full object-cover ${imageClassName ?? ''}`}
-        />
+        {image.srcSet || image.sources ? (
+          <ResponsivePicture
+            src={image.src}
+            srcSet={image.srcSet}
+            sources={image.sources}
+            sizes={image.sizes ?? '(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px'}
+            width={image.width ?? 600}
+            height={image.height ?? 420}
+            alt={image.alt}
+            loading="lazy"
+            fetchPriority="low"
+            className={`aspect-[10/7] w-full object-cover ${imageClassName ?? ''}`}
+          />
+        ) : (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width ?? 600}
+            height={image.height ?? 420}
+            sizes={image.sizes ?? '(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px'}
+            className={`aspect-[10/7] w-full object-cover ${imageClassName ?? ''}`}
+          />
+        )}
         {imageBadge && (
           <div className="absolute bottom-4 left-4 bg-red text-white text-xs font-head font-700 uppercase tracking-wide px-3 py-1.5 rounded">
             {imageBadge}

@@ -1,14 +1,17 @@
-import Image from 'next/image'
 import SmartLink from './SmartLink'
+import ResponsivePicture from './ResponsivePicture'
 
 interface HeroBackgroundSource {
   srcSet: string
   type: string
   media?: string
+  sizes?: string
 }
 
 interface HeroProps {
   bgImage: string
+  bgImageSrcSet?: string
+  bgImageSizes?: string
   bgSources?: HeroBackgroundSource[]
   bgPosition?: string
   bgFlip?: boolean
@@ -21,6 +24,8 @@ interface HeroProps {
 
 export default function Hero({
   bgImage,
+  bgImageSrcSet,
+  bgImageSizes = '100vw',
   bgSources,
   bgPosition = 'center',
   bgFlip = false,
@@ -34,39 +39,21 @@ export default function Hero({
     <header className="relative flex min-h-[64vh] items-center overflow-hidden pt-20 sm:min-h-[72vh]" aria-label="En-tête principale">
       {/* Background */}
       <div className="absolute inset-0" aria-hidden="true">
-        {bgSources?.length ? (
-          <picture className="block h-full w-full">
-            {bgSources.map((source) => (
-              <source
-                key={`${source.type}-${source.media ?? 'default'}`}
-                srcSet={source.srcSet}
-                type={source.type}
-                media={source.media}
-              />
-            ))}
-            <img
-              src={bgImage}
-              alt=""
-              fetchPriority="high"
-              loading="eager"
-              decoding="async"
-              className={`h-full w-full object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
-              style={{ objectPosition: bgPosition }}
-            />
-          </picture>
-        ) : (
-          <Image
-            src={bgImage}
-            alt=""
-            fill
-            priority
-            fetchPriority="high"
-            unoptimized
-            sizes="100vw"
-            className={`object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
-            style={{ objectPosition: bgPosition }}
-          />
-        )}
+        <ResponsivePicture
+          src={bgImage}
+          srcSet={bgImageSrcSet}
+          sizes={bgImageSizes}
+          sources={bgSources}
+          alt=""
+          width={1780}
+          height={632}
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+          pictureClassName="block h-full w-full"
+          className={`h-full w-full object-cover ${bgFlip ? '-scale-x-100' : ''}`}
+          style={{ objectPosition: bgPosition }}
+        />
       </div>
       <div
         className="absolute inset-0"

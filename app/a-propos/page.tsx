@@ -6,6 +6,7 @@ import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from '@/app/seo'
 import { createAboutPageSchema, createBreadcrumbSchema } from '@/app/schema'
+import { autorouteGeneveDisplayImage } from '@/app/imageVariants'
 
 const pageTitle = 'À propos'
 const pageDescription =
@@ -48,7 +49,13 @@ export default function AProposPage() {
       <section className="section-pad">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/optimized/autoroute-geneve-display.webp', alt: "Autoroute genevoise — terrain d'intervention de Robalex Signalisation en Suisse romande" }}
+            image={{
+              src: autorouteGeneveDisplayImage.fallback,
+              srcSet: autorouteGeneveDisplayImage.jpgSrcSet,
+              sources: [{ srcSet: autorouteGeneveDisplayImage.webpSrcSet, type: 'image/webp', sizes: autorouteGeneveDisplayImage.sizes }],
+              sizes: autorouteGeneveDisplayImage.sizes,
+              alt: "Autoroute genevoise — terrain d'intervention de Robalex Signalisation en Suisse romande",
+            }}
             imageClassName="object-[42%_center]"
           >
             <SectionHeader badge="Notre histoire" title={<>Plus de 20 ans <span className="text-red">d&apos;expertise</span></>} />
