@@ -39,7 +39,7 @@ export default function LogoMarquee({ logos }: { logos: Logo[] }) {
   const track = shouldRenderTrack ? [...logos, ...logos] : []
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden" aria-label="Logos de nos clients">
+    <div ref={containerRef} className="relative overflow-hidden" role="group" aria-label="Logos de nos clients">
       {/* Soft fade on both edges */}
       <div
         className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
