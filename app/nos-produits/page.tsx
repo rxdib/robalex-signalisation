@@ -193,11 +193,6 @@ const permProducts: Product[] = [
 
 const lightProducts: Product[] = [
   {
-    img: '/images/Liste produit/Signalisation lumineuse/Feu-bicolore.png',
-    name: 'Feux bicolores',
-    desc: 'Feux de signalisation fixes bicolores pour installation en sortie ou entrée de parking et chemins privés.',
-  },
-  {
     img: '/images/Liste produit/Signalisation lumineuse/Radar-pedagogique.jpg',
     name: 'Radars pédagogiques',
     desc: "Radar d'affichage de vitesse en temps réel, pour sensibiliser les conducteurs dans les zones sensibles.",
@@ -211,6 +206,11 @@ const lightProducts: Product[] = [
     img: '/images/Liste produit/Signalisation lumineuse/Triflash.avif',
     name: 'Triflash',
     desc: 'Signal clignotant LED pour fixation sur véhicule, entièrement personnalisable.',
+  },
+  {
+    img: '/images/Liste produit/Signalisation lumineuse/Feu-bicolore.png',
+    name: 'Feux bicolores',
+    desc: 'Feux de signalisation fixes bicolores pour installation en sortie ou entrée de parking et chemins privés.',
   },
 ]
 

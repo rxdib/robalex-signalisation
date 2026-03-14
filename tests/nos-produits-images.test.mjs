@@ -64,3 +64,16 @@ test('nos produits page uses the updated catalogue wording', () => {
     assert.ok(!pageSource.includes(label), `Expected outdated wording to be removed: ${label}`)
   }
 })
+
+test('radars pédagogiques appears before feux bicolores in the light products section', () => {
+  const pageSource = readFileSync(pagePath, 'utf8')
+  const lightProductsStart = pageSource.indexOf('const lightProducts')
+  const chantierProductsStart = pageSource.indexOf('const chantierProducts')
+  const lightProductsSource = pageSource.slice(lightProductsStart, chantierProductsStart)
+  const radarIndex = lightProductsSource.indexOf('Radars pédagogiques')
+  const feuxIndex = lightProductsSource.indexOf('Feux bicolores')
+
+  assert.ok(radarIndex !== -1, 'Expected Radars pédagogiques in light products')
+  assert.ok(feuxIndex !== -1, 'Expected Feux bicolores in light products')
+  assert.ok(radarIndex < feuxIndex, 'Expected Radars pédagogiques before Feux bicolores')
+})
