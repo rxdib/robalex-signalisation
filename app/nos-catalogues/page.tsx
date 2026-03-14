@@ -10,7 +10,7 @@ import { createBreadcrumbSchema, createCollectionPageSchema } from '@/app/schema
 
 const pageTitle = 'Nos catalogues'
 const pageDescription =
-  'Consultez ou téléchargez nos catalogues Triopan, Robalex et notre liste des signaux routiers pour préparer vos commandes en signalisation et sécurité routière.'
+  'Consultez ou téléchargez nos catalogues Triopan, Robalex Signalisation Sàrl et notre référence pratique des signaux routiers pour préparer vos commandes.'
 
 export const metadata: Metadata = buildMetadata({
   title: pageTitle,
@@ -20,30 +20,88 @@ export const metadata: Metadata = buildMetadata({
   imageAlt: 'Catalogues de signalisation et sécurité routière',
 })
 
-const mainCatalogues = [
+type CatalogueCard = {
+  badge: string
+  title: string
+  kicker: string
+  description: string
+  image: string
+  imageAlt: string
+  href: string
+  buttonLabel: string
+  tone: 'red' | 'navy'
+}
+
+const mainCatalogues: CatalogueCard[] = [
   {
     badge: 'Catalogue Triopan',
-    title: 'Catalogue Signaux pliants Triopan',
-    description: "En tant que représentant officiel de Triopan SA pour toute la Suisse romande, ce catalogue occupe une place centrale dans notre offre. Il couvre l'intégralité des signaux pliants, accessoires et produits spécifiques Triopan.",
-    points: ['Signaux pliants', 'Accessoires Triopan', "Produits adaptés aux interventions d'urgence"],
+    title: 'Catalogue Triopan',
+    kicker: 'Signaux pliants',
+    description:
+      "En tant que représentant officiel de Triopan SA en Suisse romande, nous mettons à disposition le catalogue de référence pour les signaux pliants et accessoires Triopan.",
     image: '/images/catalogue-triopan-cover.jpg',
-    imageAlt: 'Couverture du catalogue signaux pliants Triopan',
+    imageAlt: 'Couverture du catalogue Triopan',
     href: '/catalogues/catalogue-triopan.pdf',
     buttonLabel: 'Télécharger le catalogue',
-    tone: 'red' as const,
+    tone: 'red',
   },
   {
-    badge: 'Gamme complète',
-    title: 'Catalogue Signalisation & Sécurité routière',
-    description: "Notre catalogue maison couvre l'ensemble de notre gamme de produits de signalisation et de sécurité routière: panneaux OSR, cônes, barrières, miroirs, lampes et matériel de chantier.",
-    points: ['Panneaux OSR R1, R2, R3', 'Matériel de chantier complet', 'Dispositifs de sécurité et mobilier urbain'],
+    badge: 'Robalex Signalisation Sàrl',
+    title: 'Catalogue 2025',
+    kicker: 'Signalisation et sécurité routière',
+    description:
+      'Notre catalogue couvre l’ensemble de notre gamme de produits de signalisation et sécurité routière : flashs, panneaux, cônes, barrières, miroirs, mobilier urbain, balisage et matériel de chantier.',
     image: '/images/catalogue-robalex-cover.png',
-    imageAlt: 'Couverture du catalogue Robalex Signalisation',
+    imageAlt: 'Couverture du catalogue 2025 Robalex Signalisation Sàrl',
     href: '/catalogues/catalogue-robalex.pdf',
     buttonLabel: 'Télécharger le catalogue',
-    tone: 'navy' as const,
+    tone: 'navy',
   },
 ]
+
+function CatalogueCard({ catalogue }: { catalogue: CatalogueCard }) {
+  return (
+    <article className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white shadow-card transition-shadow hover:shadow-card-lg">
+      <div className="aspect-[3/4] overflow-hidden bg-bg-light">
+        <Image
+          src={catalogue.image}
+          alt={catalogue.imageAlt}
+          width={400}
+          height={533}
+          sizes="(max-width: 767px) 100vw, 50vw"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-6">
+        <span
+          className={`mb-3 inline-block rounded px-3 py-1 text-xs font-head font-700 uppercase tracking-wide text-white ${
+            catalogue.tone === 'red' ? 'bg-red' : 'bg-navy'
+          }`}
+        >
+          {catalogue.badge}
+        </span>
+        <h2 className="mb-2 font-head text-xl font-800 text-dark">{catalogue.title}</h2>
+        <p className="mb-4 text-xs font-head font-700 uppercase tracking-[0.22em] text-gray-dark">
+          {catalogue.kicker}
+        </p>
+        <p className="mb-6 flex-1 text-sm leading-relaxed text-gray-dark">{catalogue.description}</p>
+        <a
+          href={catalogue.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${catalogue.buttonLabel} - ouverture dans un nouvel onglet`}
+          className={`block rounded px-6 py-3 text-center text-sm font-head font-700 uppercase tracking-wide text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+            catalogue.tone === 'red'
+              ? 'bg-red hover:bg-red-dark focus-visible:outline-red'
+              : 'bg-navy hover:bg-navy-dark focus-visible:outline-navy'
+          }`}
+        >
+          {catalogue.buttonLabel}
+        </a>
+      </div>
+    </article>
+  )
+}
 
 export default function NosCatalogues() {
   return (
@@ -65,7 +123,11 @@ export default function NosCatalogues() {
       <Hero
         bgImage="/images/triopan-bg.jpg"
         badge="Nos catalogues"
-        title={<>Nos <span className="text-red">catalogues</span> de signalisation</>}
+        title={
+          <>
+            Nos <span className="text-red">catalogues</span> de signalisation
+          </>
+        }
         subtitle="Consultez ou téléchargez nos catalogues pour préparer vos commandes et découvrir l'ensemble de notre gamme."
         primaryCta={{ label: 'Nous contacter', href: '/contact' }}
       />
@@ -74,76 +136,48 @@ export default function NosCatalogues() {
         <div className="container">
           <SectionHeader
             badge="Nos publications"
-            title={<>Les catalogues <span className="text-red">essentiels</span></>}
-            subtitle="Deux catalogues pour retrouver rapidement les produits Triopan et l'ensemble de notre gamme en signalisation et sécurité routière."
+            title={
+              <>
+                Le catalogue <span className="text-red">essentiel</span>
+              </>
+            }
+            subtitle="Deux catalogues pour retrouver rapidement les signaux pliants Triopan et l'ensemble de notre gamme de signalisation et sécurité routière."
             centered
           />
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
             {mainCatalogues.map((catalogue) => (
-              <article key={catalogue.title} className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white shadow-card transition-shadow hover:shadow-card-lg">
-                <div className="aspect-[3/4] overflow-hidden bg-bg-light">
-                  <Image
-                    src={catalogue.image}
-                    alt={catalogue.imageAlt}
-                    width={400}
-                    height={533}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <span className={`mb-3 inline-block rounded px-3 py-1 text-xs font-head font-700 uppercase tracking-wide text-white ${catalogue.tone === 'red' ? 'bg-red' : 'bg-navy'}`}>
-                    {catalogue.badge}
-                  </span>
-                  <h2 className="mb-3 font-head text-xl font-800 text-dark">{catalogue.title}</h2>
-                  <p className="mb-4 text-sm leading-relaxed text-gray-dark">{catalogue.description}</p>
-                  <ul className="mb-6 flex flex-1 flex-col gap-2 text-sm text-gray-dark">
-                    {catalogue.points.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <span className="font-bold text-red">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={catalogue.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${catalogue.buttonLabel} - ouverture dans un nouvel onglet`}
-                    className={`block rounded px-6 py-3 text-center text-sm font-head font-700 uppercase tracking-wide text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${catalogue.tone === 'red' ? 'bg-red hover:bg-red-dark focus-visible:outline-red' : 'bg-navy hover:bg-navy-dark focus-visible:outline-navy'}`}
-                  >
-                    {catalogue.buttonLabel}
-                  </a>
-                </div>
-              </article>
+              <CatalogueCard key={catalogue.title} catalogue={catalogue} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-pad bg-bg-light" aria-label="Référence des signaux routiers">
+      <section className="section-pad bg-bg-light" aria-label="Référence pratique des signaux routiers">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/catalogue-robalex-cover.png', alt: 'Couverture de la liste des signaux routiers proposée par Robalex Signalisation' }}
-            imageClassName="object-contain bg-white p-6"
-            imageWrapperClassName="bg-white"
+            image={{
+              src: '/images/catalogue-signaux-routiers-cover.png',
+              alt: 'Première page de la référence Robalex signaux routiers',
+            }}
+            imageClassName="object-contain bg-white p-4"
+            imageWrapperClassName="border border-gray-light bg-white"
             reverse
           >
             <SectionHeader
               badge="Référence pratique"
-              title={<>Liste des <span className="text-red">signaux routiers</span></>}
-              subtitle="Un support simple pour identifier le panneau recherché et préparer votre demande."
+              title={
+                <>
+                  Robalex, <span className="text-red">signaux routiers</span>
+                </>
+              }
+              subtitle="Un support simple pour retrouver rapidement presque tous les signaux routiers OSR."
             />
             <p className="mb-4 text-gray-dark">
-              Ce document regroupe l&apos;ensemble des signaux routiers disponibles à la commande chez Robalex Signalisation: interdiction, obligation, danger, indication et localisation.
+              Ce support maison rassemble presque tous les signaux routiers OSR dans un format clair et facile à consulter.
             </p>
-            <ul className="mb-6 flex flex-col gap-2 text-sm text-gray-dark">
-              {['Tous les symboles OSR', 'Tous les formats disponibles', 'Demande sur devis selon votre besoin'].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="font-bold text-red">✓</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mb-6 text-gray-dark">
+              Pratique pour rechercher rapidement un signal, vérifier une référence et garder une base visuelle utile à portée de main au bureau comme sur chantier.
+            </p>
             <a
               href="/catalogues/Robalex_Signaux_Routiers.pdf"
               target="_blank"
