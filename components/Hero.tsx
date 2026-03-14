@@ -22,6 +22,7 @@ export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, b
           alt=""
           fill
           priority
+          unoptimized
           sizes="100vw"
           className={`object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
           style={{ objectPosition: bgPosition }}
