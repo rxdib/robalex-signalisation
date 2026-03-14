@@ -36,3 +36,31 @@ test('nos produits page references every product image in the catalogue folders'
 
   assert.deepEqual(missingImages, [])
 })
+
+test('nos produits page uses the updated catalogue wording', () => {
+  const pageSource = readFileSync(pagePath, 'utf8')
+  const expectedLabels = [
+    'Flash Fireball LED',
+    'Eflare EN800G / UB700G LED',
+    'Panneaux de signalisation routière OSR',
+    'Balises Tornado Flex',
+    'Support vertical trilatte pliable',
+    "interventions d'urgence",
+  ]
+  const outdatedLabels = [
+    'Lampe flash Fireball',
+    'eFlare AT700',
+    'Panneaux de signalisation OSR',
+    'Balises Tornado flexibles',
+    'Supports trilatte',
+    'interventions d urgence',
+  ]
+
+  for (const label of expectedLabels) {
+    assert.ok(pageSource.includes(label), `Expected updated wording: ${label}`)
+  }
+
+  for (const label of outdatedLabels) {
+    assert.ok(!pageSource.includes(label), `Expected outdated wording to be removed: ${label}`)
+  }
+})

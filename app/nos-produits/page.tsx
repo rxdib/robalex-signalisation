@@ -29,135 +29,135 @@ const tempProducts: Product[] = [
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Signaux-pliants-Triopan.jpg',
     name: 'Signaux pliants Triopan',
-    desc: 'Signalisation pliable, légère et très visible pour chantiers, urgences et interventions mobiles.',
+    desc: 'Signaux pliants Triopan entièrement personnalisables, disponibles dans toutes dimensions et classes de rétro-réfléchissement.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Fireball_V5.png',
-    name: 'Lampe flash Fireball',
-    desc: "Lampe clignotante compacte pour renforcer la visibilité des zones d'intervention et de danger.",
+    name: 'Flash Fireball LED',
+    desc: 'Lampe flash lumineuse de jour comme de nuit, à piles AA, avec fixation directe sur Triopan et support magnétique.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Helios_Blaze_v5.png',
-    name: 'Lampe Helios Blaze',
-    desc: 'Feu de balisage puissant conçu pour les chantiers exposés et les interventions de nuit.',
+    name: 'Helios Blaze LED',
+    desc: 'Lampe flash lumineuse de jour comme de nuit, à piles AA, avec fixation directe sur Triopan et support magnétique.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Star-Flash-610.png',
-    name: 'Star Flash 610',
-    desc: 'Lampe de signalisation robuste pour sécuriser rapidement un périmètre de travaux.',
+    name: 'Star-Flash LED 610',
+    desc: 'Lampe flash lumineuse de jour comme de nuit, à piles 4R25, avec grande autonomie et fixation directe sur Triopan.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/PowerFlare.png',
-    name: 'PowerFlare',
-    desc: "Balise lumineuse LED rechargeable pour interventions d'urgence et sécurisation ponctuelle.",
+    name: 'PowerFlare LED',
+    desc: "Lampe flash rechargeable ultra-compacte et magnétique, idéale pour les interventions rapides.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Eflare_AT700.png',
-    name: 'eFlare AT700',
-    desc: "Balise de sécurité compacte pour véhicules d'intervention, dépannages et zones à risque.",
+    name: 'Eflare EN800G / UB700G LED',
+    desc: 'Lampe flash lumineuse de jour comme de nuit, avec fixation sur Triopan ou cône via adaptateur.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Cône-de-signalisation.webp',
     name: 'Cônes de signalisation',
-    desc: 'Délimitation simple et rapide des zones de travaux, déviations et interventions ponctuelles.',
+    desc: 'Cônes de signalisation orange pour chantier, disponibles en plusieurs dimensions et classes de rétro-réflexion.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Quickcone_bag-of-4.jpeg',
     name: 'QuickCone',
-    desc: "Cône pliable à fort impact visuel, compact au transport et rapide à déployer pour les interventions d'urgence.",
+    desc: "Balise de signalisation rapide, pliable et compacte au transport, idéale pour les interventions d'urgence.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Bâton-led.jpg',
-    name: 'Bâton LED de signalisation',
-    desc: "Guidage manuel lumineux pour circulation alternée, événements et interventions d'urgence.",
+    name: 'Bâton lumineux LED',
+    desc: 'Bâton de guidage LED, à piles ou rechargeable, disponible en plusieurs dimensions et couleurs.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/barriere-extensible.webp',
-    name: 'Barrière extensible aluminium',
-    desc: 'Barrière légère et déployable pour isoler rapidement un accès ou une zone de travail.',
+    name: 'Barrière extensible aluminium R2',
+    desc: "Barrière pliable autonome en aluminium avec bandes réfléchissantes R2 rouge/blanc, ouverture jusqu'à 5 m.",
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Barrière_Vauban.png',
-    name: 'Barrière mobile Vauban',
-    desc: 'Barrière de canalisation robuste pour chantiers, manifestations et gestion de flux piétons.',
+    name: 'Barrière Vauban',
+    desc: 'Barrière mobile Vauban en acier zingué, longueur 2,5 mètres, pour la sécurisation des chantiers ou manifestations.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/ruban-de-barrage-500m.png',
-    name: 'Ruban de barrage 500 m',
-    desc: 'Ruban rouge-blanc très résistant pour délimiter rapidement un périmètre de travaux ou de danger.',
+    name: 'Ruban de barrage rouge/blanc 500 m',
+    desc: 'Ruban de barrage rouge/blanc très résistant, 500 m × 7,50 cm, pour la délimitation de périmètres. Entièrement personnalisable.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Ruban-de-masquage.PNG',
-    name: 'Ruban de masquage',
-    desc: 'Ruban pratique pour protéger, masquer ou marquer temporairement une zone de chantier.',
+    name: 'Bande à masquer',
+    desc: 'Bande de masquage pour annuler temporairement un panneau, disponible en plusieurs dimensions.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Bâche-forestière.jpeg',
-    name: 'Bâche forestière',
-    desc: 'Balisage visuel pour chemins forestiers, zones naturelles et interventions extérieures.',
+    name: 'Bâche forestière de balisage',
+    desc: 'Toile de signalisation pour chemins forestiers et zones naturelles, à haute résistance aux intempéries.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Sac-de-sable-15kg.png',
     name: 'Sac de sable 15 kg',
-    desc: 'Lestage simple et efficace pour maintenir panneaux, supports et balisage temporaire.',
+    desc: 'Sac de lestage 15 kg avec sangle pour le maintien de panneaux, balises et supports temporaires.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Pile-4R25-7AH.jpg',
-    name: 'Pile 4R25 7Ah',
-    desc: 'Alimentation fiable pour lampes de chantier et équipements de signalisation autonomes.',
+    name: 'Pile 4R25 - 6V',
+    desc: 'Pile standard 4R25 - 6V pour lampes de chantier et feux flash de signalisation.',
   },
 ]
 
 const permProducts: Product[] = [
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Panneau-2.30.1(G)-vitesse-max-50.png',
-    name: 'Panneaux de signalisation OSR',
-    desc: 'Panneaux permanents pour limitation, prescription, danger et indication sur voirie.',
+    name: 'Panneaux de signalisation routière OSR',
+    desc: 'Panneaux officiels OSR en aluminium R2 : danger, prescription, indication et direction, dans toutes dimensions.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Panneau-mise-a-ban.jpg',
     name: 'Panneaux de mise à ban',
-    desc: 'Signalisation claire pour accès privés, parkings réservés et sites soumis à restriction.',
+    desc: 'Signal « Interdiction de stationner » 2.50 avec texte du juge de paix sur mesure.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/plaque-de-rue.jpg',
-    name: 'Plaques de rue',
-    desc: "Plaques de rue personnalisées en fonte d'aluminium pour quartiers, bâtiments publics et signalétique locale.",
+    name: "Plaques de rue en fonte d'aluminium",
+    desc: "Plaques de rue en fonte d'aluminium, entièrement personnalisables.",
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Miroir-signalisation.jpg',
-    name: 'Miroirs de signalisation',
-    desc: 'Améliorent la visibilité aux carrefours et sorties avec versions normales ou anti-givre selon le site.',
+    name: 'Miroirs routiers de signalisation',
+    desc: 'Miroirs routiers en inox à cadre réfléchissant rouge/blanc, version normale ou libre de glace, disponibles dans toutes dimensions.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Barrière-piéton.JPEG',
-    name: 'Barrières piétonnes',
-    desc: 'Protection et guidage des usagers dans les espaces publics, écoles et zones sensibles.',
+    name: 'Barrières-arceaux piétonnes',
+    desc: 'Arceaux de protection en acier zingué Ø 60 mm pour la sécurisation des trottoirs et zones piétonnes.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/borne-ilot.png',
     name: "Bornes d'îlot",
-    desc: 'Équipement de canalisation pour îlots directionnels, séparateurs et aménagements routiers.',
+    desc: "Bornes d'îlot réfléchissantes en acier ou PVC, disponibles avec signal 2.34 intégré.",
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Potelet-flexible (Pole Cone).png',
-    name: 'Potelets flexibles',
-    desc: 'Délimitent les voies, zones piétonnes et espaces à protéger sans gêner la circulation.',
+    name: 'Potelets flexibles à mémoire de forme',
+    desc: 'Potelets flexibles à mémoire de forme avec bandes réfléchissantes, disponibles dans plusieurs couleurs et dimensions.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Ralentisseur.png',
     name: 'Ralentisseurs',
-    desc: 'Solutions de modération de vitesse pour zones résidentielles, parkings et sites privés.',
+    desc: 'Ralentisseurs de vitesse 20 ou 30 km/h en PVC jaune et noir.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Piquet-a-neige.PNG',
     name: 'Piquets à neige',
-    desc: 'Repérage hivernal des bords de route et des zones sensibles exposées à la neige.',
+    desc: 'Piquets à neige Ø 40 à 50 mm, orange ou bleus, avec bande réfléchissante R2, hauteur de 1,50 à 2 m.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Poteau-balisage-triangulaire.jpg',
-    name: 'Poteaux de balisage',
-    desc: 'Supports de repérage et de guidage pour alignements, îlots et aménagements latéraux.',
+    name: 'Balises de route',
+    desc: 'Balises de route en PVC triangulaires ou rondes avec catadioptres, pour bords de chaussée.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
@@ -166,28 +166,28 @@ const permProducts: Product[] = [
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rond.PNG',
-    name: 'Cadres ronds',
-    desc: 'Cadres adaptés aux panneaux circulaires pour une fixation durable et propre.',
+    name: 'Cadres ronds pour panneaux circulaires',
+    desc: 'Cadres ronds en acier galvanisé Ø 40 ou 60 cm, à rails, manchon ou soudés sur tube Ø 60 mm.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-triangulaire.png',
-    name: 'Cadres triangulaires',
-    desc: 'Cadres pour panneaux de danger assurant un montage stable et précis.',
+    name: 'Cadres triangulaires pour panneaux de danger',
+    desc: 'Cadres triangulaires en acier galvanisé 60 ou 90 cm, à rails, manchon ou soudés sur tube Ø 60 mm.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-octogonal.png',
-    name: 'Cadres octogonaux',
-    desc: 'Supports dédiés aux panneaux octogonaux pour une installation soignée sur site.',
+    name: 'Cadres octogonaux STOP',
+    desc: 'Cadres octogonaux en acier galvanisé 50 ou 60 cm, à rails, manchon ou soudés sur tube Ø 60 mm.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rectangulaire.PNG',
-    name: 'Cadres rectangulaires',
-    desc: "Cadres standards pour panneaux d'indication et signalétique permanente.",
+    name: 'Cadres rectangulaires à brides ou rails',
+    desc: 'Cadres rectangulaires en acier galvanisé 35x50, 50x70 ou 50x90 cm, à rails, manchon ou soudés sur tube Ø 60 mm.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rectangulaire-soudé.PNG',
-    name: 'Cadres rectangulaires soudés',
-    desc: 'Version renforcée pour panneaux de plus grand format et montage durable.',
+    name: 'Cadres rectangulaires soudés sur tube',
+    desc: 'Cadres rectangulaires en acier galvanisé, soudés sur tube Ø 60 mm de hauteur 2,50 ou 3 m.',
   },
 ]
 
@@ -195,22 +195,22 @@ const lightProducts: Product[] = [
   {
     img: '/images/Liste produit/Signalisation lumineuse/Feu-bicolore.png',
     name: 'Feux bicolores',
-    desc: 'Gestion alternée du trafic pour chantiers, accès temporaires et passages régulés.',
+    desc: 'Feux de signalisation fixes bicolores pour installation en sortie ou entrée de parking et chemins privés.',
   },
   {
     img: '/images/Liste produit/Signalisation lumineuse/Radar-pedagogique.jpg',
     name: 'Radars pédagogiques',
-    desc: 'Affichage de la vitesse en temps réel pour sensibiliser les conducteurs dans les zones sensibles.',
+    desc: "Radar d'affichage de vitesse en temps réel, pour sensibiliser les conducteurs dans les zones sensibles.",
   },
   {
     img: '/images/Liste produit/Signalisation lumineuse/Signaux-dynamique.jpg',
     name: 'Signaux dynamiques',
-    desc: 'Panneaux lumineux pour messages variables, alertes temporaires et information des usagers.',
+    desc: 'Panneaux lumineux LED pour messages variables, alertes temporaires et information des usagers en temps réel.',
   },
   {
     img: '/images/Liste produit/Signalisation lumineuse/Triflash.avif',
     name: 'Triflash',
-    desc: 'Signal lumineux clignotant pour renforcer la visibilité des points singuliers et des dangers.',
+    desc: 'Signal clignotant LED pour fixation sur véhicule, entièrement personnalisable.',
   },
 ]
 
@@ -218,42 +218,42 @@ const chantierProducts: Product[] = [
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Triopan-1.14-construction-90cm-R2.webp',
     name: 'Triopan 1.14 Construction 90 cm R2',
-    desc: 'Signal pliant de chantier haute visibilité pour travaux de voirie et balisage temporaire.',
+    desc: 'Signal pliant Triopan « Construction » 90 cm R2, 3 faces 1.14, complet avec étui bleu de transport.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Balise-de-signalisation-flèche.png',
-    name: 'Balises directionnelles à flèche',
-    desc: 'Guidage visuel des usagers pour déviations, contournements et rétrécissements de voie.',
+    name: 'Balise de signalisation R2',
+    desc: 'Balise de signalisation R2 pour déviations, contournements ou rétrécissements de voie.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Balise-tornado-flexible.jpg',
-    name: 'Balises Tornado flexibles',
-    desc: 'Balises souples et résistantes pour séparer les flux et sécuriser les zones de chantier.',
+    name: 'Balises Tornado Flex',
+    desc: 'Balise souple 75 cm avec bandes hachurées ou fléchées R2, résistante aux chocs et au renversement.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Lampe-chantier.png',
     name: 'Lampes de chantier',
-    desc: 'Éclairage de balisage pour rendre les obstacles et zones de travaux visibles de jour comme de nuit.',
+    desc: 'Lampes de chantier sur pile ou solaires, avec bride de fixation.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Flash-sur-cone.png',
     name: 'Flash sur cône',
-    desc: "Feu flash orange à fixer sur cône pour renforcer la visibilité d'une zone d'intervention ou de chantier.",
+    desc: "Flash LED à grand diamètre, à fixer sur cône pour renforcer la visibilité d'une zone d'intervention ou de chantier.",
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/latte-barrage.png',
-    name: 'Lattes de barrage rouge-blanc',
-    desc: 'Balisage horizontal simple et efficace pour fermer une zone et structurer le chantier.',
+    name: 'Lattes de barrage rouge/blanc R2',
+    desc: 'Lattes de barrage en bois, 3 ou 4 m, avec bandes réfléchissantes R2 rouge/blanc pour la fermeture de zone.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Socle-28kg-recyclé.png',
-    name: 'Socles 28 kg recyclés',
-    desc: 'Socles lourds et stables pour maintenir balises, lampes et supports en toute sécurité.',
+    name: 'Socles 28 kg en PVC recyclé',
+    desc: 'Socles 28 kg en PVC recyclé noir, empilables et incassables, pour balises, lampes et tubes Ø 42/60 mm.',
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Support-trilatte.jpeg',
-    name: 'Supports trilatte',
-    desc: 'Support pratique pour panneaux temporaires et signalisation avancée de chantier.',
+    name: 'Support vertical trilatte pliable',
+    desc: 'Support pliable en acier pour 3 lattes de barrage, idéal pour la signalisation avancée et la fermeture de chantier.',
   },
 ]
 
@@ -342,7 +342,7 @@ export default function NosProduits() {
                 Matériel pour <span className="text-red">chantiers et urgences</span>
               </>
             }
-            subtitle="Tout le matériel nécessaire pour le balisage temporaire de vos chantiers, interventions d urgence et événements."
+            subtitle="Tout le matériel nécessaire pour le balisage temporaire de vos chantiers, interventions d'urgence et événements."
           />
           <ProductGrid products={tempProducts} />
           <CatalogLink />
