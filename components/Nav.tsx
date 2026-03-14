@@ -101,8 +101,8 @@ export default function Nav() {
       >
         <div className="flex min-h-full flex-col px-6 py-6">
           <div className="mb-6 border-b border-white/10 pb-5">
-            <p className="mb-2 text-[11px] font-head font-700 uppercase tracking-[0.18em] text-white/45">Navigation</p>
-            <p className="max-w-[18rem] text-sm leading-relaxed text-white/70">
+            <p className="mb-2 text-[11px] font-head font-700 uppercase tracking-[0.18em] text-white/65">Navigation</p>
+            <p className="max-w-[18rem] text-sm leading-relaxed text-white/80">
               Accédez rapidement aux pages principales, à nos catalogues et à la demande de devis.
             </p>
           </div>

@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import SmartLink from './SmartLink'
+
 interface HeroProps {
   bgImage: string
   bgPosition?: string
@@ -13,11 +16,17 @@ export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, b
   return (
     <header className="relative flex min-h-[64vh] items-center overflow-hidden pt-20 sm:min-h-[72vh]" aria-label="En-tête principale">
       {/* Background */}
-      <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
-        style={{ backgroundImage: `url('${bgImage}')`, backgroundPosition: bgPosition }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
+          src={bgImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={`object-cover transition-transform ${bgFlip ? '-scale-x-100' : ''}`}
+          style={{ objectPosition: bgPosition }}
+        />
+      </div>
       <div
         className="absolute inset-0"
         style={{ background: 'linear-gradient(90deg, rgba(22,14,55,0.9) 0%, rgba(22,14,55,0.82) 42%, rgba(22,14,55,0.7) 100%)' }}
@@ -34,15 +43,15 @@ export default function Hero({ bgImage, bgPosition = 'center', bgFlip = false, b
         <h1 className="mb-5 max-w-3xl font-head text-3xl font-900 leading-tight text-white sm:text-4xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mb-8 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">{subtitle}</p>
+        <p className="mb-8 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">{subtitle}</p>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-          <a href={primaryCta.href} className="flex w-full items-center justify-center rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
+          <SmartLink href={primaryCta.href} className="flex w-full items-center justify-center rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
             {primaryCta.label}
-          </a>
+          </SmartLink>
           {secondaryCta && (
-            <a href={secondaryCta.href} className="flex w-full items-center justify-center rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
+            <SmartLink href={secondaryCta.href} className="flex w-full items-center justify-center rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
               {secondaryCta.label}
-            </a>
+            </SmartLink>
           )}
         </div>
       </div>

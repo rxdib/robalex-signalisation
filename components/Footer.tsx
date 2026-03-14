@@ -20,7 +20,7 @@ const productLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy pt-18 pb-6 text-white/65" role="contentinfo">
+    <footer className="bg-navy pt-18 pb-6 text-white/72" role="contentinfo">
       <div className="container">
         <div className="mb-12 grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
           <div>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           <div>
             <h4 className="mb-4 font-head text-sm font-700 uppercase tracking-[0.16em] text-white">Adresse</h4>
-            <address className="not-italic text-sm leading-relaxed text-white/70">
+            <address className="not-italic text-sm leading-relaxed text-white/78">
               Robalex Signalisation Sàrl
               <br />
               Chemin du Grand Champ 6
@@ -71,13 +71,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-4 text-xs text-white/45 sm:flex-row sm:items-center">
+        <div className="flex flex-col items-start justify-between gap-4 text-xs text-white/60 sm:flex-row sm:items-center">
           <p>© 2026 Robalex Signalisation Sàrl - Tous droits réservés</p>
           <div className="flex flex-wrap gap-5">
-            <Link href="/mentions-legales" className="transition-colors hover:text-white">
+            <Link href="/mentions-legales" className="text-white/70 transition-colors hover:text-white">
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="transition-colors hover:text-white">
+            <Link href="/politique-confidentialite" className="text-white/70 transition-colors hover:text-white">
               Politique de confidentialité
             </Link>
           </div>
