@@ -31,38 +31,40 @@ const expertises = [
   { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Marquage routier précis et durable pour communes, entreprises et régies.', link: '/nos-services' },
 ]
 
+const homeClientLogo = (fileName: string) => `/images/home-clients/${fileName}`
+
 const clients = [
   // Cantons & collectivités publiques
-  { src: '/images/logo-canton-vaud.png',              alt: 'Canton de Vaud',                    href: 'https://www.vd.ch' },
-  { src: '/images/logo-canton-valais.png',            alt: 'Canton du Valais',                  href: 'https://www.vs.ch' },
+  { src: homeClientLogo('logo-canton-vaud.png'),              alt: 'Canton de Vaud',                    href: 'https://www.vd.ch' },
+  { src: homeClientLogo('logo-canton-valais.png'),            alt: 'Canton du Valais',                  href: 'https://www.vs.ch' },
   { src: '/images/logo-canton-fribourg.svg',          alt: 'Canton de Fribourg',                href: 'https://www.fr.ch' },
-  { src: '/images/logo-canton-jura.png',              alt: 'Canton du Jura',                    href: 'https://www.jura.ch' },
+  { src: homeClientLogo('logo-canton-jura.png'),              alt: 'Canton du Jura',                    href: 'https://www.jura.ch' },
   // Polices
-  { src: '/images/logo-police-vaudoise.jpg',          alt: 'Police cantonale vaudoise',         href: 'https://www.police.vd.ch' },
-  { src: '/images/logo-police-geneve.jpg',            alt: 'Police cantonale genevoise',        href: 'https://www.police.ge.ch' },
-  { src: '/images/logo-police-neuchatel.png',         alt: 'Police cantonale neuchâteloise',    href: 'https://www.ne.ch' },
-  { src: '/images/logo-police-sion-sierre.png',       alt: 'Police régionale Sion-Sierre',      href: 'https://www.vs.ch' },
+  { src: homeClientLogo('logo-police-vaudoise.jpg'),          alt: 'Police cantonale vaudoise',         href: 'https://www.police.vd.ch' },
+  { src: homeClientLogo('logo-police-geneve.jpg'),            alt: 'Police cantonale genevoise',        href: 'https://www.police.ge.ch' },
+  { src: homeClientLogo('logo-police-neuchatel.png'),         alt: 'Police cantonale neuchâteloise',    href: 'https://www.ne.ch' },
+  { src: homeClientLogo('logo-police-sion-sierre.png'),       alt: 'Police régionale Sion-Sierre',      href: 'https://www.vs.ch' },
   // Villes & communes
-  { src: '/images/logo-ville-lausanne.jpg',           alt: 'Ville de Lausanne',                 href: 'https://www.lausanne.ch' },
-  { src: '/images/logo-ville-yverdon.png',            alt: 'Yverdon-les-Bains',                 href: 'https://www.yverdon-les-bains.ch' },
-  { src: '/images/logo-ville-pully.png',              alt: 'Ville de Pully',                    href: 'https://www.pully.ch' },
-  { src: '/images/logo-ville-nyon.png',               alt: 'Ville de Nyon',                     href: 'https://www.nyon.ch' },
-  { src: '/images/logo-commune-yvonand.jpg',          alt: "Commune d'Yvonand",                 href: 'https://www.yvonand.ch' },
-  { src: '/images/logo-commune-estavayer.png',        alt: "Commune d'Estavayer",               href: 'https://www.estavayer.ch' },
-  { src: '/images/logo-commune-bourg-en-lavaux.png',  alt: 'Commune de Bourg-en-Lavaux',        href: 'https://www.bourg-en-lavaux.ch' },
-  { src: '/images/logo-commune-gibloux.png',          alt: 'Commune de Gibloux',                href: 'https://www.gibloux.ch' },
-  { src: '/images/logo-commune-orvin.png',            alt: "Commune d'Orvin",                   href: 'https://www.orvin.ch' },
+  { src: homeClientLogo('logo-ville-lausanne.jpg'),           alt: 'Ville de Lausanne',                 href: 'https://www.lausanne.ch' },
+  { src: homeClientLogo('logo-ville-yverdon.png'),            alt: 'Yverdon-les-Bains',                 href: 'https://www.yverdon-les-bains.ch' },
+  { src: homeClientLogo('logo-ville-pully.png'),              alt: 'Ville de Pully',                    href: 'https://www.pully.ch' },
+  { src: homeClientLogo('logo-ville-nyon.png'),               alt: 'Ville de Nyon',                     href: 'https://www.nyon.ch' },
+  { src: homeClientLogo('logo-commune-yvonand.jpg'),          alt: "Commune d'Yvonand",                 href: 'https://www.yvonand.ch' },
+  { src: homeClientLogo('logo-commune-estavayer.png'),        alt: "Commune d'Estavayer",               href: 'https://www.estavayer.ch' },
+  { src: homeClientLogo('logo-commune-bourg-en-lavaux.png'),  alt: 'Commune de Bourg-en-Lavaux',        href: 'https://www.bourg-en-lavaux.ch' },
+  { src: homeClientLogo('logo-commune-gibloux.png'),          alt: 'Commune de Gibloux',                href: 'https://www.gibloux.ch' },
+  { src: homeClientLogo('logo-commune-orvin.png'),            alt: "Commune d'Orvin",                   href: 'https://www.orvin.ch' },
   // Aéroport & régies
   { src: '/images/logo-geneve-aeroport.svg',          alt: 'Genève Aéroport',                   href: 'https://www.gva.ch' },
   { src: '/images/logo-regie-turrian.svg',            alt: 'Régie Turrian',                     href: 'https://www.turrian.ch' },
   // Entreprises de construction & génie civil
   { src: '/images/logo-romande-energie.svg',          alt: 'Romande Energie',                   href: 'https://www.romande-energie.ch' },
-  { src: '/images/logo-walo.jpg',                     alt: 'Walo Bertschinger',                 href: 'https://www.walo.ch' },
-  { src: '/images/logo-bollini-sa.png',               alt: 'Bollini SA',                        href: 'https://www.bollini.ch' },
-  { src: '/images/logo-bernasconi.png',               alt: 'Bernasconi',                        href: 'https://www.bernasconisa.ch/' },
+  { src: homeClientLogo('logo-walo.jpg'),                     alt: 'Walo Bertschinger',                 href: 'https://www.walo.ch' },
+  { src: homeClientLogo('logo-bollini-sa.png'),               alt: 'Bollini SA',                        href: 'https://www.bollini.ch' },
+  { src: homeClientLogo('logo-bernasconi.png'),               alt: 'Bernasconi',                        href: 'https://www.bernasconisa.ch/' },
   { src: '/images/logo-cornaz.avif',                  alt: 'Cornaz SA',                         href: 'https://www.cornaz-fontanellaz-sa.ch/' },
-  { src: '/images/logo-jacques-lugrin.png',           alt: 'Jacques Lugrin SA',                 href: 'https://www.jacqueslugrin.ch' },
-  { src: '/images/logo-orllati.png',                  alt: 'Orllati SA',                        href: 'https://www.orllati.ch' },
+  { src: homeClientLogo('logo-jacques-lugrin.png'),           alt: 'Jacques Lugrin SA',                 href: 'https://www.jacqueslugrin.ch' },
+  { src: homeClientLogo('logo-orllati.png'),                  alt: 'Orllati SA',                        href: 'https://www.orllati.ch' },
 ]
 
 const featuredProducts = [
