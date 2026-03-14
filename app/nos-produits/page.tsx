@@ -62,6 +62,11 @@ const tempProducts: Product[] = [
     desc: 'Délimitation simple et rapide des zones de travaux, déviations et interventions ponctuelles.',
   },
   {
+    img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Quickcone_bag-of-4.jpeg',
+    name: 'QuickCone',
+    desc: "Cône pliable à fort impact visuel, compact au transport et rapide à déployer pour les interventions d'urgence.",
+  },
+  {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Bâton-led.jpg',
     name: 'Bâton LED de signalisation',
     desc: "Guidage manuel lumineux pour circulation alternée, événements et interventions d'urgence.",
@@ -78,8 +83,8 @@ const tempProducts: Product[] = [
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/ruban-de-barrage-500m.png',
-    name: 'Ruban de barrage personnalisé',
-    desc: 'Ruban rouge-blanc personnalisable pour délimiter et identifier clairement les périmètres.',
+    name: 'Ruban de barrage 500 m',
+    desc: 'Ruban rouge-blanc très résistant pour délimiter rapidement un périmètre de travaux ou de danger.',
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Ruban-de-masquage.PNG',
@@ -117,12 +122,12 @@ const permProducts: Product[] = [
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/plaque-de-rue.jpg',
     name: 'Plaques de rue',
-    desc: 'Plaques durables pour rues, quartiers, bâtiments publics et signalétique locale.',
+    desc: "Plaques de rue personnalisées en fonte d'aluminium pour quartiers, bâtiments publics et signalétique locale.",
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Miroir-signalisation.jpg',
     name: 'Miroirs de signalisation',
-    desc: 'Améliorent la visibilité dans les carrefours, sorties de parking et zones à angle mort.',
+    desc: 'Améliorent la visibilité aux carrefours et sorties avec versions normales ou anti-givre selon le site.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Barrière-piéton.JPEG',
@@ -153,6 +158,11 @@ const permProducts: Product[] = [
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Poteau-balisage-triangulaire.jpg',
     name: 'Poteaux de balisage',
     desc: 'Supports de repérage et de guidage pour alignements, îlots et aménagements latéraux.',
+  },
+  {
+    img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
+    name: 'Socles en béton 50 kg',
+    desc: 'Socles préfabriqués avec douille pour tube Ø 60 mm, assurant une base lourde et stable en signalisation permanente.',
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rond.PNG',
@@ -224,6 +234,11 @@ const chantierProducts: Product[] = [
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Lampe-chantier.png',
     name: 'Lampes de chantier',
     desc: 'Éclairage de balisage pour rendre les obstacles et zones de travaux visibles de jour comme de nuit.',
+  },
+  {
+    img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/Flash-sur-cone.png',
+    name: 'Flash sur cône',
+    desc: "Feu flash orange à fixer sur cône pour renforcer la visibilité d'une zone d'intervention ou de chantier.",
   },
   {
     img: '/images/Liste produit/Chantier (Balisages pour zones de chantier)/latte-barrage.png',
