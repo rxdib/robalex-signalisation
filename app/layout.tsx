@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
 import { Montserrat, Open_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
