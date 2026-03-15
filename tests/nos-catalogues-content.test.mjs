@@ -17,7 +17,10 @@ test('nos catalogues page uses the updated catalogue hierarchy and cleaner copy'
     "kicker: 'Signalisation et sécurité routière'",
     'Robalex,',
     'signaux routiers',
-    '/images/catalogue-signaux-routiers-cover.png',
+    'Répertoire visuel',
+    'Presque tous les signaux routiers OSR',
+    'Repérer rapidement un signal',
+    '/images/catalogue-signaux-routiers-preview.png',
   ]
   const removedStrings = [
     "title: 'Catalogue Signaux pliants Triopan'",
@@ -27,6 +30,7 @@ test('nos catalogues page uses the updated catalogue hierarchy and cleaner copy'
     'Tous les symboles OSR',
     'Tous les formats disponibles',
     'Demande sur devis selon votre besoin',
+    '/images/catalogue-signaux-routiers-cover.png',
   ]
 
   for (const expectedString of expectedStrings) {
