@@ -38,4 +38,10 @@ test('home page uses clearer expertise categories and keeps references at the en
       pageSource.indexOf('Ils nous font <span className="text-red">confiance</span>'),
     'Expected references section to appear after featured products',
   )
+
+  const catalogueLinks = pageSource.match(/link: '\/nos-catalogues'/g) ?? []
+  const catalogueLabels = pageSource.match(/linkLabel: 'Voir les catalogues'/g) ?? []
+
+  assert.equal(catalogueLinks.length, 3, 'Expected the 3 product expertise cards to point to catalogues')
+  assert.equal(catalogueLabels.length, 3, 'Expected the 3 product expertise cards to use the catalogues CTA label')
 })

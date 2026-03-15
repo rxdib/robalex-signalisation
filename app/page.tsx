@@ -44,8 +44,8 @@ const expertises: HomeExpertise[] = [
     img: '/images/triopan-protection-civil.jpg',
     alt: 'Signalisation temporaire de chantier par Robalex Signalisation',
     fit: 'object-cover object-[46%_center]',
-    link: '/nos-produits',
-    linkLabel: 'Voir les produits',
+    link: '/nos-catalogues',
+    linkLabel: 'Voir les catalogues',
   },
   {
     badge: 'Produits',
@@ -55,8 +55,8 @@ const expertises: HomeExpertise[] = [
     img: '/images/installation-panneaux.jpg',
     alt: 'Signalisation permanente installée par Robalex Signalisation',
     fit: 'object-cover object-[54%_center]',
-    link: '/nos-produits',
-    linkLabel: 'Voir les produits',
+    link: '/nos-catalogues',
+    linkLabel: 'Voir les catalogues',
   },
   {
     badge: 'Produits',
@@ -66,8 +66,8 @@ const expertises: HomeExpertise[] = [
     img: '/images/Liste produit/Signalisation lumineuse/Radar-pedagogique.jpg',
     alt: 'Radar pédagogique proposé par Robalex Signalisation',
     fit: 'object-contain bg-bg-light p-4',
-    link: '/nos-produits',
-    linkLabel: 'Voir les produits',
+    link: '/nos-catalogues',
+    linkLabel: 'Voir les catalogues',
   },
   {
     badge: 'Location',
