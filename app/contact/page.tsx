@@ -73,7 +73,7 @@ export default function Contact() {
 
               <dl className="flex flex-col gap-5 mb-8">
                 {[
-                  { label: 'Adresse', value: 'Chemin du Grand Champ 6\n1018 Lausanne' },
+                  { label: 'Adresse', value: 'Chemin du Grandchamp 6\n1018 Lausanne' },
                   { label: 'Téléphone', value: '021 657 07 05', href: 'tel:+41216570705' },
                   { label: 'Email', value: 'info@robalex-signalisation.ch', href: 'mailto:info@robalex-signalisation.ch' },
                   { label: 'Heures de bureau', value: 'Lu–Ve : 08h00 – 17h00' },
@@ -91,14 +91,14 @@ export default function Contact() {
               {/* Google Maps iframe */}
               <div className="rounded-xl overflow-hidden border border-gray-light h-64">
                 <iframe
-                  src="https://maps.google.com/maps?q=Chemin+du+Grand+Champ+6,+1018+Lausanne&output=embed"
+                  src="https://maps.google.com/maps?q=Chemin+du+Grandchamp+6,+1018+Lausanne&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localisation Robalex Signalisation — Chemin du Grand Champ 6, 1018 Lausanne"
+                  title="Localisation Robalex Signalisation — Chemin du Grandchamp 6, 1018 Lausanne"
                 />
               </div>
             </div>

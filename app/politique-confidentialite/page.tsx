@@ -16,7 +16,7 @@ const sections = [
       <p>
         Robalex Signalisation Sàrl
         <br />
-        Chemin du Grand Champ 6
+        Chemin du Grandchamp 6
         <br />
         1018 Lausanne
         <br />

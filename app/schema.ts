@@ -70,7 +70,7 @@ export const localBusinessSchema = {
   currenciesAccepted: 'CHF',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Chemin du Grand Champ 6',
+    streetAddress: 'Chemin du Grandchamp 6',
     addressLocality: 'Lausanne',
     addressRegion: 'Vaud',
     postalCode: '1018',
@@ -87,7 +87,7 @@ export const localBusinessSchema = {
   areaServed: serviceAreas,
   serviceArea: serviceAreas,
   foundingDate: '2004',
-  hasMap: 'https://maps.google.com/?q=Chemin+du+Grand+Champ+6,+1018+Lausanne',
+  hasMap: 'https://maps.google.com/?q=Chemin+du+Grandchamp+6,+1018+Lausanne',
   knowsAbout: [
     'Signalisation temporaire',
     'Signalisation permanente',

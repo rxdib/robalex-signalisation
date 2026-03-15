@@ -56,7 +56,7 @@ export default function Footer() {
             <address className="not-italic text-sm leading-relaxed text-white/78">
               Robalex Signalisation Sàrl
               <br />
-              Chemin du Grand Champ 6
+              Chemin du Grandchamp 6
               <br />
               1018 Lausanne
               <br />

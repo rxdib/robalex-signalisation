@@ -11,7 +11,7 @@ test.describe('Contact page', () => {
   })
 
   test('shows address information', async ({ page }) => {
-    await expect(page.getByText(/Chemin du Grand Champ 6/).first()).toBeVisible()
+    await expect(page.getByText(/Chemin du Grandchamp 6/).first()).toBeVisible()
     await expect(page.getByText(/1018 Lausanne/).first()).toBeVisible()
   })
 
