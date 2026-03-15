@@ -33,6 +33,11 @@ const clientLogos = [
   { src: '/images/Logo client/Location feux/Logo_bernasconi.png', alt: 'Bernasconi - client location feux de chantier Robalex Signalisation', href: 'https://www.bernasconisa.ch/' },
   { src: '/images/Logo client/Location feux/Logo_cornaz-fontanellaz.avif', alt: 'Cornaz Fontanellaz - client location feux de chantier Robalex Signalisation', href: 'https://www.cornaz-fontanellaz-sa.ch/' },
   { src: '/images/Logo client/Location feux/Logo_walo.jpg', alt: 'Walo Bertschinger - client location feux de chantier Robalex Signalisation', href: 'https://www.walo.ch/en/' },
+  { src: '/images/Logo client/Location feux/logo-grisoni.png', alt: 'Grisoni - client location feux de chantier Robalex Signalisation', href: 'https://www.groupe-grisoni.ch/' },
+  { src: '/images/Logo client/Location feux/Logo-Moll-SA.png', alt: 'Moll SA - client location feux de chantier Robalex Signalisation', href: 'https://www.moll.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_AC-atelier-commun-architectes.png', alt: 'Atelier Commun Architectes - client location feux de chantier Robalex Signalisation', href: 'https://ateliercommun.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_innov-construction-sa.png', alt: 'Innov Construction SA - client location feux de chantier Robalex Signalisation', href: 'https://innovgroup.ch/' },
+  { src: '/images/Logo client/Location feux/Logo_zmoos-sa.jpg', alt: 'Zmoos SA - client location feux de chantier Robalex Signalisation', href: 'https://zmoos.com/' },
   { src: '/images/Logo client/Location feux/Romande_Energie_Logo.svg', alt: 'Romande Energie - client location feux de chantier Robalex Signalisation', href: 'https://www.romande-energie.ch/' },
 ]
 
@@ -158,7 +163,7 @@ export default function LocationFeux() {
       <section className="section-pad bg-bg-light" aria-label="Clients location feux de chantier">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Des entreprises qui nous confient régulièrement leurs besoins en location de feux de chantier." centered />
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-10">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {clientLogos.map((c) => (
               <a
                 key={c.alt}
@@ -166,9 +171,9 @@ export default function LocationFeux() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${c.alt} - ouvre le site partenaire`}
-                className="opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-red/40 rounded"
+                className="flex min-h-24 items-center justify-center rounded-xl border border-gray-light bg-white px-4 py-4 opacity-70 transition-all hover:opacity-100 hover:shadow-card focus:outline-none focus-visible:ring-2 focus-visible:ring-red/40"
               >
-                <Image src={c.src} alt={c.alt} width={110} height={55} sizes="110px" className="object-contain max-h-14" />
+                <Image src={c.src} alt={c.alt} width={140} height={70} sizes="140px" className="max-h-14 w-auto object-contain" />
               </a>
             ))}
           </div>
