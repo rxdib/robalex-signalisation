@@ -375,7 +375,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-10">
             <a href="/nos-produits" className="border-2 border-red text-red hover:bg-red hover:text-white font-head font-700 text-sm uppercase tracking-wide px-8 py-3.5 rounded transition-colors">
-              Voir tous nos produits
+              Nos produits
             </a>
           </div>
         </div>

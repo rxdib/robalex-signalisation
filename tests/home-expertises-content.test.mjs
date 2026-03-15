@@ -28,6 +28,7 @@ test('home page uses clearer expertise categories and keeps references at the en
     'PartnerLogo',
     'Feux avec radar, décompte et matériel temporaire',
     'Passages piétons, parkings, flèches et numérotation',
+    'Voir tous nos produits',
   ]
 
   for (const expectedString of expectedStrings) {
@@ -52,7 +53,9 @@ test('home page uses clearer expertise categories and keeps references at the en
 
   const catalogueLinks = pageSource.match(/link: '\/nos-catalogues'/g) ?? []
   const catalogueLabels = pageSource.match(/linkLabel: 'Voir les catalogues'/g) ?? []
+  const featuredProductsButton = /<a href="\/nos-produits" className="border-2 border-red[\s\S]*?\n\s*Nos produits\n\s*<\/a>/
 
   assert.equal(catalogueLinks.length, 3, 'Expected the 3 product expertise cards to point to catalogues')
   assert.equal(catalogueLabels.length, 3, 'Expected the 3 product expertise cards to use the catalogues CTA label')
+  assert.match(pageSource, featuredProductsButton, 'Expected the featured products button label to be "Nos produits"')
 })
