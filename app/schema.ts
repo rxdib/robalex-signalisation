@@ -20,16 +20,23 @@ const serviceAreas = [
   },
 }))
 
+function createBrandedImageObject(imagePath: string) {
+  return {
+    '@type': 'ImageObject',
+    url: absoluteUrl(imagePath),
+    creator: { '@id': organizationId },
+    creditText: SITE_NAME,
+    copyrightNotice: `© ${SITE_NAME}`,
+  }
+}
+
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': organizationId,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: {
-    '@type': 'ImageObject',
-    url: absoluteUrl('/images/logo-robalex.png'),
-  },
+  logo: createBrandedImageObject('/images/logo-robalex.png'),
   image: absoluteUrl('/images/triopan-bg.jpg'),
   email: 'info@robalex-signalisation.ch',
   telephone: '+41216570705',
@@ -62,7 +69,10 @@ export const localBusinessSchema = {
     'Spécialiste en signalisation et sécurité routière en Suisse romande. Fourniture, installation, location et maintenance de matériel pour chantiers et équipements permanents.',
   url: SITE_URL,
   parentOrganization: { '@id': organizationId },
-  image: [absoluteUrl('/images/triopan-bg.jpg'), absoluteUrl('/images/signalisation-chantier-hd.jpg')],
+  image: [
+    createBrandedImageObject('/images/triopan-bg.jpg'),
+    createBrandedImageObject('/images/signalisation-chantier-hd.jpg'),
+  ],
   telephone: '+41216570705',
   email: 'info@robalex-signalisation.ch',
   priceRange: '$$',
@@ -132,12 +142,7 @@ function createPageSchema({ type, name, description, path, image }: BasePageSche
     inLanguage: 'fr-CH',
     isPartOf: { '@id': websiteId },
     about: { '@id': localBusinessId },
-    primaryImageOfPage: image
-      ? {
-          '@type': 'ImageObject',
-          url: absoluteUrl(image),
-        }
-      : undefined,
+    primaryImageOfPage: image ? createBrandedImageObject(image) : undefined,
   }
 }
 
@@ -188,7 +193,7 @@ export function createServiceSchema({ name, description, path, image }: ServiceS
     name,
     description,
     url: absoluteUrl(path),
-    image: absoluteUrl(image),
+    image: createBrandedImageObject(image),
     provider: { '@id': localBusinessId },
     areaServed: serviceAreas,
     availableChannel: {
