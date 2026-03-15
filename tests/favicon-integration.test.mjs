@@ -6,6 +6,7 @@ import path from 'node:path'
 const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
 const layoutPath = path.join(projectRoot, 'app', 'layout.tsx')
 const manifestPath = path.join(projectRoot, 'app', 'manifest.ts')
+const appFaviconPath = path.join(projectRoot, 'app', 'favicon.ico')
 const rootFaviconPath = path.join(projectRoot, 'public', 'favicon.ico')
 const rootAppleTouchIconPath = path.join(projectRoot, 'public', 'apple-touch-icon.png')
 
@@ -22,4 +23,12 @@ test('web app manifest and root-level favicon files exist', () => {
   assert.ok(existsSync(manifestPath), 'Expected app/manifest.ts to exist')
   assert.ok(existsSync(rootFaviconPath), 'Expected public/favicon.ico to exist')
   assert.ok(existsSync(rootAppleTouchIconPath), 'Expected public/apple-touch-icon.png to exist')
+})
+
+test('app router does not override the public favicon asset', () => {
+  assert.equal(
+    existsSync(appFaviconPath),
+    false,
+    'Expected app/favicon.ico to be absent so the public favicon set stays authoritative',
+  )
 })
