@@ -6,6 +6,8 @@ import path from 'node:path'
 const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
 const pagePath = path.join(projectRoot, 'app', 'page.tsx')
 
+const countMatches = (source, needle) => source.split(needle).length - 1
+
 test('home page uses clearer expertise categories and keeps references at the end', () => {
   const pageSource = readFileSync(pagePath, 'utf8')
   const expectedStrings = [
@@ -14,6 +16,7 @@ test('home page uses clearer expertise categories and keeps references at the en
     'Location de matériel',
     'Pose et interventions',
     'Marquage routier',
+    'Marquages routiers en peinture ou à 2 composants pour parkings, routes et sites privés.',
     'Triopan, cônes, balises, barrières et flashs',
     'Panneaux OSR, miroirs, bornes, potelets et plaques de rue',
     'Signalisation lumineuse',
@@ -23,6 +26,8 @@ test('home page uses clearer expertise categories and keeps references at the en
     'Ce que nous louons',
     'Ce que nous réalisons',
     'PartnerLogo',
+    'Feux avec radar, décompte et matériel temporaire',
+    'Passages piétons, parkings, flèches et numérotation',
   ]
 
   for (const expectedString of expectedStrings) {
@@ -32,6 +37,12 @@ test('home page uses clearer expertise categories and keeps references at the en
   for (const removedString of removedStrings) {
     assert.ok(!pageSource.includes(removedString), `Expected legacy expertise content to be removed: ${removedString}`)
   }
+
+  assert.equal(
+    countMatches(pageSource, 'Montage, pose, remplacement et démontage'),
+    1,
+    'Expected the pose card to keep a single concise description line',
+  )
 
   assert.ok(
     pageSource.indexOf('Produits <span className="text-red">phares</span>') <

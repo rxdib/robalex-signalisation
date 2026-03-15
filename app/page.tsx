@@ -27,7 +27,7 @@ type HomeExpertise = {
   badge: 'Produits' | 'Location' | 'Services'
   title: string
   desc: string
-  details: string
+  details?: string
   img: string
   alt: string
   fit: string
@@ -73,7 +73,6 @@ const expertises: HomeExpertise[] = [
     badge: 'Location',
     title: 'Location de matériel',
     desc: 'Feux de chantier et signalisation temporaire en location, avec service complet sur le terrain.',
-    details: 'Feux avec radar, décompte et matériel temporaire',
     img: '/images/feux-radar-2.jpg',
     alt: 'Feux de chantier et matériel de signalisation en location',
     fit: 'object-cover object-[62%_center]',
@@ -84,7 +83,6 @@ const expertises: HomeExpertise[] = [
     badge: 'Services',
     title: 'Pose et interventions',
     desc: 'Montage, pose, remplacement et démontage de vos équipements de signalisation sur site.',
-    details: 'Montage, pose, remplacement et démontage',
     img: '/images/panneau-candelabre.jpg',
     alt: 'Pose et interventions sur site par Robalex Signalisation',
     fit: 'object-cover object-[28%_38%]',
@@ -94,8 +92,7 @@ const expertises: HomeExpertise[] = [
   {
     badge: 'Services',
     title: 'Marquage routier',
-    desc: 'Marquages précis et durables pour organiser la circulation sur voirie, parkings et sites privés.',
-    details: 'Passages piétons, parkings, flèches et numérotation',
+    desc: 'Marquages routiers en peinture ou à 2 composants pour parkings, routes et sites privés.',
     img: '/images/travaux-marquage-parking.jpg',
     alt: 'Marquage routier réalisé par Robalex Signalisation',
     fit: 'object-cover object-[50%_center]',
@@ -254,7 +251,7 @@ export default function HomePage() {
                   <p className="mb-2 text-xs font-head font-700 uppercase tracking-[0.18em] text-red">{e.badge}</p>
                   <h3 className="mb-2 font-head text-xl font-700 text-dark">{e.title}</h3>
                   <p className="mb-3 text-sm leading-relaxed text-gray-dark">{e.desc}</p>
-                  <p className="mb-5 text-sm text-gray-dark/85">{e.details}</p>
+                  {e.details ? <p className="mb-5 text-sm text-gray-dark/85">{e.details}</p> : null}
                   <SmartLink href={e.link} className="mt-auto inline-flex items-center gap-2 text-sm font-head font-700 text-red transition-colors hover:text-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red">
                     {e.linkLabel} <span aria-hidden="true">→</span>
                   </SmartLink>
@@ -399,3 +396,4 @@ export default function HomePage() {
     </>
   )
 }
+
