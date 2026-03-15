@@ -24,12 +24,64 @@ export const metadata: Metadata = buildMetadata({
   imageAlt: 'Signalisation et sécurité routière en Suisse romande par Robalex Signalisation',
 })
 
+const expertiseHighlights = [
+  {
+    title: 'Ce que nous fournissons',
+    text: 'Signaux pliants Triopan, panneaux OSR, radars, feux, cônes, balises, miroirs et mobilier routier.',
+  },
+  {
+    title: 'Ce que nous louons',
+    text: 'Feux de chantier et matériel temporaire avec livraison, installation, maintenance et retrait.',
+  },
+  {
+    title: 'Ce que nous réalisons',
+    text: 'Pose sur site, montage, marquage routier et adaptations de circulation pour vos interventions.',
+  },
+]
+
 const expertises = [
-  { icon: <TempIcon />, title: 'Signalisation temporaire',  desc: 'Balisage temporaire de chantier — signaux pliants Triopan, cônes, barrières et lampes flash pour sécuriser toutes vos interventions.', link: '/nos-produits' },
-  { icon: <PermIcon />, title: 'Signalisation permanente', desc: 'Signaux OSR en rétro-réflexion R1, R2 ou R3 — miroirs, mise à ban et mobilier urbain.', link: '/nos-produits' },
-  { icon: <InstIcon />, title: 'Montage et installation',  desc: 'Pose et installation sur site pour une mise en place rapide et soignée.', link: '/nos-services' },
-  { icon: <FeuxIcon />, title: 'Location feux de chantier', desc: 'Service clé en main : livraison, installation, maintenance et retrait — intervention 7j/7.', link: '/location-feux-chantier' },
-  { icon: <MarkIcon />, title: 'Marquage routier',         desc: 'Marquage routier précis et durable pour communes, entreprises et régies.', link: '/nos-services' },
+  {
+    icon: <TempIcon />,
+    title: 'Signalisation temporaire',
+    desc: "Signaux pliants Triopan, cônes, balises, barrières, rubans et lampes flash pour chantiers, déviations et interventions d'urgence.",
+    link: '/nos-produits',
+    linkLabel: 'Voir les produits',
+  },
+  {
+    icon: <PermIcon />,
+    title: 'Panneaux, miroirs et mobilier',
+    desc: "Panneaux routiers OSR, mise à ban, plaques de rue, miroirs, bornes, potelets et ralentisseurs pour l'aménagement durable.",
+    link: '/nos-produits',
+    linkLabel: 'Voir les produits',
+  },
+  {
+    icon: <LightIcon />,
+    title: 'Signalisation lumineuse',
+    desc: 'Radars pédagogiques, feux bicolores, triflash et signaux dynamiques pour renforcer la visibilité et la sécurité des usagers.',
+    link: '/nos-produits',
+    linkLabel: 'Voir les produits',
+  },
+  {
+    icon: <FeuxIcon />,
+    title: 'Location de feux de chantier',
+    desc: "Feux avec radar ou décompte, avec livraison, installation, maintenance pendant le chantier et retrait en fin d'intervention.",
+    link: '/location-feux-chantier',
+    linkLabel: 'Voir la location',
+  },
+  {
+    icon: <InstIcon />,
+    title: 'Pose et interventions sur site',
+    desc: 'Montage, remplacement, démontage et pose de vos équipements de signalisation sur routes, parkings, accès privés et zones sensibles.',
+    link: '/nos-services',
+    linkLabel: 'Voir les services',
+  },
+  {
+    icon: <MarkIcon />,
+    title: 'Marquage et organisation',
+    desc: 'Passages piétons, places de parking, flèches, numérotation et adaptations temporaires de circulation pour guider et sécuriser les usagers.',
+    link: '/nos-services',
+    linkLabel: 'Voir les services',
+  },
 ]
 
 const homeClientLogo = (fileName: string) => `/images/home-clients/${fileName}`
@@ -156,23 +208,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. Expertises (3+2 grid) */}
+      {/* 3. Expertises */}
       <section className="section-pad" aria-labelledby="expertises-title">
         <div className="container">
           <SectionHeader
-            badge="Ce que nous faisons"
+            badge="Ce que nous vendons et réalisons"
             title={<>Nos <span className="text-red">expertises</span></>}
-            subtitle="De la fourniture à l'installation, nous couvrons l'ensemble de vos besoins en signalisation et sécurité routière."
+            subtitle="Nous fournissons, louons, posons et installons les équipements nécessaires pour sécuriser routes, chantiers, parkings, accès privés et espaces publics dans toute la Suisse romande."
             centered
           />
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
-            {expertises.slice(0,3).map(e => (
-              <ServiceCard key={e.title} icon={e.icon} title={e.title} description={e.desc} linkLabel="En savoir plus" linkHref={e.link} />
+          <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {expertiseHighlights.map(item => (
+              <article key={item.title} className="rounded-xl border border-gray-light bg-bg-light px-5 py-5 text-left">
+                <h3 className="mb-2 font-head text-base font-700 text-dark">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-dark">{item.text}</p>
+              </article>
             ))}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            {expertises.slice(3).map(e => (
-              <ServiceCard key={e.title} icon={e.icon} title={e.title} description={e.desc} linkLabel="En savoir plus" linkHref={e.link} />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {expertises.map(e => (
+              <ServiceCard key={e.title} icon={e.icon} title={e.title} description={e.desc} linkLabel={e.linkLabel} linkHref={e.link} />
             ))}
           </div>
         </div>
@@ -327,6 +382,7 @@ export default function HomePage() {
 // Inline SVG icons for expertise cards
 function TempIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 10V11" /></svg> }
 function PermIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> }
+function LightIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3m0 12v3M5.636 5.636l2.121 2.121m8.486 8.486l2.121 2.121M3 12h3m12 0h3M5.636 18.364l2.121-2.121m8.486-8.486l2.121-2.121M12 16a4 4 0 100-8 4 4 0 000 8z" /></svg> }
 function InstIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg> }
 function FeuxIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> }
 function MarkIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg> }
