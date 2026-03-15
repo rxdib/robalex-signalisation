@@ -153,64 +153,52 @@ export default function NosCatalogues() {
 
       <section className="section-pad bg-bg-light" aria-label="Référence pratique des signaux routiers">
         <div className="container">
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-            <div>
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)]">
+            <div className="order-2 lg:order-1">
               <SectionHeader
-                badge="Répertoire visuel"
+                badge="Référence pratique"
                 title={
                   <>
-                    Robalex, <span className="text-red">signaux routiers</span>
+                    Liste des <span className="text-red">signaux OSR</span>
                   </>
                 }
-                subtitle="Presque tous les signaux routiers OSR rassemblés dans un seul document pratique."
+                subtitle="Un document visuel simple pour retrouver rapidement la plupart des signaux routiers."
               />
               <p className="mb-4 text-gray-dark">
-                Ce document maison n&apos;est pas un catalogue commercial. C&apos;est une référence visuelle pensée pour identifier rapidement un signal et retrouver plus facilement la bonne désignation.
+                Cette liste rassemble les principaux signaux routiers OSR dans un format clair et facile à consulter.
               </p>
               <p className="mb-6 text-gray-dark">
-                Utile pour préparer une commande, vérifier un panneau avant intervention ou garder une aide simple à portée de main au bureau comme sur chantier.
+                Pratique pour repérer un signal, vérifier une référence et garder une aide visuelle au bureau ou sur chantier.
               </p>
-              <ul className="mb-8 grid gap-3 text-sm text-gray-dark">
-                {[
-                  'Repérer rapidement un signal',
-                  'Vérifier une référence visuelle avant commande',
-                  'Garder un support simple au bureau ou sur chantier',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 rounded-lg border border-gray-light bg-white px-4 py-3">
-                    <span className="mt-0.5 font-bold text-red">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
               <div className="flex flex-wrap items-center gap-4">
                 <a
                   href="/catalogues/Robalex_Signaux_Routiers.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Télécharger la liste des signaux routiers - ouverture dans un nouvel onglet"
+                  aria-label="Télécharger la liste des signaux OSR - ouverture dans un nouvel onglet"
                   className="inline-block rounded bg-navy px-6 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy"
                 >
-                  Télécharger la liste
+                  Télécharger la liste des signaux OSR
                 </a>
-                <p className="text-sm text-gray-dark">Support complémentaire à garder sous la main pour retrouver rapidement un signal.</p>
+                <p className="text-sm text-gray-dark">Un support pratique à garder sous la main pour identifier rapidement un signal.</p>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-light bg-white p-4 shadow-card lg:p-6">
+            <div className="order-1 rounded-2xl border border-gray-light bg-white p-4 shadow-card lg:order-2 lg:p-6">
               <div className="overflow-hidden rounded-xl border border-gray-light bg-[#f4f1eb]">
                 <Image
-                  src="/images/catalogue-signaux-routiers-preview.png"
-                  alt="Aperçu du répertoire visuel Robalex des signaux routiers"
-                  width={1600}
-                  height={1100}
+                  src="/images/Fond d'écran haute qualité/Signalisation-suisse-background.png"
+                  alt="Signalisation routière suisse pour illustrer la liste des signaux OSR"
+                  width={1920}
+                  height={1080}
                   sizes="(max-width: 1023px) 100vw, 55vw"
                   className="h-auto w-full object-cover"
                 />
               </div>
               <div className="mt-4 rounded-xl bg-bg-light px-4 py-4">
-                <p className="mb-1 text-xs font-head font-700 uppercase tracking-[0.18em] text-red">Aperçu du document</p>
+                <p className="mb-1 text-xs font-head font-700 uppercase tracking-[0.18em] text-red">Support de référence</p>
                 <p className="text-sm text-gray-dark">
-                  Une première page lisible avec les signaux et leurs références, pour comprendre immédiatement l&apos;utilité du document.
+                  Une liste claire à utiliser comme aide visuelle pour retrouver rapidement les principaux signaux routiers OSR.
                 </p>
               </div>
             </div>
