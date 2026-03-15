@@ -30,6 +30,17 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   applicationName: SITE_NAME,
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/Favicon/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/Favicon/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/images/Favicon/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
+    shortcut: ['/favicon.ico'],
+  },
   openGraph: {
     type: 'website',
     locale: 'fr_CH',
