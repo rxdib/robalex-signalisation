@@ -2,11 +2,10 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
-import ServiceCard from '@/components/ServiceCard'
 import FeatureBlock from '@/components/FeatureBlock'
 import CtaBand from '@/components/CtaBand'
-import PartnerLogo from '@/components/PartnerLogo'
 import LogoMarquee from '@/components/LogoMarquee'
+import SmartLink from '@/components/SmartLink'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from './seo'
 import { createWebPageSchema } from './schema'
@@ -24,61 +23,82 @@ export const metadata: Metadata = buildMetadata({
   imageAlt: 'Signalisation et sécurité routière en Suisse romande par Robalex Signalisation',
 })
 
-const expertiseHighlights = [
-  {
-    title: 'Ce que nous fournissons',
-    text: 'Signaux pliants Triopan, panneaux OSR, radars, feux, cônes, balises, miroirs et mobilier routier.',
-  },
-  {
-    title: 'Ce que nous louons',
-    text: 'Feux de chantier et matériel temporaire avec livraison, installation, maintenance et retrait.',
-  },
-  {
-    title: 'Ce que nous réalisons',
-    text: 'Pose sur site, montage, marquage routier et adaptations de circulation pour vos interventions.',
-  },
-]
+type HomeExpertise = {
+  badge: 'Produits' | 'Location' | 'Services'
+  title: string
+  desc: string
+  details: string
+  img: string
+  alt: string
+  fit: string
+  link: string
+  linkLabel: string
+}
 
-const expertises = [
+const expertises: HomeExpertise[] = [
   {
-    icon: <TempIcon />,
+    badge: 'Produits',
     title: 'Signalisation temporaire',
-    desc: "Signaux pliants Triopan, cônes, balises, barrières, rubans et lampes flash pour chantiers, déviations et interventions d'urgence.",
+    desc: "Tout le matériel pour vos chantiers, fermetures de routes, déviations et interventions d'urgence.",
+    details: 'Triopan, cônes, balises, barrières et flashs',
+    img: '/images/triopan-protection-civil.jpg',
+    alt: 'Signalisation temporaire de chantier par Robalex Signalisation',
+    fit: 'object-cover object-[46%_center]',
     link: '/nos-produits',
     linkLabel: 'Voir les produits',
   },
   {
-    icon: <PermIcon />,
-    title: 'Panneaux, miroirs et mobilier',
-    desc: "Panneaux routiers OSR, mise à ban, plaques de rue, miroirs, bornes, potelets et ralentisseurs pour l'aménagement durable.",
+    badge: 'Produits',
+    title: 'Signalisation permanente',
+    desc: "L'équipement durable de vos voiries, accès privés, parkings et espaces publics.",
+    details: 'Panneaux OSR, miroirs, bornes, potelets et plaques de rue',
+    img: '/images/installation-panneaux.jpg',
+    alt: 'Signalisation permanente installée par Robalex Signalisation',
+    fit: 'object-cover object-[54%_center]',
     link: '/nos-produits',
     linkLabel: 'Voir les produits',
   },
   {
-    icon: <LightIcon />,
+    badge: 'Produits',
     title: 'Signalisation lumineuse',
-    desc: 'Radars pédagogiques, feux bicolores, triflash et signaux dynamiques pour renforcer la visibilité et la sécurité des usagers.',
+    desc: 'Des équipements visibles et efficaces pour renforcer la sécurité et ralentir les usagers aux points sensibles.',
+    details: 'Radars pédagogiques, feux bicolores, triflash et signaux dynamiques',
+    img: '/images/Liste produit/Signalisation lumineuse/Radar-pedagogique.jpg',
+    alt: 'Radar pédagogique proposé par Robalex Signalisation',
+    fit: 'object-contain bg-bg-light p-4',
     link: '/nos-produits',
     linkLabel: 'Voir les produits',
   },
   {
-    icon: <FeuxIcon />,
-    title: 'Location de feux de chantier',
-    desc: "Feux avec radar ou décompte, avec livraison, installation, maintenance pendant le chantier et retrait en fin d'intervention.",
-    link: '/location-feux-chantier',
-    linkLabel: 'Voir la location',
-  },
-  {
-    icon: <InstIcon />,
-    title: 'Pose et interventions sur site',
-    desc: 'Montage, remplacement, démontage et pose de vos équipements de signalisation sur routes, parkings, accès privés et zones sensibles.',
+    badge: 'Location',
+    title: 'Location de matériel',
+    desc: 'Feux de chantier et signalisation temporaire en location, avec service complet sur le terrain.',
+    details: 'Feux avec radar, décompte et matériel temporaire',
+    img: '/images/feux-radar-2.jpg',
+    alt: 'Feux de chantier et matériel de signalisation en location',
+    fit: 'object-cover object-[62%_center]',
     link: '/nos-services',
     linkLabel: 'Voir les services',
   },
   {
-    icon: <MarkIcon />,
-    title: 'Marquage et organisation',
-    desc: 'Passages piétons, places de parking, flèches, numérotation et adaptations temporaires de circulation pour guider et sécuriser les usagers.',
+    badge: 'Services',
+    title: 'Pose et interventions',
+    desc: 'Montage, pose, remplacement et démontage de vos équipements de signalisation sur site.',
+    details: 'Montage, pose, remplacement et démontage',
+    img: '/images/panneau-candelabre.jpg',
+    alt: 'Pose et interventions sur site par Robalex Signalisation',
+    fit: 'object-cover object-[28%_38%]',
+    link: '/nos-services',
+    linkLabel: 'Voir les services',
+  },
+  {
+    badge: 'Services',
+    title: 'Marquage routier',
+    desc: 'Marquages précis et durables pour organiser la circulation sur voirie, parkings et sites privés.',
+    details: 'Passages piétons, parkings, flèches et numérotation',
+    img: '/images/travaux-marquage-parking.jpg',
+    alt: 'Marquage routier réalisé par Robalex Signalisation',
+    fit: 'object-cover object-[50%_center]',
     link: '/nos-services',
     linkLabel: 'Voir les services',
   },
@@ -212,22 +232,34 @@ export default function HomePage() {
       <section className="section-pad" aria-labelledby="expertises-title">
         <div className="container">
           <SectionHeader
-            badge="Ce que nous vendons et réalisons"
+            badge="Notre offre"
             title={<>Nos <span className="text-red">expertises</span></>}
-            subtitle="Nous fournissons, louons, posons et installons les équipements nécessaires pour sécuriser routes, chantiers, parkings, accès privés et espaces publics dans toute la Suisse romande."
+            subtitle="Produits, location et services pour sécuriser vos routes, chantiers, parkings et accès privés."
             centered
           />
-          <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
-            {expertiseHighlights.map(item => (
-              <article key={item.title} className="rounded-xl border border-gray-light bg-bg-light px-5 py-5 text-left">
-                <h3 className="mb-2 font-head text-base font-700 text-dark">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-dark">{item.text}</p>
-              </article>
-            ))}
-          </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {expertises.map(e => (
-              <ServiceCard key={e.title} icon={e.icon} title={e.title} description={e.desc} linkLabel={e.linkLabel} linkHref={e.link} />
+              <article key={e.title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-light bg-white transition-shadow hover:shadow-card">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={e.img}
+                    alt={e.alt}
+                    width={640}
+                    height={400}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                    className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${e.fit}`}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="mb-2 text-xs font-head font-700 uppercase tracking-[0.18em] text-red">{e.badge}</p>
+                  <h3 className="mb-2 font-head text-xl font-700 text-dark">{e.title}</h3>
+                  <p className="mb-3 text-sm leading-relaxed text-gray-dark">{e.desc}</p>
+                  <p className="mb-5 text-sm text-gray-dark/85">{e.details}</p>
+                  <SmartLink href={e.link} className="mt-auto inline-flex items-center gap-2 text-sm font-head font-700 text-red transition-colors hover:text-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red">
+                    {e.linkLabel} <span aria-hidden="true">→</span>
+                  </SmartLink>
+                </div>
+              </article>
             ))}
           </div>
         </div>
@@ -272,17 +304,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Ils nous font confiance */}
-      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
-        <div className="container">
-          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises actives sur le terrain dans toute la Suisse romande." centered />
-          <div className="mt-10">
-            <LogoMarquee logos={clients} />
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Location feux promo */}
+      {/* 5. Location feux promo */}
       <section className="section-pad bg-white" aria-labelledby="feux-title">
         <div className="container">
           <FeatureBlock
@@ -312,7 +334,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Triopan feature */}
+      {/* 6. Triopan feature */}
       <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
@@ -336,7 +358,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Produits phares */}
+      {/* 7. Produits phares */}
       <section className="section-pad bg-white" aria-labelledby="produits-title">
         <div className="container">
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
@@ -362,27 +384,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. Partenaires */}
-      <section className="section-pad bg-bg-light" aria-labelledby="partenaires-title">
+      {/* 8. Ils nous font confiance */}
+      <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
-          <SectionHeader badge="Partenaires" title={<>Nos <span className="text-red">partenaires</span></>} subtitle="Des partenaires reconnus qui complètent notre offre en signalisation et sécurité routière." centered />
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
-            <PartnerLogo src="/images/logo-triopan.png" alt="Triopan AG - partenaire Robalex Signalisation" href="https://www.triopan.ch" />
-            <PartnerLogo src="/images/logo-nissen.svg"  alt="Nissen AG - partenaire Robalex Signalisation" href="https://www.nissen.ch" />
+          <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises actives sur le terrain dans toute la Suisse romande." centered />
+          <div className="mt-10">
+            <LogoMarquee logos={clients} />
           </div>
         </div>
       </section>
 
-      {/* 10. CTA */}
+      {/* 9. CTA */}
       <CtaBand />
     </>
   )
 }
-
-// Inline SVG icons for expertise cards
-function TempIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 10V11" /></svg> }
-function PermIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> }
-function LightIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v3m0 12v3M5.636 5.636l2.121 2.121m8.486 8.486l2.121 2.121M3 12h3m12 0h3M5.636 18.364l2.121-2.121m8.486-8.486l2.121-2.121M12 16a4 4 0 100-8 4 4 0 000 8z" /></svg> }
-function InstIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg> }
-function FeuxIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg> }
-function MarkIcon() { return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg> }
