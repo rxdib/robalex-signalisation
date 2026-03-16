@@ -5,6 +5,7 @@ import path from 'node:path'
 
 const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
 const notFoundPagePath = path.join(projectRoot, 'app', 'not-found.tsx')
+const rootLayoutPath = path.join(projectRoot, 'app', 'layout.tsx')
 
 test('custom not-found page exists and exposes clear recovery actions', () => {
   assert.ok(existsSync(notFoundPagePath), 'Expected app/not-found.tsx to exist')
@@ -24,4 +25,10 @@ test('custom not-found page exists and exposes clear recovery actions', () => {
   }
 
   assert.ok(!source.includes('This page could not be found'), 'Expected default Next.js 404 copy to be removed')
+})
+
+test('root layout does not force index, follow metadata onto the 404 page', () => {
+  const layoutSource = readFileSync(rootLayoutPath, 'utf8')
+
+  assert.ok(!layoutSource.includes('robots:'), 'Expected root layout metadata to avoid a global robots override')
 })
