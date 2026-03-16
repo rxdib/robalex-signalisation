@@ -4,10 +4,6 @@ import SectionHeader from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
   title: 'Page introuvable',
-  robots: {
-    index: false,
-    follow: false,
-  },
 }
 
 export default function NotFound() {
