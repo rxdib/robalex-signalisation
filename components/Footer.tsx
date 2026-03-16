@@ -33,6 +33,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 text-sm">
               <a
                 href="tel:+41216570705"
+                data-tracking-location="footer-phone"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <PhoneIcon />
@@ -40,6 +41,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:info@robalex-signalisation.ch"
+                data-tracking-location="footer-email"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <MailIcon />
@@ -64,6 +66,8 @@ export default function Footer() {
             </address>
             <Link
               href="/contact"
+              data-track-contact-cta="true"
+              data-tracking-location="footer-contact"
               className="mt-5 inline-flex min-h-11 items-center justify-center rounded bg-red px-4 py-2.5 text-xs font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Nous contacter

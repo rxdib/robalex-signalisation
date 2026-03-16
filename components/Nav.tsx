@@ -63,6 +63,7 @@ export default function Nav() {
 
         <a
           href="tel:+41216570705"
+          data-tracking-location="nav-desktop-phone"
           className="hidden xl:flex flex-shrink-0 items-center gap-2 rounded bg-red px-5 py-2.5 text-sm font-head font-700 text-white transition-colors hover:bg-red-dark"
         >
           <PhoneIcon />
@@ -123,6 +124,7 @@ export default function Nav() {
           <div className="mt-6 border-t border-white/10 pt-6">
             <a
               href="tel:+41216570705"
+              data-tracking-location="nav-mobile-phone"
               className="mb-3 flex min-h-11 w-full items-center justify-center gap-2 rounded bg-red px-4 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <PhoneIcon />
@@ -130,6 +132,8 @@ export default function Nav() {
             </a>
             <a
               href="/contact"
+              data-track-contact-cta="true"
+              data-tracking-location="nav-mobile-contact"
               className="flex min-h-11 w-full items-center justify-center rounded border border-white/30 px-4 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:border-white hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               onClick={() => setOpen(false)}
             >

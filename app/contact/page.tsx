@@ -82,7 +82,7 @@ export default function Contact() {
                   <div key={item.label}>
                     <dt className="text-xs font-head font-700 uppercase tracking-widest text-gray mb-1">{item.label}</dt>
                     <dd className="text-dark font-500 whitespace-pre-line">
-                      {item.href ? <a href={item.href} className="text-red hover:text-red-dark transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red">{item.value}</a> : item.value}
+                      {item.href ? <a href={item.href} data-tracking-location={`contact-${item.label.toLowerCase()}`} className="text-red hover:text-red-dark transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red">{item.value}</a> : item.value}
                     </dd>
                   </div>
                 ))}
@@ -110,7 +110,7 @@ export default function Contact() {
                 title={<>Envoyez-nous votre <span className="text-red">demande</span></>}
                 subtitle="Décrivez votre besoin, votre chantier ou les produits recherchés. Nous vous répondrons dans les meilleurs délais."
               />
-              <form action="https://formspree.io/f/xqeyqzdv" method="POST" className="flex flex-col gap-5">
+              <form action="https://formspree.io/f/xqeyqzdv" method="POST" data-track-lead-form="contact-form" className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="nom" className="block text-xs font-head font-700 uppercase tracking-wide text-dark mb-1.5">Nom *</label>

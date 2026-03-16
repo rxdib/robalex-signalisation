@@ -5,6 +5,7 @@ import { Montserrat, Open_Sans } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import GoogleTracking from '@/components/GoogleTracking'
 import JsonLd from '@/components/JsonLd'
 import { SITE_NAME, SITE_URL } from './seo'
 import { localBusinessSchema, organizationSchema, websiteSchema } from './schema'
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
+        <GoogleTracking />
         <Analytics />
         <SpeedInsights />
       </body>
