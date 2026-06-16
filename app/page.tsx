@@ -41,7 +41,7 @@ const expertises: HomeExpertise[] = [
     title: 'Signalisation temporaire',
     desc: "Tout le matériel pour vos chantiers, fermetures de routes, déviations et interventions d'urgence.",
     details: 'Triopan, cônes, balises, barrières et flashs',
-    img: '/images/triopan-protection-civil.jpg',
+    img: '/images/triopan-signalisation-police.jpg',
     alt: 'Signalisation temporaire de chantier par Robalex Signalisation',
     fit: 'object-cover object-[46%_center]',
     link: '/nos-catalogues',
@@ -335,7 +335,7 @@ export default function HomePage() {
       <section className="section-pad bg-bg-light" aria-labelledby="triopan-title">
         <div className="container">
           <FeatureBlock
-            image={{ src: '/images/triopan-protection-civil.jpg', alt: 'Panneaux pliants Triopan sur mesure - Robalex Signalisation représentant officiel Suisse romande' }}
+            image={{ src: '/images/triopan-signalisation-police.jpg', alt: 'Panneaux pliants Triopan sur mesure - Robalex Signalisation représentant officiel Suisse romande' }}
             imageBadge="Représentant officiel Triopan"
             imageClassName="object-[44%_center]"
           >
