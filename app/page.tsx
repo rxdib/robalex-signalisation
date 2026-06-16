@@ -43,7 +43,7 @@ const expertises: HomeExpertise[] = [
     details: 'Triopan, cônes, balises, barrières et flashs',
     img: '/images/triopan-signalisation-police.jpg',
     alt: 'Signalisation temporaire de chantier par Robalex Signalisation',
-    fit: 'object-cover object-[46%_center]',
+    fit: 'object-cover object-[62%_center]',
     link: '/nos-catalogues',
     linkLabel: 'Voir les catalogues',
   },
@@ -337,7 +337,7 @@ export default function HomePage() {
           <FeatureBlock
             image={{ src: '/images/triopan-signalisation-police.jpg', alt: 'Panneaux pliants Triopan sur mesure - Robalex Signalisation représentant officiel Suisse romande' }}
             imageBadge="Représentant officiel Triopan"
-            imageClassName="object-[44%_center]"
+            imageClassName="object-[62%_center]"
           >
             <SectionHeader badge="Partenaire exclusif" title={<>Représentant <span className="text-red">Triopan SA</span> en Suisse romande</>} />
             <p className="text-gray-dark mb-3">Robalex Signalisation est le représentant officiel de <strong>Triopan SA</strong> pour toute la Suisse romande. Les signaux pliants Triopan sont fabriqués sur mesure selon vos symboles et textes, dans tous les formats et configurations.</p>
