@@ -44,17 +44,17 @@ export default function Nav() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-navy shadow-card-lg" aria-label="Navigation principale">
-      <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex min-w-[120px] flex-shrink-0 sm:min-w-[160px]">
-          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={42} priority sizes="(max-width: 639px) 120px, 160px" className="h-auto w-[120px] sm:w-[160px]" />
+      <div className="container flex h-20 items-center justify-between gap-3">
+        <Link href="/" aria-label="Robalex Signalisation — Accueil" className="flex min-w-[120px] flex-shrink-0 xl:min-w-[140px]">
+          <Image src="/images/logo-white.svg" alt="Robalex Signalisation" width={160} height={42} priority sizes="(max-width: 639px) 120px, (max-width: 1535px) 140px, 160px" className="h-auto w-[120px] xl:w-[140px] 2xl:w-[160px]" />
         </Link>
 
-        <ul className="hidden xl:flex flex-1 items-center justify-center gap-6">
+        <ul className="hidden xl:flex flex-1 items-center justify-center gap-3 2xl:gap-5">
           {links.map((link) => (
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="border-b-2 border-transparent py-1 text-xs font-head font-600 uppercase tracking-wide text-white/75 transition-colors hover:border-red hover:text-white"
+                className="whitespace-nowrap border-b-2 border-transparent py-1 text-[11px] font-head font-600 uppercase tracking-[0.05em] text-white/75 transition-colors hover:border-red hover:text-white 2xl:text-xs 2xl:tracking-wide"
               >
                 {link.label}
               </Link>
@@ -64,7 +64,7 @@ export default function Nav() {
 
         <a
           href="tel:+41216570705"
-          className="hidden xl:flex flex-shrink-0 items-center gap-2 rounded bg-red px-5 py-2.5 text-sm font-head font-700 text-white transition-colors hover:bg-red-dark"
+          className="hidden xl:flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded bg-red px-4 py-2.5 text-sm font-head font-700 text-white transition-colors hover:bg-red-dark 2xl:px-5"
         >
           <PhoneIcon />
           021 657 07 05

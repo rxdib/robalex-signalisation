@@ -10,7 +10,7 @@ import SmartLink from '@/components/SmartLink'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from './seo'
 import { createWebPageSchema } from './schema'
-import { autorouteGeneveDisplayImage, homeHeroImage, marquageParkingImage, panneauCandelabreImage, twongMontageImage } from './imageVariants'
+import { autorouteGeneveDisplayImage, homeHeroImage, marquageParkingImage, panneauCandelabreImage, twongSignalisationImage } from './imageVariants'
 
 const pageTitle = 'Signalisation et sécurité routière en Suisse romande'
 const pageDescription =
@@ -287,13 +287,14 @@ export default function HomePage() {
         <div className="container">
           <FeatureBlock
             image={{
-              src: twongMontageImage.fallback,
-              alt: 'Montage du système TWONG sur une glissière de sécurité',
-              sources: [{ srcSet: twongMontageImage.webpSrcSet, type: 'image/webp', sizes: twongMontageImage.sizes }],
-              sizes: twongMontageImage.sizes,
+              src: twongSignalisationImage.fallback,
+              alt: 'Système TWONG avec panneau de signalisation temporaire sur une glissière de sécurité',
+              sources: [{ srcSet: twongSignalisationImage.webpSrcSet, type: 'image/webp', sizes: twongSignalisationImage.sizes }],
+              sizes: twongSignalisationImage.sizes,
             }}
             imageBadge="En stock à Lausanne"
-            imageClassName="object-cover object-[center_38%]"
+            imageClassName="object-cover object-center"
+            reverse
           >
             <SectionHeader badge="Nouveau système" title={<>TWONG: la fixation mobile pour vos <span className="text-red">interventions temporaires.</span></>} />
             <p className="mb-5 text-gray-dark leading-relaxed">

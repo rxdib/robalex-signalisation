@@ -4,7 +4,7 @@ const pages = [
   { path: '/',                        title: /Signalisation et sécurité routière/ },
   { path: '/a-propos',                title: /À propos/ },
   { path: '/nos-produits',            title: /Nos produits/ },
-  { path: '/twong',                   title: /TWONG \| Système de fixation mobile \| Robalex Signalisation Sàrl/ },
+  { path: '/twong',                   title: /TWONG \| Robalex Signalisation Sàrl/ },
   { path: '/nos-services',            title: /Nos services/ },
   { path: '/location-feux-chantier',  title: /Location.*feux/ },
   { path: '/nos-catalogues',          title: /Nos catalogues/i },
