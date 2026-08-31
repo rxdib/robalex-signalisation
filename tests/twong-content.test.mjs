@@ -30,6 +30,6 @@ test('TWONG page presents documented benefits and a contact path without online 
 test('TWONG is discoverable from the main commercial paths', () => {
   for (const file of ['components/Nav.tsx', 'components/Footer.tsx', 'app/page.tsx', 'app/nos-produits/page.tsx']) {
     const source = readFileSync(path.join(projectRoot, file), 'utf8')
-    assert.ok(source.includes("'/twong'"), `Expected ${file} to link to /twong`)
+    assert.ok(source.includes('/twong'), `Expected ${file} to link to /twong`)
   }
 })

@@ -8,6 +8,7 @@ const links = [
   { href: '/', label: 'Accueil' },
   { href: '/a-propos', label: 'À propos' },
   { href: '/nos-produits', label: 'Nos produits' },
+  { href: '/twong', label: 'TWONG' },
   { href: '/nos-catalogues', label: 'Catalogues' },
   { href: '/nos-services', label: 'Nos services' },
   { href: '/location-feux-chantier', label: 'Location feux' },

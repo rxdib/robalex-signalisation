@@ -13,6 +13,7 @@ const navLinks = [
 
 const productLinks = [
   { href: '/nos-produits', label: 'Signalisation temporaire' },
+  { href: '/twong', label: 'Système TWONG' },
   { href: '/nos-produits', label: 'Signalisation permanente' },
   { href: '/nos-produits', label: 'Matériel de chantier' },
   { href: '/location-feux-chantier', label: 'Feux de chantier' },
