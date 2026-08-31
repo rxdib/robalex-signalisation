@@ -66,8 +66,9 @@ const sections = [
     title: 'Cookies',
     content: (
       <p>
-        Ce site ne dépose aucun cookie publicitaire ou de suivi. Seuls les éléments techniques nécessaires au bon
-        fonctionnement du site peuvent être utilisés.
+        Ce site n&apos;utilise pas de cookies publicitaires ni de suivi par Google. Des statistiques de fréquentation
+        anonymisées peuvent être recueillies via Vercel Web Analytics, sans cookie et sans identification personnelle.
+        Seuls les éléments techniques nécessaires au bon fonctionnement du site peuvent être utilisés.
       </p>
     ),
   },

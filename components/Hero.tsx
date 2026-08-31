@@ -35,18 +35,6 @@ export default function Hero({
   primaryCta,
   secondaryCta,
 }: HeroProps) {
-  const primaryTrackingProps = {
-    'data-tracking-location': 'hero-primary-cta',
-    ...(primaryCta.href === '/contact' || primaryCta.href === '/contact/' ? { 'data-track-contact-cta': 'true' } : {}),
-  }
-
-  const secondaryTrackingProps = secondaryCta
-    ? {
-        'data-tracking-location': 'hero-secondary-cta',
-        ...(secondaryCta.href === '/contact' || secondaryCta.href === '/contact/' ? { 'data-track-contact-cta': 'true' } : {}),
-      }
-    : null
-
   return (
     <header className="relative flex min-h-[64vh] items-center overflow-hidden pt-20 sm:min-h-[72vh]" aria-label="En-tête principale">
       {/* Background */}
@@ -85,11 +73,11 @@ export default function Hero({
         </h1>
         <p className="mb-8 max-w-xl text-base leading-relaxed text-white/90 sm:text-lg">{subtitle}</p>
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-          <SmartLink href={primaryCta.href} className="flex w-full items-center justify-center rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto" {...primaryTrackingProps}>
+          <SmartLink href={primaryCta.href} className="flex w-full items-center justify-center rounded bg-red px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
             {primaryCta.label}
           </SmartLink>
           {secondaryCta && (
-            <SmartLink href={secondaryCta.href} className="flex w-full items-center justify-center rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto" {...secondaryTrackingProps}>
+            <SmartLink href={secondaryCta.href} className="flex w-full items-center justify-center rounded border-2 border-white px-7 py-3.5 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto">
               {secondaryCta.label}
             </SmartLink>
           )}
