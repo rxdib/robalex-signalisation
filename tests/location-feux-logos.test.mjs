@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
+const projectRoot = path.resolve(import.meta.dirname, '..')
 const pagePath = path.join(projectRoot, 'app', 'location-feux-chantier', 'page.tsx')
 
 test('location feux page references the full client logo set', () => {

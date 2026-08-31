@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test'
 
 const pages = [
-  { path: '/',                        title: /Robalex Signalisation/ },
+  { path: '/',                        title: /Signalisation et sécurité routière/ },
   { path: '/a-propos',                title: /À propos/ },
   { path: '/nos-produits',            title: /Nos produits/ },
   { path: '/nos-services',            title: /Nos services/ },
-  { path: '/location-feux-chantier',  title: /Location feux/ },
-  { path: '/nos-catalogues',          title: /Catalogues/ },
+  { path: '/location-feux-chantier',  title: /Location.*feux/ },
+  { path: '/nos-catalogues',          title: /Nos catalogues/i },
   { path: '/contact',                 title: /Contact/ },
 ]
 

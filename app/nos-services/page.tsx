@@ -7,6 +7,7 @@ import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from '@/app/seo'
 import { createBreadcrumbSchema, createCollectionPageSchema, createServiceSchema } from '@/app/schema'
+import { installationTemporaireImage, marquageParkingImage, panneauCandelabreImage } from '@/app/imageVariants'
 
 const pageTitle = 'Nos services'
 const pageDescription =
@@ -29,6 +30,12 @@ const services: Array<{
   points: string[]
   reverse: boolean
   imageClassName?: string
+  imageVariant?: {
+    fallback: string
+    webpSrcSet: string
+    sizes: string
+  }
+  detailHref?: string
 }> = [
   {
     img: '/images/installation-signalisation-temporaire-location.jpg',
@@ -39,6 +46,8 @@ const services: Array<{
     points: ['Fermetures de routes','Travaux sur chaussée',"Interventions d'urgence",'Événements temporaires'],
     reverse: false,
     imageClassName: 'object-[56%_center]',
+    imageVariant: installationTemporaireImage,
+    detailHref: '/signalisation-temporaire',
   },
   {
     img: '/images/installation-panneaux.jpg',
@@ -49,6 +58,7 @@ const services: Array<{
     points: ['Zones 30 et 20','Passages piétons','Panneaux d\'interdiction','Panneaux indicateurs','Chemins privés','Mise à ban'],
     reverse: true,
     imageClassName: 'object-[54%_center]',
+    detailHref: '/signalisation-permanente',
   },
   {
     img: '/images/travaux-marquage-parking.jpg',
@@ -59,6 +69,8 @@ const services: Array<{
     points: ['Lignes axiales et de rive','Passages piétons','Marquage de parking & numérotation','Flèches et symboles'],
     reverse: false,
     imageClassName: 'object-[50%_center]',
+    imageVariant: marquageParkingImage,
+    detailHref: '/marquage-routier',
   },
   {
     img: '/images/travaux-location-materiel.jpg',
@@ -79,6 +91,7 @@ const services: Array<{
     points: ['Pose de panneaux permanents','Installation de signalisation temporaire','Démontage et retrait du matériel','Interventions d\'urgence et délais courts'],
     reverse: false,
     imageClassName: 'object-[22%_34%]',
+    imageVariant: panneauCandelabreImage,
   },
 ]
 
@@ -117,7 +130,14 @@ export default function NosServices() {
         <section key={s.badge} className={`section-pad ${i % 2 === 1 ? 'bg-bg-light' : 'bg-white'}`}>
           <div className="container">
             <FeatureBlock
-              image={{ src: s.img, alt: s.alt }}
+              image={{
+                src: s.imageVariant?.fallback ?? s.img,
+                alt: s.alt,
+                sources: s.imageVariant
+                  ? [{ srcSet: s.imageVariant.webpSrcSet, type: 'image/webp', sizes: s.imageVariant.sizes }]
+                  : undefined,
+                sizes: s.imageVariant?.sizes,
+              }}
               reverse={s.reverse}
               imageClassName={s.imageClassName}
             >
@@ -130,9 +150,16 @@ export default function NosServices() {
                   </li>
                 ))}
               </ul>
-              <a href="/contact" className="inline-block bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors">
-                Demander un devis
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a href="/contact" className="inline-block rounded bg-red px-6 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark">
+                  Demander un devis
+                </a>
+                {s.detailHref ? (
+                  <a href={s.detailHref} className="inline-flex items-center px-2 text-sm font-head font-700 text-red transition-colors hover:text-red-dark">
+                    En savoir plus <span aria-hidden="true">→</span>
+                  </a>
+                ) : null}
+              </div>
             </FeatureBlock>
           </div>
         </section>

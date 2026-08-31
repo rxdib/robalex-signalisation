@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test'
 
 const seoData = [
-  { path: '/',                       keyword: 'signalisation routière en suisse romande' },
+  { path: '/',                       keyword: 'signalisation et sécurité routière' },
   { path: '/location-feux-chantier', keyword: 'feux de chantier' },
-  { path: '/nos-produits',           keyword: 'signalisation routière' },
+  { path: '/nos-produits',           keyword: 'signalisation temporaire' },
   { path: '/contact',                keyword: 'Lausanne' },
 ]
 
@@ -24,11 +24,11 @@ test.describe('SEO', () => {
 
   test('homepage has LocalBusiness schema', async ({ page }) => {
     await page.goto('/')
-    const schema = await page.evaluate(() => {
+    const schemas = await page.evaluate(() => {
       const el = document.querySelector('script[type="application/ld+json"]')
-      return el ? JSON.parse(el.textContent || '{}') : {}
+      return el ? JSON.parse(el.textContent || '[]') : []
     })
-    expect(schema['@type']).toBe('LocalBusiness')
-    expect(schema.address.streetAddress).toBe('Chemin du Grandchamp 6')
+    const localBusiness = schemas.find((schema: { ['@type']?: string }) => schema['@type'] === 'LocalBusiness')
+    expect(localBusiness.address.streetAddress).toBe('Chemin du Grandchamp 6')
   })
 })

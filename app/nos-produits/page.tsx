@@ -1,11 +1,13 @@
 ﻿import type { Metadata } from 'next'
 import Image from 'next/image'
+import ResponsivePicture from '@/components/ResponsivePicture'
 import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import CtaBand from '@/components/CtaBand'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from '@/app/seo'
 import { createBreadcrumbSchema, createCollectionPageSchema } from '@/app/schema'
+import { signauxPliantsTriopanImage, socleBetonImage } from '@/app/imageVariants'
 
 const pageTitle = 'Nos produits'
 const pageDescription =
@@ -23,6 +25,11 @@ type Product = {
   img: string
   name: string
   desc: string
+  imageVariant?: {
+    fallback: string
+    webpSrcSet: string
+    sizes: string
+  }
 }
 
 const tempProducts: Product[] = [
@@ -30,6 +37,7 @@ const tempProducts: Product[] = [
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Signaux-pliants-Triopan.jpg',
     name: 'Signaux pliants Triopan',
     desc: 'Signaux pliants Triopan entièrement personnalisables, disponibles dans toutes dimensions et classes de rétro-réfléchissement.',
+    imageVariant: signauxPliantsTriopanImage,
   },
   {
     img: '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Triopan_Fireball_V5.png',
@@ -163,6 +171,7 @@ const permProducts: Product[] = [
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
     name: 'Socles en béton 50 kg',
     desc: 'Socles préfabriqués avec douille pour tube Ø 60 mm, assurant une base lourde et stable en signalisation permanente.',
+    imageVariant: socleBetonImage,
   },
   {
     img: '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Cadre-rond.PNG',
@@ -284,14 +293,26 @@ function ProductGrid({ products }: { products: Product[] }) {
           className="flex h-full flex-col overflow-hidden rounded-xl border border-gray-light bg-white shadow-card transition-shadow hover:shadow-card-lg"
         >
           <div className="aspect-[16/10] overflow-hidden bg-bg-light">
-            <Image
-              src={product.img}
-              alt={`${product.name} - Robalex Signalisation Lausanne`}
-              width={400}
-              height={225}
-              sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
-              className="h-full w-full object-contain p-4"
-            />
+            {product.imageVariant ? (
+              <ResponsivePicture
+                src={product.imageVariant.fallback}
+                sources={[{ srcSet: product.imageVariant.webpSrcSet, type: 'image/webp', sizes: product.imageVariant.sizes }]}
+                sizes={product.imageVariant.sizes}
+                alt={`${product.name} - Robalex Signalisation Lausanne`}
+                width={400}
+                height={225}
+                className="h-full w-full object-contain p-4"
+              />
+            ) : (
+              <Image
+                src={product.img}
+                alt={`${product.name} - Robalex Signalisation Lausanne`}
+                width={400}
+                height={225}
+                sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
+                className="h-full w-full object-contain p-4"
+              />
+            )}
           </div>
           <div className="flex flex-1 flex-col p-5">
             <h3 className="mb-2 font-head text-base font-700 text-dark">{product.name}</h3>

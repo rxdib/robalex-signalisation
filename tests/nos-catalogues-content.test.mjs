@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
+const projectRoot = path.resolve(import.meta.dirname, '..')
 const pagePath = path.join(projectRoot, 'app', 'nos-catalogues', 'page.tsx')
 
 test('nos catalogues page uses the updated catalogue hierarchy and cleaner copy', () => {

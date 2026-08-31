@@ -29,3 +29,27 @@ export const autorouteGeneveDisplayImage = {
   ].join(', '),
   sizes: '(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 560px',
 }
+
+const serviceDisplayImage = (fallback: string, name: string) => ({
+  fallback,
+  webpSrcSet: [
+    `/images/optimized/${name}-768.webp 768w`,
+    `/images/optimized/${name}-1280.webp 1280w`,
+  ].join(', '),
+  sizes: '(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 640px',
+})
+
+export const panneauCandelabreImage = serviceDisplayImage('/images/panneau-candelabre.jpg', 'panneau-candelabre')
+export const marquageParkingImage = serviceDisplayImage('/images/travaux-marquage-parking.jpg', 'travaux-marquage-parking')
+export const installationTemporaireImage = serviceDisplayImage(
+  '/images/installation-signalisation-temporaire-location.jpg',
+  'installation-signalisation-temporaire-location',
+)
+export const signauxPliantsTriopanImage = serviceDisplayImage(
+  '/images/Liste produit/Temporaire (Travaux de voirie - Urgences)/Signaux-pliants-Triopan.jpg',
+  'signaux-pliants-triopan',
+)
+export const socleBetonImage = serviceDisplayImage(
+  '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
+  'socle-beton-50kg-prefabrique',
+)

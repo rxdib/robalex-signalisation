@@ -4,7 +4,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 import sharp from 'sharp'
 
-const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
+const projectRoot = path.resolve(import.meta.dirname, '..')
 const publicRoot = path.join(projectRoot, 'public')
 const schemaPath = path.join(projectRoot, 'app', 'schema.ts')
 const rasterExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif'])

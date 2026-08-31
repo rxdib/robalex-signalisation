@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
+const projectRoot = path.resolve(import.meta.dirname, '..')
 const notFoundPagePath = path.join(projectRoot, 'app', 'not-found.tsx')
 const rootLayoutPath = path.join(projectRoot, 'app', 'layout.tsx')
 

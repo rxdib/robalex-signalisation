@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import ResponsivePicture from '@/components/ResponsivePicture'
 import Hero from '@/components/Hero'
 import SectionHeader from '@/components/SectionHeader'
 import FeatureBlock from '@/components/FeatureBlock'
@@ -9,7 +10,7 @@ import SmartLink from '@/components/SmartLink'
 import JsonLd from '@/components/JsonLd'
 import { buildMetadata } from './seo'
 import { createWebPageSchema } from './schema'
-import { autorouteGeneveDisplayImage, homeHeroImage } from './imageVariants'
+import { autorouteGeneveDisplayImage, homeHeroImage, marquageParkingImage, panneauCandelabreImage } from './imageVariants'
 
 const pageTitle = 'Signalisation et sécurité routière en Suisse romande'
 const pageDescription =
@@ -33,6 +34,11 @@ type HomeExpertise = {
   fit: string
   link: string
   linkLabel: string
+  imageVariant?: {
+    fallback: string
+    webpSrcSet: string
+    sizes: string
+  }
 }
 
 const expertises: HomeExpertise[] = [
@@ -88,6 +94,7 @@ const expertises: HomeExpertise[] = [
     fit: 'object-cover object-[28%_38%]',
     link: '/nos-services',
     linkLabel: 'Voir les services',
+    imageVariant: panneauCandelabreImage,
   },
   {
     badge: 'Services',
@@ -96,8 +103,9 @@ const expertises: HomeExpertise[] = [
     img: '/images/travaux-marquage-parking.jpg',
     alt: 'Marquage routier réalisé par Robalex Signalisation',
     fit: 'object-cover object-[50%_center]',
-    link: '/nos-services',
-    linkLabel: 'Voir les services',
+    link: '/marquage-routier',
+    linkLabel: 'Voir le service',
+    imageVariant: marquageParkingImage,
   },
 ]
 
@@ -238,14 +246,26 @@ export default function HomePage() {
             {expertises.map(e => (
               <article key={e.title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-light bg-white transition-shadow hover:shadow-card">
                 <div className="aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={e.img}
-                    alt={e.alt}
-                    width={640}
-                    height={400}
-                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                    className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${e.fit}`}
-                  />
+                  {e.imageVariant ? (
+                    <ResponsivePicture
+                      src={e.imageVariant.fallback}
+                      sources={[{ srcSet: e.imageVariant.webpSrcSet, type: 'image/webp', sizes: e.imageVariant.sizes }]}
+                      sizes={e.imageVariant.sizes}
+                      alt={e.alt}
+                      width={640}
+                      height={400}
+                      className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${e.fit}`}
+                    />
+                  ) : (
+                    <Image
+                      src={e.img}
+                      alt={e.alt}
+                      width={640}
+                      height={400}
+                      sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                      className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${e.fit}`}
+                    />
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <p className="mb-2 text-xs font-head font-700 uppercase tracking-[0.18em] text-red">{e.badge}</p>

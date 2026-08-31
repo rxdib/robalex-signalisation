@@ -3,16 +3,17 @@ import { test, expect } from '@playwright/test'
 test.describe('Homepage', () => {
   test.beforeEach(async ({ page }) => { await page.goto('/') })
 
-  test('hero shows correct badge and subtitle', async ({ page }) => {
+  test('hero shows the current positioning', async ({ page }) => {
     await expect(page.getByText('Suisse romande').first()).toBeVisible()
-    await expect(page.getByText(/La fourniture, la location et la pose/)).toBeVisible()
+    await expect(page.getByText(/Depuis plus de 20 ans/)).toBeVisible()
   })
 
-  test('shows 5 expertise cards', async ({ page }) => {
+  test('shows the six expertise cards', async ({ page }) => {
     await expect(page.getByText('Signalisation temporaire').first()).toBeVisible()
     await expect(page.getByText('Signalisation permanente').first()).toBeVisible()
-    await expect(page.getByText('Montage et installation')).toBeVisible()
-    await expect(page.getByText('Location feux de chantier').first()).toBeVisible()
+    await expect(page.getByText('Signalisation lumineuse').first()).toBeVisible()
+    await expect(page.getByText('Location de matériel').first()).toBeVisible()
+    await expect(page.getByText('Pose et interventions').first()).toBeVisible()
     await expect(page.getByText('Marquage routier').first()).toBeVisible()
   })
 
@@ -33,8 +34,7 @@ test.describe('Homepage', () => {
     await expect(page.getByText(/2026 Robalex/)).toBeVisible()
   })
 
-  test('partner logos link to external sites', async ({ page }) => {
-    const triopanLink = page.getByRole('link', { name: /Triopan AG/i })
-    await expect(triopanLink).toHaveAttribute('href', 'https://www.triopan.ch')
+  test('client references section is present', async ({ page }) => {
+    await expect(page.getByRole('group', { name: 'Logos de nos clients' })).toBeVisible()
   })
 })

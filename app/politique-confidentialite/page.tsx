@@ -72,6 +72,16 @@ const sections = [
       </p>
     ),
   },
+  {
+    title: 'Transmission du formulaire',
+    content: (
+      <p>
+        Le formulaire de contact est transmis par l&apos;intermédiaire de Formspree, notre prestataire technique de
+        traitement des formulaires. Les informations transmises sont utilisées uniquement pour acheminer votre demande
+        vers Robalex Signalisation Sàrl et y répondre.
+      </p>
+    ),
+  },
 ]
 
 export default function PolitiqueConfidentialite() {

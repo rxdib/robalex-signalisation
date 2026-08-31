@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import path from 'node:path'
 
-const projectRoot = 'C:\\Users\\Robin\\Desktop\\robalex-next'
+const projectRoot = path.resolve(import.meta.dirname, '..')
 const layoutPath = path.join(projectRoot, 'app', 'layout.tsx')
 const manifestPath = path.join(projectRoot, 'app', 'manifest.ts')
 const appFaviconPath = path.join(projectRoot, 'app', 'favicon.ico')

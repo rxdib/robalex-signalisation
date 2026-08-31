@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "images:strip-metadata": "node scripts/strip-image-metadata.mjs",
+    "images:generate-display": "node scripts/generate-display-images.mjs",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui"
   },
