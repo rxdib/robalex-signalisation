@@ -204,6 +204,28 @@ export function createServiceSchema({ name, description, path, image }: ServiceS
   }
 }
 
+type ProductSchemaOptions = {
+  name: string
+  description: string
+  path: string
+  image: string
+  brand?: string
+}
+
+export function createProductSchema({ name, description, path, image, brand }: ProductSchemaOptions) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${absoluteUrl(path)}#product`,
+    name,
+    description,
+    url: absoluteUrl(path),
+    image: createBrandedImageObject(image),
+    brand: brand ? { '@type': 'Brand', name: brand } : undefined,
+    seller: { '@id': localBusinessId },
+  }
+}
+
 type FAQItem = {
   q: string
   a: string

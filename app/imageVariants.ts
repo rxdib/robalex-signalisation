@@ -53,3 +53,15 @@ export const socleBetonImage = serviceDisplayImage(
   '/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
   'socle-beton-50kg-prefabrique',
 )
+export const twongSystemImage = serviceDisplayImage(
+  '/images/twong/twong-systeme-fixation-mobile.png',
+  'twong-systeme-fixation-mobile',
+)
+export const twongMontageImage = serviceDisplayImage(
+  '/images/twong/twong-montage-sans-outil.png',
+  'twong-montage-sans-outil',
+)
+export const twongSignalisationImage = serviceDisplayImage(
+  '/images/twong/twong-signalisation-temporaire.png',
+  'twong-signalisation-temporaire',
+)

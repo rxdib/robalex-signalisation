@@ -26,6 +26,18 @@ const images = [
     source: 'public/images/Liste produit/Permanent (Signaux OSR - Mobilier urbain)/Socle-béton-50kg-prefabriqué.jpg',
     name: 'socle-beton-50kg-prefabrique',
   },
+  {
+    source: 'public/images/twong/twong-systeme-fixation-mobile.png',
+    name: 'twong-systeme-fixation-mobile',
+  },
+  {
+    source: 'public/images/twong/twong-montage-sans-outil.png',
+    name: 'twong-montage-sans-outil',
+  },
+  {
+    source: 'public/images/twong/twong-signalisation-temporaire.png',
+    name: 'twong-signalisation-temporaire',
+  },
 ]
 
 mkdirSync(outputDirectory, { recursive: true })

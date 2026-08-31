@@ -10,6 +10,9 @@ const optimizedImages = [
   'installation-signalisation-temporaire-location',
   'signaux-pliants-triopan',
   'socle-beton-50kg-prefabrique',
+  'twong-systeme-fixation-mobile',
+  'twong-montage-sans-outil',
+  'twong-signalisation-temporaire',
 ]
 
 test('heavy public images have 768px and 1280px WebP display variants', () => {
@@ -26,6 +29,7 @@ test('commercial pages serve their heavy imagery through responsive sources', ()
     ['app/page.tsx', 'panneauCandelabreImage', 'marquageParkingImage'],
     ['app/nos-services/page.tsx', 'installationTemporaireImage', 'panneauCandelabreImage', 'marquageParkingImage'],
     ['app/nos-produits/page.tsx', 'signauxPliantsTriopanImage', 'socleBetonImage'],
+    ['app/twong/page.tsx', 'twongSystemImage', 'twongMontageImage', 'twongSignalisationImage'],
   ]
 
   for (const [file, ...variantNames] of pages) {
