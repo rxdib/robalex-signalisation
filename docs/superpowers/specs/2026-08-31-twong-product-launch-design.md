@@ -18,7 +18,8 @@ presentation and brochure. The approved facts are:
   lighting equipment, and similar temporary installations.
 - It is compatible with common safety barriers and profiles between 30 mm and
   330 mm thick.
-- Robalex has stock in Lausanne and supplies Switzerland.
+- Robalex has stock in Lausanne and supplies Switzerland. No delivery time or
+  stock quantity is promised.
 
 Claims such as exact certifications, wind-force ratings, installation heights,
 or quantified savings will only be shown if they can be read reliably in the
@@ -58,8 +59,8 @@ The `/twong/` page follows existing product/service page patterns and contains:
 2. Explanation: the system and its tool-free, no-drilling attachment principle.
 3. Three-step installation: position, secure with ratchet strap, install the
    equipment.
-4. Applications: signage, protection screens, traffic management, and urgent
-   interventions.
+4. Applications: signage and warning equipment, privacy/protection screens,
+   monitors, lighting equipment, and urgent intervention equipment.
 5. Compatibility: safety barriers and compatible profile range.
 6. Stock CTA: request availability, quote, or an on-site demonstration.
 
@@ -89,6 +90,10 @@ text. No third-party imagery is required.
   invented price.
 - Run the complete Node test suite, lint, production build, and Playwright
   navigation checks.
-- Review desktop and mobile renderings before merging to `main` and pushing.
-- The former production version is retained by Git commit `3037fc6` and Vercel
-  deployment history. If necessary, redeploy that commit to roll back.
+- Deploy the branch as a Vercel preview, review the page on desktop and mobile,
+  then run smoke tests against that preview before merging to `main`.
+- After production deployment, run HTTP smoke tests on the live home page,
+  `/twong/`, sitemap, navigation, and metadata.
+- The former production version is retained by Git commit `3037fc6` and its
+  Vercel deployment history. Confirm that the commit is deployable before
+  release; if a rollback is needed, redeploy it and repeat the live smoke tests.
