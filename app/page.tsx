@@ -282,38 +282,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. TWONG product feature */}
-      <section className="section-pad bg-bg-light" aria-labelledby="twong-home-title">
-        <div className="container">
-          <FeatureBlock
-            image={{
-              src: twongSignalisationImage.fallback,
-              alt: 'Système TWONG avec panneau de signalisation temporaire sur une glissière de sécurité',
-              sources: [{ srcSet: twongSignalisationImage.webpSrcSet, type: 'image/webp', sizes: twongSignalisationImage.sizes }],
-              sizes: twongSignalisationImage.sizes,
-            }}
-            imageBadge="En stock à Lausanne"
-            imageClassName="object-cover object-center"
-            reverse
-          >
-            <SectionHeader badge="Nouveau système" title={<>TWONG: la fixation mobile pour vos <span className="text-red">interventions temporaires.</span></>} />
-            <p className="mb-5 text-gray-dark leading-relaxed">
-              Un système breveté pour fixer rapidement vos équipements de signalisation temporaire, sans outil ni perçage, sur les dispositifs de retenue adaptés.
-            </p>
-            <ul className="mb-6 grid gap-2 text-sm text-gray-dark sm:grid-cols-3">
-              {['Sans outil', 'Sans perçage', 'En stock à Lausanne'].map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="font-bold text-red">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            <SmartLink href="/twong" className="inline-flex min-h-11 items-center justify-center rounded bg-red px-6 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark">
-              Découvrir le système TWONG
-            </SmartLink>
-          </FeatureBlock>
-        </div>
-      </section>
-
       {/* 5. Votre spécialiste */}
       <section className="section-pad bg-navy" aria-labelledby="specialiste-title">
         <div className="container">
@@ -403,6 +371,38 @@ export default function HomePage() {
             <a href="/nos-catalogues" className="bg-red hover:bg-red-dark text-white font-head font-700 text-sm uppercase tracking-wide px-6 py-3 rounded transition-colors inline-block">
               Voir le catalogue Triopan
             </a>
+          </FeatureBlock>
+        </div>
+      </section>
+
+      {/* 8. TWONG product feature */}
+      <section className="section-pad bg-bg-light" aria-labelledby="twong-home-title">
+        <div className="container">
+          <FeatureBlock
+            image={{
+              src: twongSignalisationImage.fallback,
+              alt: 'Système TWONG avec panneau de signalisation temporaire sur une glissière de sécurité',
+              sources: [{ srcSet: twongSignalisationImage.webpSrcSet, type: 'image/webp', sizes: twongSignalisationImage.sizes }],
+              sizes: twongSignalisationImage.sizes,
+            }}
+            imageBadge="En stock à Lausanne"
+            imageClassName="object-cover object-center"
+            reverse
+          >
+            <SectionHeader badge="Nouveau" title={<>TWONG: la fixation mobile pour vos <span className="text-red">interventions temporaires.</span></>} />
+            <p className="mb-5 text-gray-dark leading-relaxed">
+              Un système breveté pour fixer rapidement vos équipements de signalisation temporaire, sans outil ni perçage, sur les dispositifs de retenue adaptés.
+            </p>
+            <ul className="mb-6 grid gap-2 text-sm text-gray-dark sm:grid-cols-3">
+              {['Sans outil', 'Sans perçage', 'En stock à Lausanne'].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="font-bold text-red">✓</span> {item}
+                </li>
+              ))}
+            </ul>
+            <SmartLink href="/twong" className="inline-flex min-h-11 items-center justify-center rounded bg-red px-6 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark">
+              Découvrir le système TWONG
+            </SmartLink>
           </FeatureBlock>
         </div>
       </section>

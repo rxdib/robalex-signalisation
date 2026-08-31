@@ -57,6 +57,10 @@ export const twongSystemImage = serviceDisplayImage(
   '/images/twong/twong-systeme-fixation-mobile.png',
   'twong-systeme-fixation-mobile',
 )
+export const twongInstallationImage = serviceDisplayImage(
+  '/images/twong/twong-installation-double.png',
+  'twong-installation-double',
+)
 export const twongMontageImage = serviceDisplayImage(
   '/images/twong/twong-montage-sans-outil.png',
   'twong-montage-sans-outil',

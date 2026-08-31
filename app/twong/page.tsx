@@ -4,7 +4,7 @@ import FeatureBlock from '@/components/FeatureBlock'
 import JsonLd from '@/components/JsonLd'
 import SectionHeader from '@/components/SectionHeader'
 import SmartLink from '@/components/SmartLink'
-import { twongSignalisationImage, twongSystemImage } from '@/app/imageVariants'
+import { twongInstallationImage, twongSignalisationImage } from '@/app/imageVariants'
 import { buildMetadata } from '@/app/seo'
 import { createBreadcrumbSchema, createProductSchema, createWebPageSchema } from '@/app/schema'
 
@@ -32,7 +32,7 @@ export default function TwongPage() {
       name: 'TWONG - Système de fixation mobile',
       description,
       path: '/twong/',
-      image: twongSystemImage.fallback,
+      image: twongInstallationImage.fallback,
       brand: 'TWONG',
     }),
     createBreadcrumbSchema([
@@ -59,13 +59,13 @@ export default function TwongPage() {
         <div className="container">
           <FeatureBlock
             image={{
-              src: twongSystemImage.fallback,
-              alt: 'Système de fixation mobile TWONG',
-              sources: [{ srcSet: twongSystemImage.webpSrcSet, type: 'image/webp', sizes: twongSystemImage.sizes }],
-              sizes: twongSystemImage.sizes,
+              src: twongInstallationImage.fallback,
+              alt: 'Deux systèmes TWONG installés sur une glissière de sécurité',
+              sources: [{ srcSet: twongInstallationImage.webpSrcSet, type: 'image/webp', sizes: twongInstallationImage.sizes }],
+              sizes: twongInstallationImage.sizes,
             }}
             imageBadge="En stock à Lausanne"
-            imageClassName="object-contain bg-bg-light p-6 sm:p-10"
+            imageClassName="!aspect-[4/5] !object-contain bg-bg-light p-3 sm:p-5"
           >
             <SectionHeader badge="Dans notre assortiment" title={<>Une solution <span className="text-red">TWONG</span> pour vos installations temporaires.</>} />
             <p id="twong-overview-title" className="mb-6 text-gray-dark leading-relaxed">

@@ -40,3 +40,17 @@ test('TWONG is discoverable from the main commercial paths', () => {
     assert.ok(source.includes('/twong'), `Expected ${file} to link to /twong`)
   }
 })
+
+test('TWONG follows the Triopan section on the homepage and uses the compact badge', () => {
+  const source = readFileSync(path.join(projectRoot, 'app', 'page.tsx'), 'utf8')
+
+  assert.ok(source.indexOf('/* 7. Triopan feature */') < source.indexOf('/* 8. TWONG product feature */'))
+  assert.ok(source.includes('badge="Nouveau"'))
+})
+
+test('TWONG overview uses the complete on-site installation photograph', () => {
+  const source = readFileSync(twongPagePath, 'utf8')
+
+  assert.ok(source.includes('twongInstallationImage'))
+  assert.ok(existsSync(path.join(projectRoot, 'public', 'images', 'twong', 'twong-installation-double.png')))
+})

@@ -31,6 +31,10 @@ const images = [
     name: 'twong-systeme-fixation-mobile',
   },
   {
+    source: 'public/images/twong/twong-installation-double.png',
+    name: 'twong-installation-double',
+  },
+  {
     source: 'public/images/twong/twong-montage-sans-outil.png',
     name: 'twong-montage-sans-outil',
   },
