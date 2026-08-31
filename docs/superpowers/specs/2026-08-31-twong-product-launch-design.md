@@ -60,7 +60,7 @@ The `/twong/` page follows existing product/service page patterns and contains:
 3. Three-step installation: position, secure with ratchet strap, install the
    equipment.
 4. Applications: signage and warning equipment, privacy/protection screens,
-   monitors, lighting equipment, and urgent intervention equipment.
+   monitors, and lighting equipment.
 5. Compatibility: safety barriers and compatible profile range.
 6. Stock CTA: request availability, quote, or an on-site demonstration.
 
