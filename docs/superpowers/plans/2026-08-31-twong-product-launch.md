@@ -17,6 +17,7 @@
 - Modify: `scripts/generate-display-images.mjs` - generate responsive derivatives for the chosen TWONG images.
 - Modify: `app/imageVariants.ts` - expose the generated image variant descriptors.
 - Modify: `app/page.tsx` - add one premium TWONG showcase between expertise and featured products.
+- Modify: `app/nos-produits/page.tsx` - add a temporary-signage TWONG product callout linking to the detail page.
 - Modify: `components/Nav.tsx` - add the TWONG navigation route.
 - Modify: `components/Footer.tsx` - add a product footer link.
 - Modify: `app/sitemap.ts` - publish `/twong/` with its own truthful date.
@@ -40,7 +41,7 @@ Assert that the dedicated page source includes the controlled terms `Système de
 
 - [ ] **Step 2: Add failing integration assertions**
 
-Extend the sitemap source test to require `'/twong/'`. Extend the Playwright navigation matrix with `/twong` and an expected `/TWONG/` heading. Add source assertions that `components/Nav.tsx`, `components/Footer.tsx`, and `app/page.tsx` link to `/twong`.
+Extend the sitemap source test to require `'/twong/'`. Extend the Playwright navigation matrix with `/twong` and the exact browser-title regex `/TWONG \| Système de fixation mobile \| Robalex Signalisation Sàrl/`. Add source assertions that `components/Nav.tsx`, `components/Footer.tsx`, `app/page.tsx`, and `app/nos-produits/page.tsx` link to `/twong`.
 
 - [ ] **Step 3: Run the new tests to verify failure**
 
@@ -64,9 +65,9 @@ git commit -m "test: définit le contrat de lancement TWONG"
 - Modify: `scripts/generate-display-images.mjs`
 - Modify: `app/imageVariants.ts`
 
-- [ ] **Step 1: Copy only the three selected supplied images**
+- [ ] **Step 1: Copy and sanitize only the three selected supplied images**
 
-Use the supplied isolated product image for the compatibility/product block, the field mounting image for the hero, and the road-sign image for the home showcase. Copy to descriptive ASCII filenames; do not embed brochure PDF pages or third-party media.
+Use the supplied isolated product image for the compatibility/product block, the field mounting image for the hero and home showcase, and the road-sign image for the application section. Copy to descriptive ASCII filenames; do not embed brochure PDF pages or third-party media. Run the existing metadata-stripping script over copied rasters before committing them.
 
 - [ ] **Step 2: Extend the existing Sharp generator**
 
@@ -76,15 +77,15 @@ Add each TWONG source image to the current display-image manifest with the same 
 
 Run: `npm run images:generate-display`
 
-Expected: each configured TWONG image has responsive JPG/PNG fallback and WebP files under `public/images/display/` without modifying unrelated image sources.
+Expected: each configured TWONG image has `768` and `1280` WebP variants under `public/images/optimized/`; copied source images remain the fallback files without modifying unrelated image sources.
 
 - [ ] **Step 4: Export typed image descriptors**
 
 Add TWONG image variants to `app/imageVariants.ts` so home and product page consume the same image metadata without duplicating source sets.
 
-- [ ] **Step 5: Run image tests**
+- [ ] **Step 5: Extend and run image tests**
 
-Run: `node --test tests/image-delivery.test.mjs tests/image-seo-metadata.test.mjs`
+Add the three TWONG image names to `tests/image-delivery.test.mjs`, including the TWONG page in its page-usage assertions. Then run: `node --test tests/image-delivery.test.mjs tests/image-seo-metadata.test.mjs`
 
 Expected: PASS.
 
@@ -105,7 +106,7 @@ git commit -m "feat: ajoute les médias optimisés TWONG"
 
 - [ ] **Step 1: Implement metadata and JSON-LD**
 
-Use `buildMetadata` with title `TWONG | Système de fixation mobile`, path `/twong/`, French-Swiss description, and a TWONG field image. Add breadcrumb and `Product` JSON-LD with the product name, description, image, manufacturer/brand only where source-supported, and no price, review, rating, quantity, or availability enum.
+Use the existing metadata convention to emit the exact document title `TWONG | Système de fixation mobile | Robalex Signalisation Sàrl`, path `/twong/`, French-Swiss description, and a TWONG field image. Add breadcrumb and `Product` JSON-LD with the product name, description, image, manufacturer/brand only where source-supported, and no price, review, rating, quantity, or availability enum.
 
 - [ ] **Step 2: Implement the page with existing components**
 
@@ -132,6 +133,7 @@ git commit -m "feat: ajoute la page produit TWONG"
 
 **Files:**
 - Modify: `app/page.tsx`
+- Modify: `app/nos-produits/page.tsx`
 - Modify: `components/Nav.tsx`
 - Modify: `components/Footer.tsx`
 - Modify: `app/sitemap.ts`
@@ -145,22 +147,26 @@ Insert `TWONG` after `Nos produits` in the shared navigation list and add `Syst�
 
 - [ ] **Step 2: Add the home-page showcase**
 
-Add one new semantic section after the existing expertise cards and before the specialist/featured product path. Use the selected responsive road-sign image, concise factual benefits, and a single `/twong/` CTA. Match existing section spacing, card radius, red accent, and responsive layout.
+Add one new semantic section after the existing expertise cards and before the specialist/featured product path. Use the selected responsive field-mounting image, concise factual benefits, and a single `/twong/` CTA. Match existing section spacing, card radius, red accent, and responsive layout.
 
-- [ ] **Step 3: Add the sitemap route**
+- [ ] **Step 3: Add a product-context link**
+
+Add one TWONG callout to the temporary-signage section of `/nos-produits/`, linking to `/twong/`. This gives visitors arriving via the product catalogue a relevant route without turning every existing product card into a link.
+
+- [ ] **Step 4: Add the sitemap route**
 
 Add `/twong/` with `2026-08-31`, monthly change frequency, and a priority consistent with product/service detail pages.
 
-- [ ] **Step 4: Run focused tests**
+- [ ] **Step 5: Run focused tests**
 
 Run: `node --test tests/twong-content.test.mjs tests/sitemap.test.mjs`
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit integrations**
+- [ ] **Step 6: Commit integrations**
 
 ```powershell
-git add app/page.tsx components/Nav.tsx components/Footer.tsx app/sitemap.ts tests
+git add app/page.tsx app/nos-produits/page.tsx components/Nav.tsx components/Footer.tsx app/sitemap.ts tests
 git commit -m "feat: met TWONG en avant dans le site"
 ```
 
@@ -204,17 +210,21 @@ Confirm Git commit `3037fc6` resolves locally and the existing Vercel project ca
 
 - [ ] **Step 2: Push branch and inspect Vercel preview**
 
-Push `codex/twong-product-launch`; wait for the preview deployment. Run HTTP checks for `/`, `/twong/`, `/sitemap.xml`, and the new navigation links against the preview URL.
+Push `codex/twong-product-launch`; wait for the preview deployment. Run HTTP checks for `/`, `/twong/`, `/sitemap.xml`, and the new navigation links against the preview URL. Review the preview at mobile and desktop breakpoints before merging.
 
 - [ ] **Step 3: Merge and push production**
 
 Fast-forward `main` only after preview verification succeeds. Push `main` to trigger the production deployment.
 
-- [ ] **Step 4: Run production smoke tests**
+- [ ] **Step 4: Run production smoke tests and define rollback trigger**
 
-Verify `https://www.robalex-signalisation.ch/`, `/twong/`, and `/sitemap.xml` return HTTP 200. Confirm metadata and canonical URL for `/twong/`, menu/footer visibility, home showcase, and absence of fabricated price/quantity claims.
+Verify `https://www.robalex-signalisation.ch/`, `/twong/`, and `/sitemap.xml` return HTTP 200. Confirm metadata and canonical URL for `/twong/`, menu/footer visibility, home showcase, and absence of fabricated price/quantity claims. Roll back if any route fails, navigation is broken, the TWONG page is visually unusable, or source-constrained claims are missing.
 
-- [ ] **Step 5: Commit final state if needed**
+- [ ] **Step 5: Execute the rollback procedure if triggered**
+
+Redeploy Git commit `3037fc6` through Vercel, then repeat the HTTP smoke tests for `/`, `/nos-produits/`, and `/sitemap.xml` before declaring the rollback complete.
+
+- [ ] **Step 6: Commit final state if needed**
 
 ```powershell
 git status --short
