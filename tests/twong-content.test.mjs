@@ -28,6 +28,16 @@ test('TWONG page presents documented benefits and a contact path without online 
   assert.equal(source.includes('livraison sous'), false, 'TWONG must not promise an unsupported delivery time')
 })
 
+test('TWONG page does not declare Product rich-result markup without commercial offer data', () => {
+  const source = readFileSync(twongPagePath, 'utf8')
+
+  assert.equal(
+    source.includes('createProductSchema'),
+    false,
+    'TWONG must not declare Product markup without offers, reviews, or aggregate ratings',
+  )
+})
+
 test('desktop navigation keeps each label on a single line', () => {
   const source = readFileSync(path.join(projectRoot, 'components', 'Nav.tsx'), 'utf8')
 

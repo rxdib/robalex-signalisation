@@ -6,7 +6,7 @@ import SectionHeader from '@/components/SectionHeader'
 import SmartLink from '@/components/SmartLink'
 import { twongInstallationImage, twongSignalisationImage } from '@/app/imageVariants'
 import { buildMetadata } from '@/app/seo'
-import { createBreadcrumbSchema, createProductSchema, createWebPageSchema } from '@/app/schema'
+import { createBreadcrumbSchema, createWebPageSchema } from '@/app/schema'
 
 const title = 'TWONG'
 const description =
@@ -27,13 +27,6 @@ export default function TwongPage() {
       description,
       path: '/twong/',
       image: twongSignalisationImage.fallback,
-    }),
-    createProductSchema({
-      name: 'TWONG - Système de fixation mobile',
-      description,
-      path: '/twong/',
-      image: twongInstallationImage.fallback,
-      brand: 'TWONG',
     }),
     createBreadcrumbSchema([
       { name: 'Accueil', path: '/' },
