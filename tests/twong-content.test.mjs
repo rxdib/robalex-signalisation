@@ -58,6 +58,23 @@ test('TWONG follows the Triopan section on the homepage and uses the compact bad
   assert.ok(source.includes('badge="Nouveau"'))
 })
 
+test('TWONG is visually separated from the Triopan section on the homepage', () => {
+  const source = readFileSync(path.join(projectRoot, 'app', 'page.tsx'), 'utf8')
+  const triopanStart = source.indexOf('/* 7. Triopan feature */')
+  const twongStart = source.indexOf('/* 8. TWONG product feature */')
+  const productsStart = source.indexOf('/* 9. Produits phares */')
+
+  assert.notEqual(triopanStart, -1)
+  assert.notEqual(twongStart, -1)
+  assert.notEqual(productsStart, -1)
+
+  const triopanSection = source.slice(triopanStart, twongStart)
+  const twongSection = source.slice(twongStart, productsStart)
+
+  assert.match(triopanSection, /<section className="section-pad bg-bg-light"/)
+  assert.match(twongSection, /<section className="section-pad bg-white"/)
+})
+
 test('TWONG overview uses the complete on-site installation photograph', () => {
   const source = readFileSync(twongPagePath, 'utf8')
 

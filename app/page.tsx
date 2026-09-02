@@ -376,7 +376,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. TWONG product feature */}
-      <section className="section-pad bg-bg-light" aria-labelledby="twong-home-title">
+      <section className="section-pad bg-white" aria-labelledby="twong-home-title">
         <div className="container">
           <FeatureBlock
             image={{
@@ -407,8 +407,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Produits phares */}
-      <section className="section-pad bg-white" aria-labelledby="produits-title">
+      {/* 9. Produits phares */}
+      <section className="section-pad bg-bg-light" aria-labelledby="produits-title">
         <div className="container">
           <SectionHeader badge="Notre gamme" title={<>Produits <span className="text-red">phares</span></>} subtitle="Une sélection de nos produits les plus demandés." centered />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -433,7 +433,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. Ils nous font confiance */}
+      {/* 10. Ils nous font confiance */}
       <section className="section-pad bg-bg-light" aria-labelledby="clients-title">
         <div className="container">
           <SectionHeader badge="Références" title={<>Ils nous font <span className="text-red">confiance</span></>} subtitle="Communes, services d'urgence, Polices et entreprises actives sur le terrain dans toute la Suisse romande." centered />
@@ -443,7 +443,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. CTA */}
+      {/* 11. CTA */}
       <CtaBand />
     </>
   )
