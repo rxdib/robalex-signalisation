@@ -81,3 +81,12 @@ test('TWONG overview uses the complete on-site installation photograph', () => {
   assert.ok(source.includes('twongInstallationImage'))
   assert.ok(existsSync(path.join(projectRoot, 'public', 'images', 'twong', 'twong-installation-double.png')))
 })
+
+test('TWONG promotion avoids installation-method claims', () => {
+  for (const file of ['app/page.tsx', 'app/nos-produits/page.tsx', 'app/twong/page.tsx']) {
+    const source = readFileSync(path.join(projectRoot, file), 'utf8').toLowerCase()
+
+    assert.equal(source.includes('sans outil'), false, `Expected ${file} not to mention sans outil`)
+    assert.equal(source.includes('sans perçage'), false, `Expected ${file} not to mention sans perçage`)
+  }
+})

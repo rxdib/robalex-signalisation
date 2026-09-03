@@ -391,15 +391,8 @@ export default function HomePage() {
           >
             <SectionHeader badge="Nouveau" title={<>TWONG: la fixation mobile pour vos <span className="text-red">interventions temporaires.</span></>} />
             <p className="mb-5 text-gray-dark leading-relaxed">
-              Un système breveté pour fixer rapidement vos équipements de signalisation temporaire, sans outil ni perçage, sur les dispositifs de retenue adaptés.
+              Un système de fixation mobile pour vos équipements de signalisation temporaire sur les dispositifs de retenue adaptés.
             </p>
-            <ul className="mb-6 grid gap-2 text-sm text-gray-dark sm:grid-cols-3">
-              {['Sans outil', 'Sans perçage', 'En stock à Lausanne'].map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <span className="font-bold text-red">✓</span> {item}
-                </li>
-              ))}
-            </ul>
             <SmartLink href="/twong" className="inline-flex min-h-11 items-center justify-center rounded bg-red px-6 py-3 text-sm font-head font-700 uppercase tracking-wide text-white transition-colors hover:bg-red-dark">
               Découvrir le système TWONG
             </SmartLink>

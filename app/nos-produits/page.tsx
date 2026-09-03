@@ -371,7 +371,7 @@ export default function NosProduits() {
             <div>
               <p className="text-xs font-head font-700 uppercase tracking-[0.16em] text-red">Nouveau système</p>
               <h2 className="mt-2 font-head text-xl font-800 text-dark">TWONG - système de fixation mobile</h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-dark">Fixation de signalisation temporaire sans outil ni perçage, en stock à Lausanne.</p>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-gray-dark">Système de fixation mobile pour la signalisation temporaire, disponible à Lausanne.</p>
             </div>
             <SmartLink href="/twong" className="mt-5 inline-flex min-h-11 shrink-0 items-center justify-center rounded border-2 border-red px-5 py-2.5 text-sm font-head font-700 uppercase tracking-wide text-red transition-colors hover:bg-red hover:text-white sm:mt-0">
               Voir TWONG
