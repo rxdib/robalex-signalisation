@@ -38,9 +38,9 @@ const mainCatalogues: CatalogueCard[] = [
     kicker: 'Signaux pliants',
     description:
       "En tant que représentant officiel de Triopan SA en Suisse romande, nous mettons à disposition le catalogue de référence pour les signaux pliants et accessoires Triopan.",
-    image: '/images/catalogue-triopan-cover-2026.webp',
+    image: '/images/catalogue-triopan-cover-2026.webp?v=2026-10-29-2',
     imageAlt: 'Couverture du catalogue Triopan',
-    href: '/catalogues/catalogue-triopan.pdf?v=2026-10-29',
+    href: '/catalogues/catalogue-triopan.pdf?v=2026-10-29-2',
     buttonLabel: 'Télécharger le catalogue',
     tone: 'red',
   },
@@ -50,9 +50,9 @@ const mainCatalogues: CatalogueCard[] = [
     kicker: 'Signalisation et sécurité routière',
     description:
       'Notre catalogue couvre l’ensemble de notre gamme de produits de signalisation et sécurité routière : flashs, panneaux, cônes, barrières, miroirs, mobilier urbain, balisage et matériel de chantier.',
-    image: '/images/catalogue-robalex-cover-2026.webp',
+    image: '/images/catalogue-robalex-cover-2026.webp?v=2026-10-29-2',
     imageAlt: 'Couverture du catalogue 2026 Robalex Signalisation Sàrl',
-    href: '/catalogues/catalogue-robalex.pdf?v=2026-10-29',
+    href: '/catalogues/catalogue-robalex.pdf?v=2026-10-29-2',
     buttonLabel: 'Télécharger le catalogue',
     tone: 'navy',
   },
@@ -172,7 +172,7 @@ export default function NosCatalogues() {
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="/catalogues/Robalex_Signaux_Routiers.pdf?v=2026-10-29"
+                  href="/catalogues/Robalex_Signaux_Routiers.pdf?v=2026-10-29-2"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Télécharger la liste des signaux OSR - ouverture dans un nouvel onglet"
