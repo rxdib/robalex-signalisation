@@ -38,21 +38,21 @@ const mainCatalogues: CatalogueCard[] = [
     kicker: 'Signaux pliants',
     description:
       "En tant que représentant officiel de Triopan SA en Suisse romande, nous mettons à disposition le catalogue de référence pour les signaux pliants et accessoires Triopan.",
-    image: '/images/catalogue-triopan-cover.jpg',
+    image: '/images/catalogue-triopan-cover-2026.webp',
     imageAlt: 'Couverture du catalogue Triopan',
-    href: '/catalogues/catalogue-triopan.pdf',
+    href: '/catalogues/catalogue-triopan.pdf?v=2026-10-29',
     buttonLabel: 'Télécharger le catalogue',
     tone: 'red',
   },
   {
     badge: 'Robalex Signalisation Sàrl',
-    title: 'Catalogue 2025',
+    title: 'Catalogue 2026',
     kicker: 'Signalisation et sécurité routière',
     description:
       'Notre catalogue couvre l’ensemble de notre gamme de produits de signalisation et sécurité routière : flashs, panneaux, cônes, barrières, miroirs, mobilier urbain, balisage et matériel de chantier.',
-    image: '/images/catalogue-robalex-cover.png',
-    imageAlt: 'Couverture du catalogue 2025 Robalex Signalisation Sàrl',
-    href: '/catalogues/catalogue-robalex.pdf',
+    image: '/images/catalogue-robalex-cover-2026.webp',
+    imageAlt: 'Couverture du catalogue 2026 Robalex Signalisation Sàrl',
+    href: '/catalogues/catalogue-robalex.pdf?v=2026-10-29',
     buttonLabel: 'Télécharger le catalogue',
     tone: 'navy',
   },
@@ -68,7 +68,7 @@ function CatalogueCard({ catalogue }: { catalogue: CatalogueCard }) {
           width={400}
           height={533}
           sizes="(max-width: 767px) 100vw, 50vw"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
@@ -172,7 +172,7 @@ export default function NosCatalogues() {
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <a
-                  href="/catalogues/Robalex_Signaux_Routiers.pdf"
+                  href="/catalogues/Robalex_Signaux_Routiers.pdf?v=2026-10-29"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Télécharger la liste des signaux OSR - ouverture dans un nouvel onglet"

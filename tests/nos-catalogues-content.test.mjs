@@ -13,7 +13,7 @@ test('nos catalogues page uses the updated catalogue hierarchy and cleaner copy'
     "title: 'Catalogue Triopan'",
     "kicker: 'Signaux pliants'",
     "badge: 'Robalex Signalisation Sàrl'",
-    "title: 'Catalogue 2025'",
+    "title: 'Catalogue 2026'",
     "kicker: 'Signalisation et sécurité routière'",
     'Liste des',
     'signaux OSR',

@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/nos-produits/', lastModified: '2026-08-31', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/twong/', lastModified: '2026-08-31', changeFrequency: 'monthly' as const, priority: 0.9 },
     { path: '/contact/', lastModified: '2026-08-31', changeFrequency: 'monthly' as const, priority: 0.85 },
-    { path: '/nos-catalogues/', lastModified: '2026-06-16', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/nos-catalogues/', lastModified: '2026-10-29', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/a-propos/', lastModified: '2026-06-16', changeFrequency: 'monthly' as const, priority: 0.75 },
   ]
 
